@@ -306,7 +306,7 @@ public class Tela_login extends javax.swing.JFrame {
 
     private void btnManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManualActionPerformed
        try {
-            Desktop.getDesktop().open(new File("C:\\Users\\casa\\Documents\\NetBeansProjects\\AsuperArts\\src\\br\\com\\AsuperArts\\UI\\pdf\\L001-C00237.pdf"));
+            Desktop.getDesktop().open(new File(""));
         } catch (IOException ex) {
             Logger.getLogger(Form_ManualUso.class.getName()).log(Level.SEVERE, null, ex);
         }
