@@ -21,8 +21,8 @@ public class ProdutoBLL {
         PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, p.getNome());
             ps.setInt(2, p.getQuantidade());
-            ps.setString(3, p.getValor_unitario());
-            ps.setString(4, p.getUni_medida());
+            ps.setDouble(3, p.getPreco_compra());
+            ps.setInt(4, p.getLargura());
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteBLL.class.getName()).log(Level.SEVERE, null, ex);
@@ -40,8 +40,8 @@ public class ProdutoBLL {
                 p.setId_produto(rs.getInt("id_produto"));
                 p.setNome(rs.getString("nome_produto"));
                 p.setQuantidade(rs.getInt("quantidade"));
-                p.setValor_unitario(rs.getString("valor_unitario"));
-                p.setUni_medida(rs.getString("uni_medida"));
+                p.setPreco_compra(rs.getDouble("preco_compra"));
+                p.setLargura(rs.getInt("largura"));
             }
             return p;
         } catch (SQLException ex) {
@@ -64,8 +64,10 @@ public class ProdutoBLL {
                 produto.setId_produto(rs.getInt("id_produto"));
                 produto.setNome(rs.getString("nome_produto"));
                 produto.setQuantidade(rs.getInt("quantidade"));
-                produto.setValor_unitario(rs.getString("valor_unitario"));
-                produto.setUni_medida(rs.getString("uni_medida"));
+                produto.setPreco_compra(rs.getDouble("preco_compra"));
+                produto.setLargura(rs.getInt("largura"));
+                produto.setComprimento(rs.getInt("comprimento"));
+                produto.setEspessura(rs.getInt("espessura"));
                produtos.add(produto);
             }
             return produtos;
@@ -92,8 +94,8 @@ public class ProdutoBLL {
             
             ps.setString(1, p.getNome());
             ps.setInt(2, p.getQuantidade());
-            ps.setString(3, p.getValor_unitario());
-            ps.setString(4, p.getUni_medida());     
+            ps.setDouble(3, p.getPreco_compra() );
+            ps.setInt(4, p.getLargura());     
             ps.setInt(5, p.getId_produto()); 
             ps.executeUpdate();
         } catch (SQLException ex) {

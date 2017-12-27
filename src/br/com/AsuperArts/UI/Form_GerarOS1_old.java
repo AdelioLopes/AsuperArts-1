@@ -394,7 +394,7 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
             String nomeProduto = txt_Produto.getSelectedItem().toString();
             ProdutoBLL pb = new ProdutoBLL();
             ProdutoDTO produto = pb.listarValorUnitarioProduto(nomeProduto);
-            txtValorUnitario.setText(produto.getValor_unitario().toString());
+           // txtValorUnitario.setText(produto.getValor_unitario().toString());
     }//GEN-LAST:event_txt_ProdutoActionPerformed
      
 

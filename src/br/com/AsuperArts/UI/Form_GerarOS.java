@@ -23,6 +23,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -84,7 +85,7 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         txt_DataEntrada = new com.toedter.calendar.JDateChooser();
         txt_DataSaida = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tb_os = new javax.swing.JTable();
 
         setClosable(true);
         setIconifiable(true);
@@ -221,7 +222,7 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         txt_DataSaida.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data de Saída", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
         txt_DataSaida.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tb_os.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -237,8 +238,8 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(jTable1);
+        tb_os.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tb_os);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -409,9 +410,9 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
          
          JOptionPane.showMessageDialog(null, soma);
          
-         
-           
-        
+         DefaultTableModel modelo =  (DefaultTableModel) tb_os.getModel();
+         Object[] dados = {txt_Empresa.getSelectedItem(), txt_Produto.getSelectedItem(), txt_Quantidade.getText(), txtValorUnitario.getText(), txt_Valor_Total_Produto.getText()};
+         modelo.addRow(dados);
         
         
        
@@ -433,7 +434,7 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
             String nomeProduto = txt_Produto.getSelectedItem().toString();
             ProdutoBLL pb = new ProdutoBLL();
             ProdutoDTO produto = pb.listarValorUnitarioProduto(nomeProduto);
-            txtValorUnitario.setText(produto.getValor_unitario().toString());
+            txtValorUnitario.setText(produto.getPreco_compra().toString());
     }//GEN-LAST:event_txt_ProdutoActionPerformed
 
     private void txt_QuantidadeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_QuantidadeKeyReleased
@@ -461,7 +462,7 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
     private javax.swing.JButton btn_remover;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tb_os;
     private javax.swing.JTextField txtValorUnitario;
     private javax.swing.JTextField txt_Arquivo;
     private com.toedter.calendar.JDateChooser txt_DataEntrada;

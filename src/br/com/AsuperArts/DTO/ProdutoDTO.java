@@ -9,8 +9,10 @@ public class ProdutoDTO {
     private Integer id_produto;
     private String nome;
     private Integer quantidade;
-    private String valor_unitario;
-    private String uni_medida;
+    private Double preco_compra;
+    private Integer largura;
+    private Integer comprimento;
+    private Integer espessura;
 
     public Integer getId_produto() {
         return id_produto;
@@ -36,20 +38,39 @@ public class ProdutoDTO {
         this.quantidade = quantidade;
     }
 
-    public String getValor_unitario() {
-        return valor_unitario;
+    public Double getPreco_compra() {
+        return preco_compra;
     }
 
-    public void setValor_unitario(String valor_unitario) {
-        this.valor_unitario = valor_unitario;
-    }
-      public String getUni_medida() {
-        return uni_medida;
+    public void setPreco_compra(Double preco_compra) {
+        this.preco_compra = preco_compra;
     }
 
-    public void setUni_medida(String uni_medida) {
-        this.uni_medida = uni_medida;
+    public Integer getLargura() {
+        return largura;
     }
+
+    public void setLargura(Integer largura) {
+        this.largura = largura;
+    }
+
+    public Integer getComprimento() {
+        return comprimento;
+    }
+
+    public void setComprimento(Integer comprimento) {
+        this.comprimento = comprimento;
+    }
+
+    public Integer getEspessura() {
+        return espessura;
+    }
+
+    public void setEspessura(Integer espessura) {
+        this.espessura = espessura;
+    }
+
+   
 
     @Override
     public String toString() {
