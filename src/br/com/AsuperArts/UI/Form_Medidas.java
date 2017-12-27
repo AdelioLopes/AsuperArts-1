@@ -1,6 +1,8 @@
 
 package br.com.AsuperArts.UI;
 
+import br.com.AsuperArts.BLL.MedidasBLL;
+
 /**
  *
  * @author Equipe Senac 2017
@@ -34,7 +36,7 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tb_medidas = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
@@ -65,12 +67,12 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
 
         jButton3.setText("alterar");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tb_medidas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Título 5", "Título 6"
+                "ID", "Largura", "Comprimento", "Minutos", "Tamanho", "Peso"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -81,8 +83,8 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tb_medidas.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tb_medidas);
 
         jButton4.setText("desfazer");
 
@@ -159,9 +161,11 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
 
         setBounds(0, 0, 1050, 550);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void preencherTabela(){
         
+    } 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        MedidasBLL medidasBLL = new MedidasBLL();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -173,12 +177,12 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTable tb_medidas;
     // End of variables declaration//GEN-END:variables
 }
