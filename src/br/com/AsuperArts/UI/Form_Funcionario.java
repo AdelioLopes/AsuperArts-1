@@ -23,9 +23,10 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         btn_cancelar.setBackground(new Color(255,255,255));
         btn_editar.setBackground(new Color(255,255,255));
         btn_excluir.setBackground(new Color(255,255,255));
+        this.tb_funcionario.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
     public void preencherTabela(){
-    this.tb_funcionario.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    
     DefaultTableModel modelo = (DefaultTableModel) tb_funcionario.getModel();
     modelo.setNumRows(0);
     FuncionarioBLL rn = new FuncionarioBLL();
