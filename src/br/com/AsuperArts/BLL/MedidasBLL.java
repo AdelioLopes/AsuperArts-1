@@ -34,7 +34,24 @@ public class MedidasBLL {
             Logger.getLogger(MedidasBLL.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+    public List<MedidasDTO> largura(){
+        sql = "SELECT largura FROM tb_medidas;";
+        List<MedidasDTO> medidas =new ArrayList<>();
+        ResultSet rs;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MedidasDTO medida = new MedidasDTO();
+                medida.setLargura(rs.getInt("largura"));
+                medidas.add(medida);
+            }
+            return medidas;
+        } catch (SQLException ex) {
+            Logger.getLogger(MedidasBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    return null;
+    }
     public List<MedidasDTO> listaMedidas(){
         sql = "SELECT * FROM tb_medidas;";
         List<MedidasDTO> medidas =new ArrayList<>();

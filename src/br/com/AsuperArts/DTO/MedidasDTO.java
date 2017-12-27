@@ -1,6 +1,5 @@
 package br.com.AsuperArts.DTO;
 
-import java.util.Objects;
 
 /**
  *
@@ -26,6 +25,10 @@ public class MedidasDTO {
         return largura;
     }
 
+   
+    
+    
+    
     public void setLargura(Integer largura) {
         this.largura = largura;
     }
@@ -64,31 +67,7 @@ public class MedidasDTO {
         this.peso = peso;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + Objects.hashCode(this.id_medidas);
-        return hash;
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final MedidasDTO other = (MedidasDTO) obj;
-        if (!Objects.equals(this.id_medidas, other.id_medidas)) {
-            return false;
-        }
-        return true;
-    }
-    
     
             
 }

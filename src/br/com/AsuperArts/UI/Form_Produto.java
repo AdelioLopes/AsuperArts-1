@@ -1,14 +1,18 @@
 package br.com.AsuperArts.UI;
 
+import br.com.AsuperArts.BLL.MedidasBLL;
 import br.com.AsuperArts.BLL.ProdutoBLL;
 import br.com.AsuperArts.DAL.Conexao;
 import br.com.AsuperArts.DTO.CampoDecimal;
+import br.com.AsuperArts.DTO.MedidasDTO;
 import br.com.AsuperArts.DTO.ProdutoDTO;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,6 +29,7 @@ import javax.swing.table.DefaultTableModel;
 public class Form_Produto extends javax.swing.JInternalFrame {
     public Form_Produto() {
         initComponents();
+        
         btn_alterar.setEnabled(false);
         btn_cancelar.setEnabled(false);
         btn_alterar.setBackground(new Color(255,255,255));
@@ -33,15 +38,22 @@ public class Form_Produto extends javax.swing.JInternalFrame {
         btn_editar.setBackground(new Color(255,255,255));
         btn_excluir.setBackground(new Color(255,255,255));
         preencherTabela();
+        MedidasBLL rg = new MedidasBLL();
+        
+        for(MedidasDTO m :rg.largura()){
+         txt_largura.setSelectedItem(m);
+        }
+        
         
         //txt_vl_unitario = new CampoDecimal(CampoDecimal.REAL);
     }
-    
+   
      public void preencherTabela() {
         this.jTableProduto.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         DefaultTableModel modelo = (DefaultTableModel) jTableProduto.getModel();
         modelo.setNumRows(0);
         ProdutoBLL rg = new ProdutoBLL();
+        
         this.jTableProduto.setModel(modelo);
         this.jTableProduto.getColumnModel().getColumn(0).setPreferredWidth(50);
         this.jTableProduto.getColumnModel().getColumn(0).setMaxWidth(50);
@@ -59,6 +71,8 @@ public class Form_Produto extends javax.swing.JInternalFrame {
         DefaultTableCellRenderer direita = new DefaultTableCellRenderer();
         direita.setHorizontalAlignment(SwingConstants.RIGHT);
         this.jTableProduto.getColumnModel().getColumn(3).setCellRenderer(direita);
+        
+        
         
         for (ProdutoDTO pro : rg.listaProduto()) {
             modelo.addRow(new Object[]{
@@ -85,9 +99,9 @@ public class Form_Produto extends javax.swing.JInternalFrame {
         btn_alterar = new javax.swing.JButton();
         txt_id = new javax.swing.JTextField();
         btn_cancelar = new javax.swing.JButton();
-        txt_unidadeMedida = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        txt_largura = new javax.swing.JComboBox<>();
+        txt_comprimento = new javax.swing.JComboBox<>();
+        txt_espessura = new javax.swing.JComboBox<>();
         btn_excluir = new javax.swing.JButton();
         txt_buscar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -199,11 +213,11 @@ public class Form_Produto extends javax.swing.JInternalFrame {
             }
         });
 
-        txt_unidadeMedida.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Largura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
+        txt_largura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Largura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
 
-        jComboBox1.setBorder(javax.swing.BorderFactory.createTitledBorder("Comprimento"));
+        txt_comprimento.setBorder(javax.swing.BorderFactory.createTitledBorder("Comprimento"));
 
-        jComboBox2.setBorder(javax.swing.BorderFactory.createTitledBorder("Espessura"));
+        txt_espessura.setBorder(javax.swing.BorderFactory.createTitledBorder("Espessura"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -227,10 +241,10 @@ public class Form_Produto extends javax.swing.JInternalFrame {
                                 .addComponent(txt_vl_unitario, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txt_unidadeMedida, 0, 108, Short.MAX_VALUE))
+                                    .addComponent(txt_espessura, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txt_largura, 0, 108, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(2, 2, 2)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -247,10 +261,10 @@ public class Form_Produto extends javax.swing.JInternalFrame {
                         .addComponent(txt_qnt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txt_vl_unitario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_unidadeMedida)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_largura)
+                        .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_espessura, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btn_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -368,14 +382,14 @@ public class Form_Produto extends javax.swing.JInternalFrame {
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
       
-        if (!txt_nome_produto.getText().equals("") && !txt_qnt.getText().equals("") && !txt_vl_unitario.getText().equals("") && !txt_unidadeMedida.getSelectedItem().equals("") ) {
+        if (!txt_nome_produto.getText().equals("") && !txt_qnt.getText().equals("") && !txt_vl_unitario.getText().equals("") && !txt_largura.getSelectedItem().equals("") ) {
             ProdutoBLL rg = new ProdutoBLL();
             ProdutoDTO produtoDTO = new ProdutoDTO();
             produtoDTO.setNome(txt_nome_produto.getText());
             produtoDTO.setQuantidade(Integer.parseInt(txt_qnt.getText()));
             produtoDTO.setPreco_compra(Double.valueOf(txt_vl_unitario.getText().replace(".", "").replace(",", ".").replace(" ","")));
-            produtoDTO.setLargura(Integer.valueOf(txt_unidadeMedida.getSelectedItem().toString()));
-            JOptionPane.showMessageDialog(null, txt_unidadeMedida.getSelectedItem());
+            produtoDTO.setLargura(Integer.valueOf(txt_largura.getSelectedItem().toString()));
+            JOptionPane.showMessageDialog(null, txt_largura.getSelectedItem());
             rg.cadastrarProduto(produtoDTO);
             preencherTabela();
             txt_nome_produto.setText("");
@@ -414,12 +428,12 @@ public class Form_Produto extends javax.swing.JInternalFrame {
     private void btn_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alterarActionPerformed
         ProdutoBLL rg = new ProdutoBLL();
        ProdutoDTO produtoDTO = new ProdutoDTO();
-        if(!txt_nome_produto.getText().equals("") && !txt_qnt.getText().equals("")&& !txt_vl_unitario.getText().equals("") && !txt_unidadeMedida.getSelectedItem().equals("")){
+        if(!txt_nome_produto.getText().equals("") && !txt_qnt.getText().equals("")&& !txt_vl_unitario.getText().equals("") && !txt_largura.getSelectedItem().equals("")){
                 produtoDTO.setId_produto(Integer.parseInt(txt_id.getText()));
                 produtoDTO.setNome(txt_nome_produto.getText());
                 produtoDTO.setQuantidade(Integer.parseInt(txt_qnt.getText()));
                 produtoDTO.setPreco_compra(Double.valueOf(txt_vl_unitario.getText().replace(".", "").replace(",", ".").replace(" ","")));
-                produtoDTO.setLargura(Integer.valueOf(txt_unidadeMedida.getSelectedItem().toString()));
+                produtoDTO.setLargura(Integer.valueOf(txt_largura.getSelectedItem().toString()));
                 rg.Alterar(produtoDTO);
                 preencherTabela();
                 btn_cadastrar.setEnabled(true);
@@ -455,7 +469,7 @@ public class Form_Produto extends javax.swing.JInternalFrame {
         txt_nome_produto.setText("");
         txt_qnt.setText("");
         txt_vl_unitario.setText("");
-        txt_unidadeMedida.setSelectedItem("");
+        txt_largura.setSelectedItem("");
     }//GEN-LAST:event_btn_cancelarActionPerformed
 public void setar_campos(){
     int setar = jTableProduto.getSelectedRow();
@@ -463,7 +477,7 @@ public void setar_campos(){
     txt_nome_produto.setText(jTableProduto.getModel().getValueAt(setar, 1).toString());
     txt_qnt.setText(jTableProduto.getModel().getValueAt(setar, 2).toString());
     txt_vl_unitario.setText(jTableProduto.getModel().getValueAt(setar, 3).toString());
-    txt_unidadeMedida.setSelectedItem(jTableProduto.getModel().getValueAt(setar, 4).toString());
+    txt_largura.setSelectedItem(jTableProduto.getModel().getValueAt(setar, 4).toString());
 }
     
     public void buscarProduto(){
@@ -519,17 +533,17 @@ public void setar_campos(){
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton btn_editar;
     private javax.swing.JButton btn_excluir;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableProduto;
     private javax.swing.JTextField txt_buscar;
+    private javax.swing.JComboBox<String> txt_comprimento;
+    private javax.swing.JComboBox<String> txt_espessura;
     private javax.swing.JTextField txt_id;
+    private javax.swing.JComboBox<String> txt_largura;
     private javax.swing.JTextField txt_nome_produto;
     private javax.swing.JTextField txt_qnt;
-    private javax.swing.JComboBox<String> txt_unidadeMedida;
     private javax.swing.JTextField txt_vl_unitario;
     // End of variables declaration//GEN-END:variables
 

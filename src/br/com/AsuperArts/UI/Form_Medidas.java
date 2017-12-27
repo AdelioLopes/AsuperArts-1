@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Equipe Senac 2017
  */
 public class Form_Medidas extends javax.swing.JInternalFrame {
-
+    
     /**
      * Creates new form Form_cadastroMedidas
      */
@@ -21,6 +21,7 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         initComponents();
         preencherTabela();
         this.tb_medidas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
     }
 
     /**
@@ -131,13 +132,13 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         jLabel2.setText("=");
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel3.setText("CM");
+        jLabel3.setText("cm²");
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel4.setText("CM");
+        jLabel4.setText("cm");
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel5.setText("CM");
+        jLabel5.setText("cm");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -176,9 +177,9 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,6 +264,7 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
             medidasDTO.setTamanho(Integer.valueOf(txt_tamanho.getText()));
             medidasDTO.setPeso(Integer.valueOf(txt_peso.getText()));
             medidasBLL.inserir(medidasDTO);
+            preencherTabela();
             txt_largura.setText("");
             txt_comprimento.setText("");
             txt_minutos.setText("");
