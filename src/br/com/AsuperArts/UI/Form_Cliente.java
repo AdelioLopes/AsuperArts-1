@@ -18,9 +18,9 @@ import net.proteanit.sql.DbUtils;
 /**
  * @author Equipe senac 2017
  */
-public class Form_cadastroCliente extends javax.swing.JInternalFrame {
+public class Form_Cliente extends javax.swing.JInternalFrame {
 
-    public Form_cadastroCliente() {
+    public Form_Cliente() {
         initComponents();
         preencherTabela();
         btn_alterar.setEnabled(false);

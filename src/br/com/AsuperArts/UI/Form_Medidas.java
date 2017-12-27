@@ -1,20 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.com.AsuperArts.UI;
 
 /**
  *
- * @author casa
+ * @author Equipe Senac 2017
  */
-public class Form_cadastroMedidas extends javax.swing.JInternalFrame {
+public class Form_Medidas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Form_cadastroMedidas
      */
-    public Form_cadastroMedidas() {
+    public Form_Medidas() {
         initComponents();
     }
 
@@ -59,6 +55,11 @@ public class Form_cadastroMedidas extends javax.swing.JInternalFrame {
         jTextField6.setBorder(javax.swing.BorderFactory.createTitledBorder("Peso"));
 
         jButton1.setText("cadastrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("excluir");
 
@@ -69,11 +70,11 @@ public class Form_cadastroMedidas extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Título 5", "Título 6"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -111,8 +112,8 @@ public class Form_cadastroMedidas extends javax.swing.JInternalFrame {
                         .addComponent(jTextField4)
                         .addComponent(jTextField5)
                         .addComponent(jTextField6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
@@ -158,6 +159,10 @@ public class Form_cadastroMedidas extends javax.swing.JInternalFrame {
 
         setBounds(0, 0, 1050, 550);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

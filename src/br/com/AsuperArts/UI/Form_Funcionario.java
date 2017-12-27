@@ -11,9 +11,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Equipe Senac 2017
  */
-public class Form_cadastroFuncionario extends javax.swing.JInternalFrame {
+public class Form_Funcionario extends javax.swing.JInternalFrame {
 
-    public Form_cadastroFuncionario() {
+    public Form_Funcionario() {
         initComponents();
         preencherTabela();
         btn_alterar.setEnabled(false);

@@ -22,8 +22,8 @@ import javax.swing.table.DefaultTableModel;
 /**
  * @author Equipe senac 2017
  */
-public class Form_cadastroProduto extends javax.swing.JInternalFrame {
-    public Form_cadastroProduto() {
+public class Form_Produto extends javax.swing.JInternalFrame {
+    public Form_Produto() {
         initComponents();
         btn_alterar.setEnabled(false);
         btn_cancelar.setEnabled(false);

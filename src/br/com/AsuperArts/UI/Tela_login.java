@@ -1,6 +1,6 @@
 package br.com.AsuperArts.UI;
 import br.com.AsuperArts.BLL.LoginBLL;
-import static br.com.AsuperArts.UI.Form_cadastroUsuario.convertPasswordToMD5;
+import static br.com.AsuperArts.UI.Form_Usuario.convertPasswordToMD5;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Image;

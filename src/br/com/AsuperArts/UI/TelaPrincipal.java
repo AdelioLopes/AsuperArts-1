@@ -14,11 +14,11 @@ import javax.swing.Timer;
  * @author Equipe senac 2017
  */
 public class TelaPrincipal extends javax.swing.JFrame{
-    private Form_cadastroMedidas form_cadastroMedidas = null;
-    private Form_cadastroProduto form_cadastroProduto = null;
-    private Form_cadastroCliente form_cadastroCliente = null;
-    private Form_cadastroUsuario form_cadastroUsuario = null;
-    private Form_cadastroFuncionario form_cadastroFuncionario = null;
+    private Form_Medidas form_cadastroMedidas = null;
+    private Form_Produto form_cadastroProduto = null;
+    private Form_Cliente form_cadastroCliente = null;
+    private Form_Usuario form_cadastroUsuario = null;
+    private Form_Funcionario form_cadastroFuncionario = null;
     private Form_GerarOS form_GerarOS = null;
     private Form_relatorio form_relatorio = null;
     private Form_desenvolvedor form_desenvolvedor = null;
@@ -336,7 +336,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
     private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
         fecharTelas();
-        form_cadastroUsuario = new Form_cadastroUsuario();
+        form_cadastroUsuario = new Form_Usuario();
         form_cadastroUsuario.setVisible(true);
         desktop.add(form_cadastroUsuario);
         
@@ -363,7 +363,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
     private void ProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProdutoActionPerformed
         fecharTelas();
-        form_cadastroProduto  = new Form_cadastroProduto();
+        form_cadastroProduto  = new Form_Produto();
         form_cadastroProduto.setVisible(true);
         desktop.add(form_cadastroProduto);
     }//GEN-LAST:event_ProdutoActionPerformed
@@ -391,14 +391,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
     private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
         fecharTelas();
-        form_cadastroCliente = new Form_cadastroCliente();
+        form_cadastroCliente = new Form_Cliente();
         form_cadastroCliente.setVisible(true);
         desktop.add(form_cadastroCliente);
     }//GEN-LAST:event_ClienteActionPerformed
 
     private void FuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FuncionarioActionPerformed
         fecharTelas();
-        form_cadastroFuncionario = new Form_cadastroFuncionario();
+        form_cadastroFuncionario = new Form_Funcionario();
         form_cadastroFuncionario.setVisible(true);
         desktop.add(form_cadastroFuncionario);
     }//GEN-LAST:event_FuncionarioActionPerformed
@@ -418,7 +418,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     }//GEN-LAST:event_TipoOSActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        form_cadastroMedidas = new Form_cadastroMedidas();
+        form_cadastroMedidas = new Form_Medidas();
         form_cadastroMedidas.setVisible(true);
         desktop.add(form_cadastroMedidas);
     }//GEN-LAST:event_jMenuItem1ActionPerformed

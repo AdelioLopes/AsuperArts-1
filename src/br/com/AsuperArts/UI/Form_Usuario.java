@@ -24,8 +24,8 @@ import javax.swing.table.TableModel;
  *
  * @author Gabriel Duarte
  */
-public class Form_cadastroUsuario extends javax.swing.JInternalFrame {
-    public Form_cadastroUsuario() {
+public class Form_Usuario extends javax.swing.JInternalFrame {
+    public Form_Usuario() {
         initComponents();
         preencherTabela();
         btn_alterar.setEnabled(false);
@@ -308,7 +308,7 @@ public void preencherTabela(){
                 
                 JOptionPane.showMessageDialog(null, "Usuário cadastrado");
             } catch (NoSuchAlgorithmException ex) {
-                Logger.getLogger(Form_cadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Form_Usuario.class.getName()).log(Level.SEVERE, null, ex);
             }
              }else {
                  JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
@@ -361,7 +361,7 @@ public void preencherTabela(){
                 txtAcesso.setSelectedItem("");                
                 JOptionPane.showMessageDialog(null, "Alterado");
             } catch (NoSuchAlgorithmException ex) {
-                Logger.getLogger(Form_cadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Form_Usuario.class.getName()).log(Level.SEVERE, null, ex);
             }
              }else {
                  JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
