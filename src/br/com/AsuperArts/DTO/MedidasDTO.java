@@ -1,6 +1,8 @@
 package br.com.AsuperArts.DTO;
 
 
+
+
 /**
  *
  * @author Equipe Senac 2017
@@ -25,9 +27,6 @@ public class MedidasDTO {
         return largura;
     }
 
-   
-    
-    
     
     public void setLargura(Integer largura) {
         this.largura = largura;
@@ -41,7 +40,6 @@ public class MedidasDTO {
         this.comprimento = comprimento;
     }
 
-    
     
     public Integer getHora() {
         return hora;
@@ -67,7 +65,5 @@ public class MedidasDTO {
         this.peso = peso;
     }
 
-
-    
             
 }

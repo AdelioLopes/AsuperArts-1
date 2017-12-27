@@ -52,6 +52,25 @@ public class MedidasBLL {
         }
     return null;
     }
+    public List<MedidasDTO> comprimento(){
+        sql = "SELECT comprimento FROM tb_medidas;";
+        List<MedidasDTO> medidas =new ArrayList<>();
+        ResultSet rs;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MedidasDTO medida = new MedidasDTO();
+                medida.setComprimento(rs.getInt("comprimento"));
+                medidas.add(medida);
+            }
+            return medidas;
+        } catch (SQLException ex) {
+            Logger.getLogger(MedidasBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    return null;
+    }
+    
     public List<MedidasDTO> listaMedidas(){
         sql = "SELECT * FROM tb_medidas;";
         List<MedidasDTO> medidas =new ArrayList<>();
