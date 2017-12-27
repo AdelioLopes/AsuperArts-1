@@ -52,6 +52,7 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        txt_espessura = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(1050, 550));
 
@@ -100,14 +101,14 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Largura", "Comprimento", "Minutos", "Tamanho", "Peso"
+                "ID", "Largura", "Comprimento", "Tamanho", "Espesura", "Minutos", "Peso"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true
+                false, false, false, true, true, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -140,6 +141,8 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel5.setText("cm");
 
+        txt_espessura.setBorder(javax.swing.BorderFactory.createTitledBorder("Espessura"));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -154,19 +157,22 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
                             .addComponent(txt_minutos, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txt_largura, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_tamanho, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_tamanho, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3))
+                            .addComponent(txt_espessura, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_cadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -177,7 +183,7 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -199,7 +205,9 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_minutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_minutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_espessura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -242,8 +250,9 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
             medida.getId_medidas(),
             medida.getLargura(),
             medida.getComprimento(),
-            medida.getHora(),
             medida.getTamanho(),
+            medida.getEspessura(),
+            medida.getHora(),
             medida.getPeso()
             });
         }
@@ -256,12 +265,14 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
            !txt_comprimento.getText().equals("")&&
            !txt_minutos.getText().equals("")&&
            !txt_tamanho.getText().equals("")&&
+           !txt_espessura.getText().equals("")&&
            !txt_peso.getText().equals("")
         ){
             medidasDTO.setLargura(Integer.valueOf(txt_largura.getText()));
             medidasDTO.setComprimento(Integer.valueOf(txt_comprimento.getText()));
             medidasDTO.setHora(Integer.valueOf(txt_minutos.getText()));
             medidasDTO.setTamanho(Integer.valueOf(txt_tamanho.getText()));
+            medidasDTO.setEspessura(Integer.valueOf(txt_espessura.getText()));
             medidasDTO.setPeso(Integer.valueOf(txt_peso.getText()));
             medidasBLL.inserir(medidasDTO);
             preencherTabela();
@@ -269,6 +280,7 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
             txt_comprimento.setText("");
             txt_minutos.setText("");
             txt_tamanho.setText("");
+            txt_espessura.setText("");
             txt_peso.setText("");
             JOptionPane.showMessageDialog(null, "Cadastrado");
         }else {
@@ -304,6 +316,7 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tb_medidas;
     private javax.swing.JTextField txt_comprimento;
+    private javax.swing.JTextField txt_espessura;
     private javax.swing.JTextField txt_id;
     private javax.swing.JTextField txt_largura;
     private javax.swing.JTextField txt_minutos;

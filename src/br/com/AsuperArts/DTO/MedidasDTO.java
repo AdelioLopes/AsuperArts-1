@@ -11,8 +11,9 @@ public class MedidasDTO {
     private Integer id_medidas;
     private Integer largura;
     private Integer comprimento;
-    private Integer hora;
     private Integer tamanho;
+    private Integer espessura;
+    private Integer hora;
     private Integer peso;
 
     public Integer getId_medidas() {
@@ -65,5 +66,13 @@ public class MedidasDTO {
         this.peso = peso;
     }
 
+    public Integer getEspessura() {
+        return espessura;
+    }
+
+    public void setEspessura(Integer espessura) {
+        this.espessura = espessura;
+    }
+    
             
 }
