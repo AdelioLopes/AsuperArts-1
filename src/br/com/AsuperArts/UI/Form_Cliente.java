@@ -89,12 +89,10 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
 
-        txtCliente.setBackground(new java.awt.Color(244, 244, 255));
         txtCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtCliente.setToolTipText("");
         txtCliente.setPreferredSize(new java.awt.Dimension(16, 46));
 
-        txtContato.setBackground(new java.awt.Color(244, 244, 255));
         txtContato.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtContato.setPreferredSize(new java.awt.Dimension(16, 46));
         txtContato.addActionListener(new java.awt.event.ActionListener() {
@@ -103,16 +101,15 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             }
         });
 
-        txtTelefone.setBackground(new java.awt.Color(244, 244, 255));
         txtTelefone.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtTelefone.setPreferredSize(new java.awt.Dimension(16, 46));
 
         txtCodigo.setEditable(false);
+        txtCodigo.setBackground(new java.awt.Color(255, 255, 255));
         txtCodigo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtCodigo.setEnabled(false);
         txtCodigo.setPreferredSize(new java.awt.Dimension(16, 46));
 
-        txtCodArea.setBackground(new java.awt.Color(244, 244, 255));
         txtCodArea.setPreferredSize(new java.awt.Dimension(16, 46));
         txtCodArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,7 +290,6 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             }
         });
 
-        txtPesquisa.setBackground(new java.awt.Color(244, 244, 255));
         txtPesquisa.setForeground(new java.awt.Color(255, 255, 255));
         txtPesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {

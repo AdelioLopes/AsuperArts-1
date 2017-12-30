@@ -72,10 +72,10 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
 
-        txtNome.setBackground(new java.awt.Color(244, 244, 255));
         txtNome.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
         txtId.setEditable(false);
+        txtId.setBackground(new java.awt.Color(255, 255, 255));
         txtId.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
