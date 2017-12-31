@@ -109,11 +109,9 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         txt_Arquivo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Arquivo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Arquivo", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 14))); // NOI18N
 
-        btn_add.setBackground(new java.awt.Color(204, 204, 204));
         btn_add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Adicionar.png"))); // NOI18N
+        btn_add.setText("Adicionar");
         btn_add.setToolTipText("ADICIONAR");
-        btn_add.setBorder(null);
         btn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addActionPerformed(evt);
@@ -130,11 +128,9 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_gerarOS.setBackground(new java.awt.Color(204, 204, 204));
         btn_gerarOS.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_gerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/fecharOS.png"))); // NOI18N
+        btn_gerarOS.setText("Gerar OS");
         btn_gerarOS.setToolTipText("GERAR OS");
-        btn_gerarOS.setBorder(null);
         btn_gerarOS.setMaximumSize(new java.awt.Dimension(60, 60));
         btn_gerarOS.setMinimumSize(new java.awt.Dimension(60, 60));
         btn_gerarOS.setPreferredSize(new java.awt.Dimension(60, 60));
@@ -144,11 +140,9 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_remover.setBackground(new java.awt.Color(204, 204, 204));
         btn_remover.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_remover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
+        btn_remover.setText("Cancelar");
         btn_remover.setToolTipText("CANCELAR");
-        btn_remover.setBorder(null);
         btn_remover.setMaximumSize(new java.awt.Dimension(60, 60));
         btn_remover.setMinimumSize(new java.awt.Dimension(60, 60));
         btn_remover.setPreferredSize(new java.awt.Dimension(60, 60));
@@ -334,11 +328,11 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1034, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1044, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 1050, 550);
