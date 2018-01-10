@@ -243,7 +243,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         });
 
         btn_alterar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_alterar.setText("salvar");
+        btn_alterar.setText("Salvar");
         btn_alterar.setToolTipText("Salvar Alteração");
         btn_alterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_alterar.setMaximumSize(new java.awt.Dimension(60, 60));
