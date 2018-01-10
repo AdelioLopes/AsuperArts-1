@@ -232,7 +232,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         }
 
         btn_cancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_cancelar.setText("desfazer");
+        btn_cancelar.setText("Desfazer");
         btn_cancelar.setToolTipText("Cancelar");
         btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_cancelar.setPreferredSize(new java.awt.Dimension(60, 60));
