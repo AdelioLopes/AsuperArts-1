@@ -278,7 +278,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         });
 
         btn_editar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_editar.setText("Editar Cliente");
+        btn_editar.setText("Editar");
         btn_editar.setToolTipText("Editar");
         btn_editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_editar.setMaximumSize(new java.awt.Dimension(60, 60));
