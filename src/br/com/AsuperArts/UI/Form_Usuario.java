@@ -48,10 +48,6 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         txtSenha = new javax.swing.JPasswordField();
         txtAcesso = new javax.swing.JComboBox<>();
         txt_id = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableLogin = new javax.swing.JTable();
@@ -78,29 +74,21 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
 
         txtUsuario.setBackground(new java.awt.Color(240, 240, 240));
         txtUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuário"));
 
         txtSenha.setBackground(new java.awt.Color(240, 240, 240));
         txtSenha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtSenha.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha"));
 
         txtAcesso.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtAcesso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "1", "2" }));
+        txtAcesso.setBorder(javax.swing.BorderFactory.createTitledBorder("Nível de Usuário"));
 
         txt_id.setEditable(false);
         txt_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_id.setBorder(javax.swing.BorderFactory.createTitledBorder("Cód"));
         txt_id.setEnabled(false);
         txt_id.setPreferredSize(new java.awt.Dimension(16, 46));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel1.setText("Código");
-
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setText("Usuário");
-
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel3.setText("Senha");
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel4.setText("Nível de Usuário");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -108,21 +96,13 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4)
-                    .addComponent(txtAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -130,22 +110,12 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -290,7 +260,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         setBounds(0, 0, 1050, 550);
@@ -453,10 +423,6 @@ public static String convertPasswordToMD5(char[] cadeia) throws NoSuchAlgorithmE
     private javax.swing.JButton btn_editar;
     private javax.swing.JButton btn_excluir;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

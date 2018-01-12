@@ -34,8 +34,6 @@ public class Form_TipoOS extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         txt_nome = new javax.swing.JTextField();
         txt_id = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableTipoOs = new javax.swing.JTable();
@@ -45,7 +43,6 @@ public class Form_TipoOS extends javax.swing.JInternalFrame {
         btn_excluir = new javax.swing.JButton();
         btn_editar = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(240, 240, 240));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
@@ -56,16 +53,12 @@ public class Form_TipoOS extends javax.swing.JInternalFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
 
         txt_nome.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txt_nome.setBorder(javax.swing.BorderFactory.createTitledBorder("Nome/Tipo"));
 
         txt_id.setEditable(false);
         txt_id.setBackground(new java.awt.Color(255, 255, 255));
         txt_id.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel1.setText("Código");
-
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setText("Nome/Tipo");
+        txt_id.setBorder(javax.swing.BorderFactory.createTitledBorder("Cód"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -73,28 +66,18 @@ public class Form_TipoOS extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(288, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -176,9 +159,10 @@ public class Form_TipoOS extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,9 +172,7 @@ public class Form_TipoOS extends javax.swing.JInternalFrame {
                         .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_cadastrar))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1)))
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -347,8 +329,6 @@ public void setar_campos(){
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton btn_editar;
     private javax.swing.JButton btn_excluir;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

@@ -49,7 +49,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="painelLogin" alignment="0" pref="936" max="32767" attributes="0"/>
+          <Component id="painelLogin" alignment="1" pref="936" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -64,6 +64,13 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
         </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true">
+              <Color PropertyName="color" blue="66" green="66" red="66" type="rgb"/>
+            </LineBorder>
+          </Border>
+        </Property>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor em Forma de M&#xe3;o"/>
         </Property>
@@ -75,52 +82,51 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="txtSenha" min="-2" pref="612" max="-2" attributes="0"/>
-                          <EmptySpace pref="117" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="240" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="316" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="btnLogar" min="-2" pref="154" max="-2" attributes="0"/>
-                              <Component id="txtUsuario" min="-2" pref="612" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnLogar" pref="512" max="32767" attributes="0"/>
+                              <Component id="txtUsuario" max="32767" attributes="0"/>
+                              <Component id="txtSenha" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="342" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="240" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace pref="187" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtSenha" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                          <Component id="txtUsuario" min="-2" pref="39" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtUsuario" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSenha" min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnLogar" min="-2" pref="52" max="-2" attributes="0"/>
-                  <EmptySpace pref="201" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnLogar" min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace pref="182" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -139,6 +145,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenhaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtUsuario">
           <Properties>
@@ -155,6 +164,9 @@
             <Property name="doubleBuffered" type="boolean" value="true"/>
             <Property name="dragEnabled" type="boolean" value="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsuarioActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
@@ -174,7 +186,7 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder roundedCorners="true">
-                  <Color PropertyName="color" type="null"/>
+                  <Color PropertyName="color" blue="66" green="66" red="66" type="rgb"/>
                 </LineBorder>
               </Border>
             </Property>
@@ -186,7 +198,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="33" type="rgb"/>
+              <Color type="null"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="36" style="0"/>
@@ -194,6 +206,16 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/AsuperArts/UI/img/logoadelio.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                <BevelBorder>
+                  <Color PropertyName="highlightOuter" blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+                  <Color PropertyName="highlightInner" blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+                  <Color PropertyName="shadowOuter" blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                  <Color PropertyName="shadowInner" blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                </BevelBorder>
+              </Border>
             </Property>
           </Properties>
         </Component>
@@ -206,7 +228,7 @@
               <Color blue="ff" green="33" red="5b" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/AsuperArts/UI/img/cadeado-iloveimg-resized.png"/>
+              <Image iconType="3" name="/br/com/AsuperArts/UI/img/senha.png"/>
             </Property>
           </Properties>
         </Component>
@@ -219,7 +241,7 @@
               <Color blue="ff" green="33" red="5b" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/AsuperArts/UI/img/User-iloveimg-resized.png"/>
+              <Image iconType="3" name="/br/com/AsuperArts/UI/img/user.png"/>
             </Property>
           </Properties>
         </Component>
