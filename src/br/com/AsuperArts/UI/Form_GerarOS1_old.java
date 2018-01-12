@@ -77,8 +77,8 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
         txt_Quantidade = new javax.swing.JTextField();
         txt_Produto = new javax.swing.JComboBox<>();
         txt_Valor_Total_OS = new javax.swing.JTextField();
-        txt_DataEntrada = new com.toedter.calendar.JDateChooser();
-        txt_DataSaida = new com.toedter.calendar.JDateChooser();
+        txt_DataEntrada = new org.netbeans.modules.form.InvalidComponent();
+        txt_DataSaida = new org.netbeans.modules.form.InvalidComponent();
         jScrollPane1 = new javax.swing.JScrollPane();
         Lista_OS = new javax.swing.JList<>();
 
@@ -90,6 +90,7 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(800, 480));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanel1.setAutoscrolls(true);
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 480));
 
@@ -187,11 +188,9 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
         txt_Valor_Total_OS.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Valor Total OS", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
         txt_Valor_Total_OS.setEnabled(false);
 
-        txt_DataEntrada.setBackground(new java.awt.Color(255, 255, 255));
-        txt_DataEntrada.setBorder(javax.swing.BorderFactory.createTitledBorder("Data de Entrada"));
+        txt_DataEntrada.null;
 
-        txt_DataSaida.setBackground(new java.awt.Color(255, 255, 255));
-        txt_DataSaida.setBorder(javax.swing.BorderFactory.createTitledBorder("Data de Saída"));
+        txt_DataSaida.null;
 
         jScrollPane1.setViewportView(Lista_OS);
 
@@ -243,11 +242,10 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_gerarOS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,22 +278,21 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
                             .addComponent(txt_Valor_Total_OS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(txt_Quantidade)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1242, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
-                .addGap(133, 133, 133))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 1258, 777);
@@ -407,8 +404,8 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtValorUnitario;
     private javax.swing.JTextField txt_Arquivo;
-    private com.toedter.calendar.JDateChooser txt_DataEntrada;
-    private com.toedter.calendar.JDateChooser txt_DataSaida;
+    private org.netbeans.modules.form.InvalidComponent txt_DataEntrada;
+    private org.netbeans.modules.form.InvalidComponent txt_DataSaida;
     private javax.swing.JTextField txt_Dt_OS;
     private javax.swing.JComboBox<Object> txt_Empresa;
     private javax.swing.JTextField txt_Num_OS;
