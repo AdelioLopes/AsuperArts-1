@@ -7,6 +7,10 @@ package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.ProdutosBLL;
 import br.com.AsuperArts.DTO.ProdutosDTO;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,8 +23,21 @@ public class Form_Produtos extends javax.swing.JInternalFrame {
      */
     public Form_Produtos() {
         initComponents();
+        preencherTabela();
     }
-
+    public void preencherTabela() {
+         getContentPane().setBackground(new Color(255,255,255));
+        this.tb_produtos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        DefaultTableModel modelo = (DefaultTableModel) tb_produtos.getModel();
+        modelo.setNumRows(0);
+        ProdutosBLL rg = new ProdutosBLL();
+        for (ProdutosDTO cli : rg.listaProduto()) {
+            modelo.addRow(new Object[]{
+                cli.getId_produtos(),
+                cli.getNome()
+            });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,7 +58,7 @@ public class Form_Produtos extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tb_produtos = new javax.swing.JTable();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastrar"));
 
@@ -64,7 +81,7 @@ public class Form_Produtos extends javax.swing.JInternalFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tb_produtos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -80,7 +97,7 @@ public class Form_Produtos extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tb_produtos);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -156,6 +173,12 @@ public class Form_Produtos extends javax.swing.JInternalFrame {
         if(!txtNome.equals("")){
             ProdutosBLL rg = new ProdutosBLL();
             ProdutosDTO produtosDTO = new ProdutosDTO();
+            produtosDTO.setNome(txtNome.getText());
+            rg.inserir(produtosDTO);
+            txtNome.setText("");
+            JOptionPane.showMessageDialog(null, "Produto cadastrado");
+        }else {
+            JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -170,7 +193,7 @@ public class Form_Produtos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tb_produtos;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
