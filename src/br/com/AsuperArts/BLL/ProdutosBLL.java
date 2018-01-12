@@ -2,6 +2,7 @@
 package br.com.AsuperArts.BLL;
 
 import br.com.AsuperArts.DAL.Conexao;
+import br.com.AsuperArts.DTO.ProdutoDTO;
 import br.com.AsuperArts.DTO.ProdutosDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,8 +31,15 @@ public class ProdutosBLL {
         }
     }
     
-    public void excluir(){
-    
+    public void ExcluirProduto(ProdutosDTO p){
+        sql = "DELETE FROM tb_produtos WHERE id_produtos=?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, p.getId_produtos());
+            ps.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
     }
     

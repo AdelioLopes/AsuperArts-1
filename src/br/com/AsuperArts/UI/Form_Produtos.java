@@ -71,6 +71,11 @@ public class Form_Produtos extends javax.swing.JInternalFrame {
         jButton4.setText("Salvar");
 
         jButton3.setText("Excluir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Editar");
 
@@ -175,12 +180,31 @@ public class Form_Produtos extends javax.swing.JInternalFrame {
             ProdutosDTO produtosDTO = new ProdutosDTO();
             produtosDTO.setNome(txtNome.getText());
             rg.inserir(produtosDTO);
+            preencherTabela();
             txtNome.setText("");
             JOptionPane.showMessageDialog(null, "Produto cadastrado");
         }else {
             JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        ProdutosBLL rg = new ProdutosBLL();
+        ProdutosDTO produtosDTO = new ProdutosDTO();
+        if (this.tb_produtos.getSelectedRowCount() > 0) {
+            int linha = this.tb_produtos.getSelectedRow();
+            produtosDTO.setId_produtos((int) this.tb_produtos.getValueAt(linha, 0));
+            int resposta = 0;
+            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo excluir?");
+            if (resposta == JOptionPane.YES_OPTION) {
+                rg.ExcluirProduto(produtosDTO);
+                preencherTabela();
+                JOptionPane.showMessageDialog(null, "Excluído!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
+        } 
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
