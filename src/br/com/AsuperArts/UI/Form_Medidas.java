@@ -49,7 +49,6 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         txt_tamanho = new javax.swing.JTextField();
         txt_minutos = new javax.swing.JTextField();
         txt_espessura = new javax.swing.JTextField();
-        txt_peso = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -63,14 +62,14 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Largura", "Comprimento", "Tamanho", "Espesura", "Minutos", "Peso"
+                "ID", "Largura", "Comprimento", "Tamanho", "Espesura", "Minutos"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true, false, true
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -181,10 +180,6 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         txt_espessura.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_espessura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Espessura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18))); // NOI18N
 
-        txt_peso.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
-        txt_peso.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_peso.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Peso", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -204,9 +199,7 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
                 .addComponent(txt_minutos, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addComponent(txt_espessura, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
-                .addComponent(txt_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
+                .addGap(223, 223, 223))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,15 +207,10 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txt_largura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(txt_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_largura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,8 +273,8 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
             medida.getComprimento(),
             medida.getTamanho(),
             medida.getEspessura(),
-            medida.getHora(),
-            medida.getPeso()
+            medida.getHora()
+            
             });
         }
     } 
@@ -298,15 +286,14 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
            !txt_comprimento.getText().equals("")&&
            !txt_minutos.getText().equals("")&&
            !txt_tamanho.getText().equals("")&&
-           !txt_espessura.getText().equals("")&&
-           !txt_peso.getText().equals("")
+           !txt_espessura.getText().equals("")
         ){
             medidasDTO.setLargura(Integer.valueOf(txt_largura.getText()));
             medidasDTO.setComprimento(Integer.valueOf(txt_comprimento.getText()));
             medidasDTO.setHora(Integer.valueOf(txt_minutos.getText()));
             medidasDTO.setTamanho(Integer.valueOf(txt_tamanho.getText()));
             medidasDTO.setEspessura(Integer.valueOf(txt_espessura.getText()));
-            medidasDTO.setPeso(Integer.valueOf(txt_peso.getText()));
+            
             medidasBLL.inserir(medidasDTO);
             preencherTabela();
             txt_largura.setText("");
@@ -314,7 +301,7 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
             txt_minutos.setText("");
             txt_tamanho.setText("");
             txt_espessura.setText("");
-            txt_peso.setText("");
+            
             JOptionPane.showMessageDialog(null, "Cadastrado");
         }else {
                  JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
@@ -358,7 +345,6 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_id;
     private javax.swing.JTextField txt_largura;
     private javax.swing.JTextField txt_minutos;
-    private javax.swing.JTextField txt_peso;
     private javax.swing.JTextField txt_tamanho;
     // End of variables declaration//GEN-END:variables
 }
