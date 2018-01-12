@@ -7,7 +7,7 @@ package br.com.AsuperArts.UI;
 public class Form_desenvolvedor extends javax.swing.JInternalFrame {
     public Form_desenvolvedor() {
         initComponents();
-        lbl_desenvoldedor.setText("<html> <h1>Software desenvoldido pela equipe Senac-df 2017.  </h1></html>");
+        lbl_desenvoldedor.setText("<html> <h1>Software desenvoldido pela equipe Senac-df 2017. Integrantes:  </h1></html>");
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
