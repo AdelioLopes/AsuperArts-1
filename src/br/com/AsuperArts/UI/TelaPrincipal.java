@@ -1,11 +1,11 @@
 package br.com.AsuperArts.UI;
 
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
+
+//import java.awt.Image;
+//import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
+//import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import javax.swing.Timer;
@@ -28,19 +28,16 @@ public class TelaPrincipal extends javax.swing.JFrame{
     public TelaPrincipal() {
        initComponents();
        
-       URL url = this.getClass().getResource("img/IconeAsuperArts.png");  
-       Image icone = Toolkit.getDefaultToolkit().getImage(url);  
-       this.setIconImage(icone);
-       
+
        Tela_login tl = new Tela_login();
        tl.txtUsuario.setText("no login");
        lblUsuario.setText("no login");
     }
  public TelaPrincipal(Integer tipo) {
         initComponents();
-        URL url = this.getClass().getResource("img/IconeAsuperArts.png");  
+        /*URL url = this.getClass().getResource("img/IconeAsuperArts.png");  
         Image icone = Toolkit.getDefaultToolkit().getImage(url);  
-        this.setIconImage(icone);
+        this.setIconImage(icone);*/
         
         if(tipo == 1){
             restrito.setEnabled(true);
@@ -60,7 +57,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         lblUsuario = new javax.swing.JLabel();
         dt_sistema = new javax.swing.JLabel();
         h_sistema = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu6 = new javax.swing.JMenu();
         TrocarUsuario = new javax.swing.JMenuItem();
@@ -148,9 +144,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         dt_sistema.getAccessibleContext().setAccessibleName("dt_sistema");
         h_sistema.getAccessibleContext().setAccessibleName("h_sistema");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/logoadelio-iloveimg-resized.png"))); // NOI18N
-        jLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
 
         jMenuBar1.setEnabled(false);
 
@@ -312,19 +305,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, 1003, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -482,7 +470,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JLabel dt_sistema;
     private javax.swing.JLabel h_sistema;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu6;
