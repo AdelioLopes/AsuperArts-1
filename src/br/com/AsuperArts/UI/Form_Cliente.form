@@ -72,54 +72,49 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtCodigo" min="-2" pref="80" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="245" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtCliente" min="-2" pref="318" max="-2" attributes="0"/>
+                      <Component id="txtCodArea" min="-2" pref="63" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jTextField1" min="-2" pref="344" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="txtTelefone" min="-2" pref="237" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtCodArea" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                      <Component id="txtCliente" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtContato" max="32767" attributes="0"/>
-                      <Component id="txtTelefone" min="-2" pref="243" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                  <Component id="txtContato" min="-2" pref="213" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtCodigo" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="txtCliente" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="jTextField1" min="-2" pref="55" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="txtCodigo" min="-2" pref="36" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="txtCodArea" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtTelefone" min="-2" pref="54" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="txtContato" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtTelefone" min="-2" pref="45" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="txtCliente" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtCodArea" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                  <Component id="txtContato" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -127,9 +122,6 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="txtCliente">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f0" green="f0" id="Button.background" palette="3" red="f0" type="palette"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
             </Property>
@@ -151,9 +143,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtContato">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f0" green="f0" id="Button.background" palette="3" red="f0" type="palette"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
             </Property>
@@ -174,9 +163,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtTelefone">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f0" green="f0" id="Button.background" palette="3" red="f0" type="palette"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
             </Property>
@@ -196,11 +182,14 @@
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="14" style="0"/>
+              <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder title="C&#xf3;d">
+                  <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                    <EmptyBorder/>
+                  </Border>
                   <Font PropertyName="font" name="Arial" size="18" style="1"/>
                 </TitledBorder>
               </Border>
@@ -213,9 +202,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCodArea">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f0" green="f0" id="Button.background" palette="3" red="f0" type="palette"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
             </Property>
@@ -236,9 +222,14 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField1">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="0"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Email"/>
+                <TitledBorder title="Email">
+                  <Font PropertyName="font" name="Arial" size="18" style="1"/>
+                </TitledBorder>
               </Border>
             </Property>
           </Properties>
@@ -299,7 +290,7 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="306" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="262" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -475,6 +466,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtPesquisa">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="0"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
@@ -487,7 +481,7 @@
                       <Color PropertyName="shadowInner" blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                     </BevelBorder>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
+                  <Font PropertyName="font" name="Arial" size="18" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
