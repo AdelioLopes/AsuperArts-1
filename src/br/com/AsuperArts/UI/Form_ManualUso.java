@@ -29,6 +29,7 @@ public class Form_ManualUso extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("Abrir Manual de Instruções");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/IconeAsuperArts.png"))); // NOI18N
 
         btnManual.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         btnManual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Pdflogogt.png"))); // NOI18N
