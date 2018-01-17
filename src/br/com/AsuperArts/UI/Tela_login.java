@@ -81,7 +81,7 @@ public class Tela_login extends javax.swing.JFrame {
         });
 
         btnLogar.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow"));
-        btnLogar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        btnLogar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         btnLogar.setForeground(new java.awt.Color(102, 102, 102));
         btnLogar.setText("Fazer Login");
         btnLogar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
@@ -91,7 +91,6 @@ public class Tela_login extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setBackground(null);
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/logoadelio.png"))); // NOI18N
@@ -134,9 +133,7 @@ public class Tela_login extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel3)
-                    .addGroup(painelLoginLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
