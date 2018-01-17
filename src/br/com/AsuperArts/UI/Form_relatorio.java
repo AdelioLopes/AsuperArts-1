@@ -27,7 +27,6 @@ public class Form_relatorio extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/IconeAsuperArts.png"))); // NOI18N
         setPreferredSize(new java.awt.Dimension(1050, 550));

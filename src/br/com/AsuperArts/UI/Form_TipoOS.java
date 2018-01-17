@@ -44,7 +44,6 @@ public class Form_TipoOS extends javax.swing.JInternalFrame {
         btn_editar = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
         setTitle("Tipo Os");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/IconeAsuperArts.png"))); // NOI18N

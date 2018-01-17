@@ -64,7 +64,6 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         setClosable(true);
         setForeground(new java.awt.Color(51, 51, 51));
-        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("A super Art's");

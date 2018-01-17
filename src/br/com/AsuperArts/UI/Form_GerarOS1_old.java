@@ -83,7 +83,6 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
         txt_DataEntrada = new com.toedter.calendar.JDateChooser();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
         setTitle("Gerar OS");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/IconeAsuperArts.png"))); // NOI18N

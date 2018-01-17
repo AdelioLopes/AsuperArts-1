@@ -3,7 +3,6 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
-    <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="maximizable" type="boolean" value="true"/>
     <Property name="title" type="java.lang.String" value="Ordem de Servi&#xe7;os - AsuperArts"/>
     <Property name="frameIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -172,10 +171,8 @@
                           <Component id="txt_Produto" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="txt_Quantidade" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="txt_Valor_Total_Produto" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="txtValorUnitario" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="txt_Valor_Total_Produto" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="txtValorUnitario" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">

@@ -114,7 +114,6 @@ public class Form_Produto extends javax.swing.JInternalFrame {
         btn_alterar = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Cadastro de Produtos");

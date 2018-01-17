@@ -51,7 +51,6 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         btn_cadastrar = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setFocusable(false);

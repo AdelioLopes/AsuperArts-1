@@ -16,7 +16,6 @@ public class Form_desenvolvedor extends javax.swing.JInternalFrame {
         lbl_desenvoldedor = new javax.swing.JLabel();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Desenvolvedor");

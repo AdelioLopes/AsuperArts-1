@@ -58,7 +58,6 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Cadastro de Usuários");
