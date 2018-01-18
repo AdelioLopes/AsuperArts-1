@@ -82,6 +82,7 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
         txt_DataSaida = new com.toedter.calendar.JDateChooser();
         txt_DataEntrada = new com.toedter.calendar.JDateChooser();
 
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         setClosable(true);
         setMaximizable(true);
         setTitle("Gerar OS");
@@ -315,7 +316,7 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1224, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1232, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(

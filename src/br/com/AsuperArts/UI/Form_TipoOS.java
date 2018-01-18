@@ -43,6 +43,7 @@ public class Form_TipoOS extends javax.swing.JInternalFrame {
         btn_excluir = new javax.swing.JButton();
         btn_editar = new javax.swing.JButton();
 
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         setClosable(true);
         setMaximizable(true);
         setTitle("Tipo Os");
@@ -172,7 +173,7 @@ public class Form_TipoOS extends javax.swing.JInternalFrame {
                         .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_cadastrar)))
-                .addContainerGap(376, Short.MAX_VALUE))
+                .addContainerGap(386, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
