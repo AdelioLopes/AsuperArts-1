@@ -114,10 +114,10 @@ public class TelaPrincipal extends javax.swing.JFrame{
         lblUsuario.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         dt_sistema.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        dt_sistema.setForeground(new java.awt.Color(173, 153, 255));
+        dt_sistema.setForeground(new java.awt.Color(51, 51, 255));
 
         h_sistema.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        h_sistema.setForeground(new java.awt.Color(173, 153, 255));
+        h_sistema.setForeground(new java.awt.Color(51, 51, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
