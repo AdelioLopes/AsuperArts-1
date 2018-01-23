@@ -125,7 +125,7 @@ public class Form_Produto extends javax.swing.JInternalFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Cadastro", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
 
         txt_nome_produto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_nome_produto.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Produto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        txt_nome_produto.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Produto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_nome_produto.setPreferredSize(new java.awt.Dimension(16, 46));
         txt_nome_produto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,13 +134,13 @@ public class Form_Produto extends javax.swing.JInternalFrame {
         });
 
         txt_qnt.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_qnt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Quantidade", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        txt_qnt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Quantidade", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_qnt.setPreferredSize(new java.awt.Dimension(16, 46));
         txt_qnt.setRequestFocusEnabled(false);
 
         txt_vl_unitario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_vl_unitario.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txt_vl_unitario.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Valor Unitário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        txt_vl_unitario.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Valor Unitário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_vl_unitario.setPreferredSize(new java.awt.Dimension(16, 46));
         txt_vl_unitario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,11 +156,11 @@ public class Form_Produto extends javax.swing.JInternalFrame {
 
         txt_largura.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_largura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
-        txt_largura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Largura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        txt_largura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Largura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         txt_comprimento.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_comprimento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
-        txt_comprimento.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Comprimento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        txt_comprimento.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Comprimento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_comprimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_comprimentoActionPerformed(evt);
@@ -169,7 +169,7 @@ public class Form_Produto extends javax.swing.JInternalFrame {
 
         txt_espessura.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_espessura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
-        txt_espessura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Espessura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        txt_espessura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Espessura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_espessura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_espessuraActionPerformed(evt);
@@ -255,14 +255,14 @@ public class Form_Produto extends javax.swing.JInternalFrame {
         }
 
         txt_buscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_buscar.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Buscar Produto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        txt_buscar.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Buscar Produto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_buscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_buscarKeyReleased(evt);
             }
         });
 
-        btn_cadastrar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_cadastrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cadastro_produto.png"))); // NOI18N
         btn_cadastrar.setText("Cadastrar");
         btn_cadastrar.setToolTipText("Cadastrar");
@@ -274,7 +274,7 @@ public class Form_Produto extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_editar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
         btn_editar.setText("Editar");
         btn_editar.setToolTipText("Editar");
@@ -286,7 +286,7 @@ public class Form_Produto extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_excluir.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_excluir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
         btn_excluir.setText("Excluir");
         btn_excluir.setToolTipText("Excluir");
@@ -298,7 +298,7 @@ public class Form_Produto extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_cancelar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cancelar.png"))); // NOI18N
         btn_cancelar.setText("Cancelar");
         btn_cancelar.setToolTipText("Cancelar");
@@ -310,7 +310,7 @@ public class Form_Produto extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_alterar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_alterar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_alterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
         btn_alterar.setText("Salvar ");
         btn_alterar.setToolTipText("Salvar Edição");
@@ -328,12 +328,11 @@ public class Form_Produto extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 996, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btn_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_cancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -341,8 +340,8 @@ public class Form_Produto extends javax.swing.JInternalFrame {
                         .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_cadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(227, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -361,7 +360,7 @@ public class Form_Produto extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                 .addContainerGap())
         );

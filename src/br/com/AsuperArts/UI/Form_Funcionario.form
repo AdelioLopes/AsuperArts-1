@@ -93,12 +93,14 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtId" min="-2" pref="87" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jTextField1" min="-2" pref="205" max="-2" attributes="0"/>
-                      <Component id="txtNome" min="-2" pref="219" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="txtNome" min="-2" pref="245" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="dt_nascimento" min="-2" pref="170" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="dt_nascimento" min="-2" pref="257" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -130,7 +132,7 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true"/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="24" style="1"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -165,7 +167,7 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true"/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="24" style="1"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -185,11 +187,14 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true"/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="24" style="1"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -241,7 +246,7 @@
                       <Component id="btn_alterar" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="210" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="222" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -287,7 +292,7 @@
         <Component class="javax.swing.JButton" name="btn_cadastrar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="24" style="1"/>
+              <Font name="Arial" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/AsuperArts/UI/img/Cadastro_user.png"/>
@@ -316,7 +321,7 @@
         <Component class="javax.swing.JButton" name="btn_editar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="24" style="1"/>
+              <Font name="Arial" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/AsuperArts/UI/img/editar.png"/>
@@ -342,7 +347,7 @@
         <Component class="javax.swing.JButton" name="btn_excluir">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="24" style="1"/>
+              <Font name="Arial" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/AsuperArts/UI/img/Excluir.png"/>
@@ -368,7 +373,7 @@
         <Component class="javax.swing.JButton" name="btn_cancelar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="24" style="1"/>
+              <Font name="Arial" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/AsuperArts/UI/img/Cancelar.png"/>
@@ -391,7 +396,7 @@
         <Component class="javax.swing.JButton" name="btn_alterar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="24" style="1"/>
+              <Font name="Arial" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/AsuperArts/UI/img/Salvar.png"/>

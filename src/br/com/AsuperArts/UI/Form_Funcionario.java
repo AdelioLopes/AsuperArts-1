@@ -75,14 +75,14 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Cadastro", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
 
         txtNome.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtNome.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Nome Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        txtNome.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Nome Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         txtId.setEditable(false);
         txtId.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Cód", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
 
         dt_nascimento.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        dt_nascimento.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Data de Nascimento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        dt_nascimento.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Data de Nascimento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         dt_nascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dt_nascimentoActionPerformed(evt);
@@ -90,7 +90,12 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         });
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,11 +105,12 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(171, 171, 171)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addComponent(dt_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(dt_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -144,7 +150,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             tb_funcionario.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        btn_cadastrar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_cadastrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cadastro_user.png"))); // NOI18N
         btn_cadastrar.setText("Cadastrar");
         btn_cadastrar.setToolTipText("Cadastrar");
@@ -158,7 +164,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_editar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
         btn_editar.setText("Editar");
         btn_editar.setToolTipText("Editar");
@@ -171,7 +177,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_excluir.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_excluir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
         btn_excluir.setText("Excluir");
         btn_excluir.setToolTipText("Excluir");
@@ -184,7 +190,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_cancelar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cancelar.png"))); // NOI18N
         btn_cancelar.setText("Cancelar");
         btn_cancelar.setToolTipText("Cancelar");
@@ -196,7 +202,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_alterar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_alterar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_alterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
         btn_alterar.setText("Salvar ");
         btn_alterar.setToolTipText("Salvar Edição");
@@ -238,7 +244,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
                     .addComponent(btn_cadastrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_alterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(22, 22, 22)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -355,6 +361,10 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
     private void dt_nascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dt_nascimentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dt_nascimentoActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 public void setar_campos(){
     int setar = tb_funcionario.getSelectedRow();
     txtId.setText(tb_funcionario.getModel().getValueAt(setar, 0).toString());
