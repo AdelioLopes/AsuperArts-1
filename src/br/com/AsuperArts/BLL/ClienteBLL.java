@@ -16,17 +16,16 @@ import java.util.logging.Logger;
 public class ClienteBLL {
     String sql;
     Connection con = new Conexao().abrirConexao();
-    
-    
-    public void cadastrarCliente(ClienteDTO c){
         
+    public void cadastrarCliente(ClienteDTO c){
+        sql = "INSERT INTO tb_cliente(nome,contato,ddd,telefone,email)VALUES(?,?,?,?,?);";
         try {
-        sql = "INSERT INTO tb_cliente(nome,contato,ddd,telefone)VALUES(?,?,?,?);";
         PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, c.getNome());
-            ps.setString(2, c.getContato());
-            ps.setInt(3, c.getDdd());
-            ps.setInt(4, c.getTelefone());
+            ps.setString(0, c.getNome());
+            ps.setString(1, c.getContato());
+            ps.setInt(2, c.getDdd());
+            ps.setInt(3, c.getTelefone());
+            ps.setString(4, c.getEmail());
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteBLL.class.getName()).log(Level.SEVERE, null, ex);
@@ -49,6 +48,7 @@ public class ClienteBLL {
                 cliente.setContato(rs.getString("contato"));
                 cliente.setDdd(rs.getInt("ddd"));
                 cliente.setTelefone(rs.getInt("telefone"));
+                cliente.setEmail(rs.getString("email"));
                 clientes.add(cliente);
             }
             return clientes;
@@ -71,6 +71,7 @@ public class ClienteBLL {
                 c.setContato(rs.getString("contato"));
                 c.setDdd(rs.getInt("ddd"));
                 c.setTelefone(rs.getInt("telefone"));
+                c.setEmail(rs.getString("email"));
             }
             return c;
         } catch (SQLException ex) {
@@ -79,7 +80,7 @@ public class ClienteBLL {
         return null;
     }
     public void alterar(ClienteDTO c){
-        sql = "UPDATE tb_cliente SET nome=?,contato=?,ddd=?,telefone=? WHERE id_cliente=?";
+        sql = "UPDATE tb_cliente SET nome=?,contato=?,ddd=?,telefone=?, email=? WHERE id_cliente=?";
         
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -88,7 +89,8 @@ public class ClienteBLL {
             ps.setString(2, c.getContato());
             ps.setInt(3, c.getDdd());
             ps.setInt(4, c.getTelefone());
-            ps.setInt(5, c.getId_cliente());
+            ps.setString(5, c.getEmail());
+            ps.setInt(6, c.getId_cliente());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteBLL.class.getName()).log(Level.SEVERE, null, ex);

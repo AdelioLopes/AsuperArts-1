@@ -66,4 +66,16 @@ public class ProdutosBLL {
         }
         return null;
     }
+    public void Alterar(ProdutosDTO p){
+        sql = "UPDATE tb_produtos SET nome=? WHERE id_produtos=?;";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ps.setString(1, p.getNome());     
+            ps.setInt(2, p.getId_produtos()); 
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutoDTO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

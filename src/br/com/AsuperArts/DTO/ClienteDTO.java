@@ -13,6 +13,8 @@ public class ClienteDTO {
     private String contato;
     private Integer ddd;
     private Integer telefone;
+    private String email;
+
     public Integer getId_cliente() {
         return id_cliente;
     }
@@ -44,7 +46,6 @@ public class ClienteDTO {
     public void setDdd(Integer ddd) {
         this.ddd = ddd;
     }
-    
 
     public Integer getTelefone() {
         return telefone;
@@ -53,8 +54,17 @@ public class ClienteDTO {
     public void setTelefone(Integer telefone) {
         this.telefone = telefone;
     }
-    
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    
+    
     @Override
     public String toString() {
         return getNome(); 

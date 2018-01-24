@@ -62,7 +62,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         txtTelefone = new javax.swing.JTextField();
         txtCodigo = new javax.swing.JTextField();
         txtCodArea = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableCliente = new javax.swing.JTable();
@@ -122,8 +122,8 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        txtEmail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtEmail.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -140,7 +140,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtContato, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(200, 200, 200))
         );
         jPanel1Layout.setVerticalGroup(
@@ -150,7 +150,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
@@ -172,11 +172,11 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "CLIENTE", "CONTATO", "DDD", "TELEFONE"
+                "ID", "CLIENTE", "CONTATO", "DDD", "TELEFONE", "EMAIL"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -197,6 +197,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             jTableCliente.getColumnModel().getColumn(2).setResizable(false);
             jTableCliente.getColumnModel().getColumn(3).setResizable(false);
             jTableCliente.getColumnModel().getColumn(4).setResizable(false);
+            jTableCliente.getColumnModel().getColumn(5).setResizable(false);
         }
 
         btn_cancelar.setBackground(new java.awt.Color(204, 204, 204));
@@ -352,19 +353,22 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
-        if (!txtCliente.getText().equals("") && !txtContato.getText().equals("") && !txtTelefone.getText().equals("")) {
+        if (!txtCliente.getText().equals("") && !txtContato.getText().equals("") && !txtTelefone.getText().equals("") && !txtEmail.getText().equals("")){
             ClienteBLL rg = new ClienteBLL();
-            ClienteDTO clienteDTO = new ClienteDTO();
-            clienteDTO.setNome(txtCliente.getText());
-            clienteDTO.setContato(txtContato.getText());
-            clienteDTO.setDdd(Integer.parseInt(txtCodArea.getText()));
-            clienteDTO.setTelefone(Integer.parseInt(txtTelefone.getText()));
-            rg.cadastrarCliente(clienteDTO);
+            ClienteDTO clientesDTO = new ClienteDTO();
+            
+            clientesDTO.setNome(txtCliente.getText());
+            clientesDTO.setContato(txtContato.getText());
+            clientesDTO.setDdd(Integer.parseInt(txtCodArea.getText()));
+            clientesDTO.setTelefone(Integer.parseInt(txtTelefone.getText()));
+            clientesDTO.setEmail(txtEmail.getText());
+            rg.cadastrarCliente(clientesDTO);
             preencherTabela();
             txtCliente.setText("");
             txtContato.setText("");
             txtCodArea.setText("");
             txtTelefone.setText("");
+            txtEmail.setText("");
             JOptionPane.showMessageDialog(null, "Cliente cadastrado");
 
         } else {
@@ -516,11 +520,11 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableCliente;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtCliente;
     private javax.swing.JTextField txtCodArea;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtContato;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtPesquisa;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
