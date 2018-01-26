@@ -38,7 +38,9 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         for(FuncionarioDTO func: rn.listar()){
             modelo.addRow(new Object[]{
             func.getId_funcionario(),
-            func.getNome()
+            func.getNome(),
+            func.getDt_nascimento(),
+            func.getEmail()
             });
         }
     }
@@ -49,8 +51,8 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         txtNome = new javax.swing.JTextField();
         txtId = new javax.swing.JTextField();
-        dt_nascimento = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        txtDt_nascimento = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_funcionario = new javax.swing.JTable();
@@ -81,19 +83,19 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         txtId.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Cód", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
 
-        dt_nascimento.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        dt_nascimento.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Data de Nascimento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        dt_nascimento.addActionListener(new java.awt.event.ActionListener() {
+        txtDt_nascimento.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtDt_nascimento.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Data de Nascimento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        txtDt_nascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dt_nascimentoActionPerformed(evt);
+                txtDt_nascimentoActionPerformed(evt);
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtEmail.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
 
@@ -106,11 +108,11 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
                 .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(171, 171, 171)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(dt_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtDt_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -119,9 +121,9 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dt_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDt_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -132,11 +134,11 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "NOME"
+                "ID", "NOME", "DATA DE NASCIMENTO", "EMAIL"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -148,6 +150,8 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         if (tb_funcionario.getColumnModel().getColumnCount() > 0) {
             tb_funcionario.getColumnModel().getColumn(0).setResizable(false);
             tb_funcionario.getColumnModel().getColumn(1).setResizable(false);
+            tb_funcionario.getColumnModel().getColumn(2).setResizable(false);
+            tb_funcionario.getColumnModel().getColumn(3).setResizable(false);
         }
 
         btn_cadastrar.setBackground(new java.awt.Color(204, 204, 204));
@@ -283,9 +287,13 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         FuncionarioDTO funcionario = new FuncionarioDTO();
         if(!txtNome.getText().equals("")){
             funcionario.setNome(txtNome.getText());
+            funcionario.setDt_nascimento(txtDt_nascimento.getText());
+            funcionario.setEmail(txtEmail.getText());
             rn.inserir(funcionario);
             preencherTabela();
             txtNome.setText("");
+            txtDt_nascimento.setText("");
+            txtEmail.setText("");
             
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE );
         }else{
@@ -339,6 +347,8 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         if(!txtNome.getText().equals("")){
                 funcionarioDTO.setId_funcionario(Integer.parseInt(txtId.getText()));
                 funcionarioDTO.setNome(txtNome.getText());
+                funcionarioDTO.setDt_nascimento(txtDt_nascimento.getText());
+                funcionarioDTO.setEmail(txtEmail.getText());
                 rg.Alterar(funcionarioDTO);
                 preencherTabela();
                 btn_cadastrar.setEnabled(true);
@@ -365,17 +375,19 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
-    private void dt_nascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dt_nascimentoActionPerformed
+    private void txtDt_nascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDt_nascimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_dt_nascimentoActionPerformed
+    }//GEN-LAST:event_txtDt_nascimentoActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 public void setar_campos(){
     int setar = tb_funcionario.getSelectedRow();
     txtId.setText(tb_funcionario.getModel().getValueAt(setar, 0).toString());
     txtNome.setText(tb_funcionario.getModel().getValueAt(setar, 1).toString());
+    txtDt_nascimento.setText(tb_funcionario.getModel().getValueAt(setar, 2).toString());
+    txtEmail.setText(tb_funcionario.getModel().getValueAt(setar, 3).toString());
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -384,12 +396,12 @@ public void setar_campos(){
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton btn_editar;
     private javax.swing.JButton btn_excluir;
-    private javax.swing.JTextField dt_nascimento;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tb_funcionario;
+    private javax.swing.JTextField txtDt_nascimento;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables

@@ -47,7 +47,8 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
                 cli.getNome(),
                 cli.getContato(),
                 cli.getDdd(),
-                cli.getTelefone()
+                cli.getTelefone(),
+                cli.getEmail()
             });
         }
     }
@@ -439,6 +440,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
                     clienteDTO.setContato(txtContato.getText());
                     clienteDTO.setDdd(Integer.parseInt(txtCodArea.getText()));
                     clienteDTO.setTelefone(Integer.parseInt(txtTelefone.getText()));
+                    clienteDTO.setEmail(txtEmail.getText());
                     
                         JOptionPane.showMessageDialog(null, "Alterado");
                         clienteBLL.alterar(clienteDTO);
@@ -453,6 +455,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
                         txtContato.setText("");
                         txtCodArea.setText("");
                         txtTelefone.setText("");
+                        txtEmail.setText("");
                 }else{
                     JOptionPane.showMessageDialog(null, "Campos obrigatórios!");
                 }
@@ -470,6 +473,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         txtContato.setText("");
         txtCodArea.setText("");
         txtTelefone.setText("");
+        txtEmail.setText("");
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void txtContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContatoActionPerformed
@@ -491,6 +495,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         txtContato.setText(jTableCliente.getModel().getValueAt(linha, 2).toString());
         txtCodArea.setText(jTableCliente.getModel().getValueAt(linha, 3).toString());
         txtTelefone.setText(jTableCliente.getModel().getValueAt(linha, 4).toString());
+        txtEmail.setText(jTableCliente.getModel().getValueAt(linha, 5).toString());
     }
     
     public void buscarCliente() {

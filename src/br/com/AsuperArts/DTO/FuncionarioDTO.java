@@ -1,5 +1,6 @@
 package br.com.AsuperArts.DTO;
 
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -9,6 +10,8 @@ import java.util.Objects;
 public class FuncionarioDTO {
     private Integer id_funcionario;
     private String nome;
+    private String dt_nascimento;
+    private String email;
 
     public Integer getId_funcionario() {
         return id_funcionario;
@@ -24,6 +27,22 @@ public class FuncionarioDTO {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getDt_nascimento() {
+        return dt_nascimento;
+    }
+
+    public void setDt_nascimento(String dt_nascimento) {
+        this.dt_nascimento = dt_nascimento;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

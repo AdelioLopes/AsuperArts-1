@@ -21,11 +21,11 @@ public class ClienteBLL {
         sql = "INSERT INTO tb_cliente(nome,contato,ddd,telefone,email)VALUES(?,?,?,?,?);";
         try {
         PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(0, c.getNome());
-            ps.setString(1, c.getContato());
-            ps.setInt(2, c.getDdd());
-            ps.setInt(3, c.getTelefone());
-            ps.setString(4, c.getEmail());
+            ps.setString(1, c.getNome());
+            ps.setString(2, c.getContato());
+            ps.setInt(3, c.getDdd());
+            ps.setInt(4, c.getTelefone());
+            ps.setString(5, c.getEmail());
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteBLL.class.getName()).log(Level.SEVERE, null, ex);

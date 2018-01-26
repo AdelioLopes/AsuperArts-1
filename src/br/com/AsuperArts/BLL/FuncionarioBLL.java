@@ -19,10 +19,12 @@ public class FuncionarioBLL {
     Connection conexao = new Conexao().abrirConexao();
     String sql;
     public void inserir(FuncionarioDTO func){
-        sql = "INSERT INTO tb_funcionario(nome)VALUES(?);";
+        sql = "INSERT INTO tb_funcionario(nome,dt_nascimento,email)VALUES(?,?,?);";
         try {
             PreparedStatement ps = conexao.prepareStatement(sql);
             ps.setString(1, func.getNome());
+            ps.setString(2, func.getDt_nascimento());
+            ps.setString(3, func.getEmail());
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(FuncionarioBLL.class.getName()).log(Level.SEVERE, null, ex);
