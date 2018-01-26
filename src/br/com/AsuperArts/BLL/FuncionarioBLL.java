@@ -66,6 +66,8 @@ public class FuncionarioBLL {
                FuncionarioDTO funcionario = new FuncionarioDTO();
                funcionario.setId_funcionario(rs.getInt("id_funcionario"));
                funcionario.setNome(rs.getString("nome"));
+               funcionario.setDt_nascimento(rs.getString("dt_nascimento"));
+               funcionario.setEmail(rs.getString("email"));
                funcionarios.add(funcionario);
            }
             return funcionarios;
