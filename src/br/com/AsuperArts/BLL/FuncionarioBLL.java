@@ -78,12 +78,14 @@ public class FuncionarioBLL {
         return null;  
     }
     public void Alterar(FuncionarioDTO f){
-        sql = "UPDATE tb_funcionario SET nome=? WHERE id_funcionario=?;";
+        sql = "UPDATE tb_funcionario SET nome=?, dt_nascimento=?, email=? WHERE id_funcionario=?;";
         try {
             PreparedStatement ps = conexao.prepareStatement(sql);
             
             ps.setString(1, f.getNome());
-            ps.setInt(2, f.getId_funcionario());           
+            ps.setString(2, f.getDt_nascimento());
+            ps.setString(3, f.getEmail());
+            ps.setInt(4, f.getId_funcionario());           
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(FuncionarioDTO.class.getName()).log(Level.SEVERE, null, ex);

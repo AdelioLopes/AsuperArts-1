@@ -358,6 +358,8 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
                 btn_cancelar.setEnabled(false);
                 txtId.setText("");
                 txtNome.setText("");
+                txtDt_nascimento.setText("");
+                txtEmail.setText("");
                 JOptionPane.showMessageDialog(null, "Alterado");
              }else {
                  JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
@@ -372,6 +374,8 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         btn_excluir.setEnabled(true);
         txtId.setText("");
         txtNome.setText("");
+        txtDt_nascimento.setText("");
+        txtEmail.setText("");
         
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
