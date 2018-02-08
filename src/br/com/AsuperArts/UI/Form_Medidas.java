@@ -20,6 +20,8 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
     public Form_Medidas() {
         initComponents();
         preencherTabela();
+        btn_alterar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
         this.tb_medidas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
     }
@@ -44,10 +46,10 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_medidas = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_alterar = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
+        btn_editar = new javax.swing.JButton();
+        btn_excluir = new javax.swing.JButton();
         btn_cadastrar = new javax.swing.JButton();
 
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -200,39 +202,49 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         tb_medidas.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tb_medidas);
 
-        jButton5.setBackground(new java.awt.Color(204, 204, 204));
-        jButton5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
-        jButton5.setText("Salvar");
-        jButton5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn_alterar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_alterar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_alterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
+        btn_alterar.setText("Salvar");
+        btn_alterar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_alterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn_alterarActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(204, 204, 204));
-        jButton4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
-        jButton4.setText("Desfazer");
-        jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        jButton3.setBackground(new java.awt.Color(204, 204, 204));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
-        jButton3.setText("Alterar");
-        jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
+        btn_cancelar.setText("Desfazer");
+        btn_cancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_cancelarActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
-        jButton2.setText("Excluir");
-        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_editar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
+        btn_editar.setText("Alterar");
+        btn_editar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editarActionPerformed(evt);
+            }
+        });
+
+        btn_excluir.setBackground(new java.awt.Color(204, 204, 204));
+        btn_excluir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
+        btn_excluir.setText("Excluir");
+        btn_excluir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_excluirActionPerformed(evt);
+            }
+        });
 
         btn_cadastrar.setBackground(new java.awt.Color(204, 204, 204));
         btn_cadastrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -254,13 +266,13 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 805, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(205, Short.MAX_VALUE))
@@ -271,10 +283,10 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
                 .addGap(5, 5, 5)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cadastrar)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btn_alterar)
+                    .addComponent(btn_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_excluir)
+                    .addComponent(btn_editar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                 .addContainerGap())
@@ -375,13 +387,59 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_larguraActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btn_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alterarActionPerformed
+        MedidasBLL rg = new MedidasBLL();
+        MedidasDTO medidasDTO = new MedidasDTO();
+        if(!txt_largura.getText().equals("") && !txt_comprimento.getText().equals("") && !txt_tamanho.getText().equals("") && !txt_espessura.getText().equals("")
+                && !txt_minutos.getText().equals("")){
+                medidasDTO.setId_medidas(Integer.parseInt(txt_id.getText()));
+                medidasDTO.setLargura(Integer.parseInt(txt_largura.getText()));  
+                medidasDTO.setComprimento(Integer.parseInt(txt_comprimento.getText()));  
+                medidasDTO.setTamanho(Integer.parseInt(txt_tamanho.getText()));  
+                medidasDTO.setEspessura(Integer.parseInt(txt_espessura.getText()));  
+                medidasDTO.setHora(Integer.parseInt(txt_minutos.getText()));  
+                rg.Alterar(medidasDTO);
+                preencherTabela();
+                btn_cadastrar.setEnabled(true);
+                btn_editar.setEnabled(true);
+                btn_excluir.setEnabled(true);
+                btn_alterar.setEnabled(false);
+                btn_cancelar.setEnabled(false);
+                
+                txt_id.setText("");
+                txt_largura.setText("");
+                txt_comprimento.setText("");
+                txt_tamanho.setText("");
+                txt_espessura.setText("");
+                txt_minutos.setText("");
+                JOptionPane.showMessageDialog(null, "Alterado");
+             }else {
+                 JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
+            }
+    }//GEN-LAST:event_btn_alterarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
+        MedidasBLL rg = new MedidasBLL();
+        MedidasDTO medidasDTO = new MedidasDTO();
+        
+        if(this.tb_medidas.getSelectedRowCount() > 0){
+        int linha = this.tb_medidas.getSelectedRow();
+        medidasDTO.setId_medidas((int) this.tb_medidas.getValueAt(linha, 0));    
+        int resposta = 0;
+        resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo alterar?");
+        if(resposta == JOptionPane.YES_OPTION){
+                setar_campos();                
+                btn_cadastrar.setEnabled(false);
+                btn_editar.setEnabled(false);
+                btn_excluir.setEnabled(false);
+                btn_alterar.setEnabled(true);
+                btn_cancelar.setEnabled(true);
+                preencherTabela();
+            }
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
+        }
+    }//GEN-LAST:event_btn_editarActionPerformed
 
     private void txt_tamanhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tamanhoActionPerformed
         // TODO add your handling code here:
@@ -395,13 +453,54 @@ public class Form_Medidas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_minutosActionPerformed
 
+    private void btn_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirActionPerformed
+        MedidasBLL rg = new MedidasBLL();
+        MedidasDTO medidasDTO = new MedidasDTO();
+        
+        if (this.tb_medidas.getSelectedRowCount() > 0) {
+            int linha = this.tb_medidas.getSelectedRow();
+            medidasDTO.setId_medidas((int) this.tb_medidas.getValueAt(linha, 0));
+            int resposta = 0;
+            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo excluir?");
+            if (resposta == JOptionPane.YES_OPTION) {
+                rg.Excluir(medidasDTO);
+                preencherTabela();
+                JOptionPane.showMessageDialog(null, "Excluído!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
+        } 
+    }//GEN-LAST:event_btn_excluirActionPerformed
 
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        btn_alterar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
+        btn_cadastrar.setEnabled(true);
+        btn_editar.setEnabled(true);
+        btn_excluir.setEnabled(true);
+        txt_id.setText("");
+        txt_largura.setText("");
+        txt_comprimento.setText("");
+        txt_tamanho.setText("");
+        txt_espessura.setText("");
+        txt_minutos.setText("");
+    }//GEN-LAST:event_btn_cancelarActionPerformed
+
+ public void setar_campos(){
+    int setar = tb_medidas.getSelectedRow();
+    txt_id.setText(tb_medidas.getModel().getValueAt(setar, 0).toString());
+    txt_largura.setText(tb_medidas.getModel().getValueAt(setar, 1).toString());  
+    txt_comprimento.setText(tb_medidas.getModel().getValueAt(setar, 2).toString()); 
+    txt_tamanho.setText(tb_medidas.getModel().getValueAt(setar, 3).toString()); 
+    txt_espessura.setText(tb_medidas.getModel().getValueAt(setar, 4).toString()); 
+    txt_minutos.setText(tb_medidas.getModel().getValueAt(setar, 5).toString()); 
+ }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_alterar;
     private javax.swing.JButton btn_cadastrar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_editar;
+    private javax.swing.JButton btn_excluir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
