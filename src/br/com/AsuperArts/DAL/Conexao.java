@@ -17,7 +17,7 @@ public class Conexao {
     private final String BANCO = ("bd_adelio");
     private final String CONEXAO = ("jdbc:mysql://localhost/"+BANCO);
     private final String USUARIO = ("root");
-    private final String SENHA = ("");
+    private final String SENHA = ("senac");
     private Connection getConexao(){
         try {
             Class.forName(DRIVER);
