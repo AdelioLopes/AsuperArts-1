@@ -15,7 +15,6 @@ import javax.swing.Timer;
  */
 public class TelaPrincipal extends javax.swing.JFrame{
     private Form_Medidas form_cadastroMedidas = null;
-    private Form_Produtos form_cadastroProdutos = null;
     private Form_Cliente form_cadastroCliente = null;
     private Form_Usuario form_cadastroUsuario = null;
     private Form_Funcionario form_cadastroFuncionario = null;
@@ -24,6 +23,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private Form_desenvolvedor form_desenvolvedor = null;
     private Form_ManualUso form_ManualUso = null;
     private Form_TipoOS form_TipoOS = null;
+    private Form_Estoque form_Estoque = null;
     
     public TelaPrincipal() {
        initComponents();
@@ -62,14 +62,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
         TrocarUsuario = new javax.swing.JMenuItem();
         Sair = new javax.swing.JMenuItem();
         restrito = new javax.swing.JMenu();
-        Usuario = new javax.swing.JMenuItem();
         Cliente = new javax.swing.JMenuItem();
-        Produto = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         Funcionario = new javax.swing.JMenuItem();
-        TipoOS = new javax.swing.JMenuItem();
         GerarOS = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         RelatorioOS = new javax.swing.JMenuItem();
+        TipoOS = new javax.swing.JMenuItem();
+        Usuario = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         FuncGerarOS = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -176,16 +176,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         restrito.setText("Restrito");
         restrito.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
-        Usuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
-        Usuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Usuario.setText("Usuário do Sistema");
-        Usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioActionPerformed(evt);
-            }
-        });
-        restrito.add(Usuario);
-
         Cliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         Cliente.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Cliente.setText("Clientes");
@@ -196,25 +186,13 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(Cliente);
 
-        Produto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
-        Produto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Produto.setText("Produtos");
-        Produto.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("Estoque");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ProdutoActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        restrito.add(Produto);
-
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jMenuItem1.setText("Medidas");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        restrito.add(jMenuItem1);
+        restrito.add(jMenuItem2);
 
         Funcionario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
         Funcionario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -226,16 +204,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(Funcionario);
 
-        TipoOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK));
-        TipoOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        TipoOS.setText("Tipo OS");
-        TipoOS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TipoOSActionPerformed(evt);
-            }
-        });
-        restrito.add(TipoOS);
-
         GerarOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK));
         GerarOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         GerarOS.setText("Gerar OS");
@@ -246,6 +214,16 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(GerarOS);
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMenuItem1.setText("Medidas");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        restrito.add(jMenuItem1);
+
         RelatorioOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
         RelatorioOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         RelatorioOS.setText("Relatórios OS");
@@ -255,6 +233,26 @@ public class TelaPrincipal extends javax.swing.JFrame{
             }
         });
         restrito.add(RelatorioOS);
+
+        TipoOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK));
+        TipoOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        TipoOS.setText("Tipo OS");
+        TipoOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipoOSActionPerformed(evt);
+            }
+        });
+        restrito.add(TipoOS);
+
+        Usuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
+        Usuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Usuario.setText("Usuário do Sistema");
+        Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsuarioActionPerformed(evt);
+            }
+        });
+        restrito.add(Usuario);
 
         jMenuBar1.add(restrito);
 
@@ -367,13 +365,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         desktop.add(form_GerarOS);
     }//GEN-LAST:event_GerarOSActionPerformed
 
-    private void ProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProdutoActionPerformed
-        fecharTelas();
-        form_cadastroProdutos  = new Form_Produtos();
-        form_cadastroProdutos.setVisible(true);
-        desktop.add(form_cadastroProdutos);
-    }//GEN-LAST:event_ProdutoActionPerformed
-
     private void RelatorioOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioOSActionPerformed
         fecharTelas();
         form_relatorio = new Form_relatorio();
@@ -429,6 +420,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
         desktop.add(form_cadastroMedidas);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        form_Estoque = new Form_Estoque();
+        form_Estoque.setVisible(true);
+        desktop.add(form_Estoque);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -438,8 +435,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
     }
     public void fecharTelas(){
-        if(form_cadastroProdutos != null){form_cadastroProdutos.setVisible(false);}
-        form_cadastroProdutos = null;
         if(form_cadastroCliente != null){form_cadastroCliente.setVisible(false);}
         form_cadastroCliente = null;   
         if(form_cadastroUsuario != null){form_cadastroUsuario.setVisible(false);}
@@ -465,7 +460,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenuItem Funcionario;
     private javax.swing.JMenuItem GerarOS;
     private javax.swing.JMenuItem ManualUso;
-    private javax.swing.JMenuItem Produto;
     private javax.swing.JMenuItem RelatorioOS;
     private javax.swing.JMenuItem Sair;
     private javax.swing.JMenuItem TipoOS;
@@ -479,6 +473,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JLabel lblUsuario;

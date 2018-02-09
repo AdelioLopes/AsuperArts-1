@@ -107,6 +107,11 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         txtTelefone.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtTelefone.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Telefone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txtTelefone.setPreferredSize(new java.awt.Dimension(16, 46));
+        txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefoneKeyTyped(evt);
+            }
+        });
 
         txtCodigo.setEditable(false);
         txtCodigo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -120,6 +125,11 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         txtCodArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodAreaActionPerformed(evt);
+            }
+        });
+        txtCodArea.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodAreaKeyTyped(evt);
             }
         });
 
@@ -488,6 +498,20 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
     private void txtClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteActionPerformed
+
+    private void txtCodAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodAreaKeyTyped
+        String caracteres ="0123456789";
+        if(!caracteres.contains(evt.getKeyChar()+"")){
+        evt.consume();
+        }
+    }//GEN-LAST:event_txtCodAreaKeyTyped
+
+    private void txtTelefoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefoneKeyTyped
+        String caracteres ="0123456789";
+        if(!caracteres.contains(evt.getKeyChar()+"")){
+        evt.consume();
+        }
+    }//GEN-LAST:event_txtTelefoneKeyTyped
     public void setandoCampos(){
         
         int linha = jTableCliente.getSelectedRow();
