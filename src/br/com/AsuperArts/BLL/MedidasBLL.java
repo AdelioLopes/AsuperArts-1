@@ -21,7 +21,7 @@ public class MedidasBLL {
     String sql;
     
     public void inserir(MedidasDTO m){
-    sql = "INSERT INTO tb_medidas (largura,comprimento,tamanho,espessura,hora)VALUES(?,?,?,?,?,?);";
+    sql = "INSERT INTO tb_medidas (largura,comprimento,tamanho,espessura,hora)VALUES(?,?,?,?,?);";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, m.getLargura());
@@ -29,7 +29,6 @@ public class MedidasBLL {
             ps.setInt(3, m.getTamanho());
             ps.setInt(4, m.getEspessura());
             ps.setInt(5, m.getHora());
-     
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(MedidasBLL.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,5 +60,32 @@ public class MedidasBLL {
         }
         
     return null;
+    }
+    public void Excluir(MedidasDTO m){
+        sql = "DELETE FROM tb_medidas WHERE id_medida=?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, m.getId_medidas());
+            ps.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }
+    public void Alterar(MedidasDTO m){
+        sql = "UPDATE tb_medidas SET largura=?, comprimento=?, tamanho=?, espessura=?, hora=? WHERE id_medida=?;";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ps.setInt(1, m.getLargura());     
+            ps.setInt(2, m.getComprimento()); 
+            ps.setInt(3, m.getTamanho());
+            ps.setInt(4, m.getEspessura());
+            ps.setInt(5, m.getHora());
+            ps.setInt(6, m.getId_medidas());
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(MedidasBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

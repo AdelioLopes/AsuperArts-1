@@ -23,6 +23,8 @@ public class Form_Produtos extends javax.swing.JInternalFrame {
      */
     public Form_Produtos() {
         initComponents();
+        btn_alterar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
         preencherTabela();
     }
     public void preencherTabela() {

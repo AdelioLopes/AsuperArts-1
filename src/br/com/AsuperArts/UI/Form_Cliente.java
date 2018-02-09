@@ -354,7 +354,8 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
-        if (!txtCliente.getText().equals("") && !txtContato.getText().equals("") && !txtTelefone.getText().equals("") && !txtEmail.getText().equals("")){
+        if (!txtCliente.getText().equals("") && !txtContato.getText().equals("") && !txtCodArea.getText().equals("") && !txtTelefone.getText().equals("")
+                && !txtEmail.getText().equals("")){
             ClienteBLL rg = new ClienteBLL();
             ClienteDTO clientesDTO = new ClienteDTO();
             

@@ -15,7 +15,7 @@ public class Conexao {
 
     private final String DRIVER = ("com.mysql.jdbc.Driver");
     private final String BANCO = ("bd_adelio");
-    private final String CONEXAO = ("jdbc:mysql://localhost/"+BANCO);
+    private final String CONEXAO = ("jdbc:mysql://localhost/" + BANCO + "?autoReconnect=true&useSSL=false");
     private final String USUARIO = ("root");
     private final String SENHA = ("senac");
     private Connection getConexao(){
