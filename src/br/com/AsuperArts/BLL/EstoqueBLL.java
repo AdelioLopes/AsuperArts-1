@@ -62,4 +62,31 @@ public class EstoqueBLL {
          }
          return null;
     }
+    public void alterar(EstoqueDTO e){
+        sql = "UPDATE tb_estoque SET nome=?,cor=?,espessura=?,comprimento=?,largura=?,valorCompra=?,valorCm=? WHERE id_estoque=?;";
+         try {
+             PreparedStatement ps = con.prepareStatement(sql);
+             ps.setString(1, e.getNome());
+             ps.setString(2, e.getCor());
+             ps.setDouble(3, e.getEspessura());
+             ps.setDouble(4, e.getComprimento());
+             ps.setDouble(5, e.getLargura());
+             ps.setDouble(6, e.getValorCompra());
+             ps.setDouble(7, e.getValorCm());
+             ps.setDouble(8, e.getIdEstoque());
+             ps.executeUpdate();
+         } catch (SQLException ex) {
+             Logger.getLogger(EstoqueBLL.class.getName()).log(Level.SEVERE, null, ex);
+         }
+    }
+    public void excluir(EstoqueDTO e){
+    sql = "DELETE FROM tb_estoque WHERE id_estoque=?;";
+         try {
+             PreparedStatement ps = con.prepareStatement(sql);
+             ps.setInt(1, e.getIdEstoque());
+             ps.execute();
+         } catch (SQLException ex) {
+             Logger.getLogger(EstoqueBLL.class.getName()).log(Level.SEVERE, null, ex);
+         }
+    }
 }
