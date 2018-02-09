@@ -5,6 +5,10 @@
  */
 package br.com.AsuperArts.UI;
 
+import br.com.AsuperArts.BLL.EstoqueBLL;
+import br.com.AsuperArts.DTO.EstoqueDTO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author casa
@@ -156,6 +160,11 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cadastro_produto.png"))); // NOI18N
         jButton2.setText("Cadastrar");
         jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(204, 204, 204));
         jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -247,6 +256,40 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
     private void txt_valorcmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_valorcmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_valorcmActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if(!txt_nome.getText().equals("")&&
+           !txt_cor.getText().equals("")&&
+           !txt_espessura.getText().equals("")&&
+           !txt_comprimento.getText().equals("")&&
+           !txt_largura.getText().equals("")&&
+           !txt_valorCompra.getText().equals("")&&
+           !txt_valorcm.getText().equals("")
+           ){
+            EstoqueBLL rg = new EstoqueBLL();
+            EstoqueDTO dTO = new EstoqueDTO();
+            
+            dTO.setNome(txt_nome.getText());
+            dTO.setCor(txt_cor.getText());
+            dTO.setEspessura(Double.parseDouble(txt_espessura.toString()));
+            dTO.setComprimento(Double.parseDouble(txt_comprimento.toString()));
+            dTO.setLargura(Double.parseDouble(txt_largura.toString()));
+            dTO.setValorCompra(Double.parseDouble(txt_largura.toString()));
+            dTO.setValorCompra(Double.parseDouble(txt_valorcm.toString()));
+            rg.cadastrar(dTO);
+            txt_comprimento.setText("");
+            txt_cor.setText("");
+            txt_espessura.setText("");
+            txt_largura.setText("");
+            txt_nome.setText("");
+            txt_valorCompra.setText("");
+            txt_valorcm.setText("");
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+                   
+        }else{
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
