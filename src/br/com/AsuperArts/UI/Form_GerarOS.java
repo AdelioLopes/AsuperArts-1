@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import javax.swing.DefaultListModel;
 
 
@@ -29,7 +30,8 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
     
     public Form_GerarOS() {
         initComponents();
-        
+        SimpleDateFormat fd = new  SimpleDateFormat("dd/MM/yyyy");
+        dt_sistema.setText( fd.format(new java.util.Date()));
   
         btn_gerarOS.setBackground(new Color(255,255,255));
         btn_remover.setBackground(new Color(255,255,255));
@@ -57,7 +59,7 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         txt_Arquivo = new javax.swing.JTextField();
         txt_Responsavel = new javax.swing.JTextField();
         txt_Valor_Total_Produto = new javax.swing.JTextField();
-        txt_Dt_OS = new javax.swing.JTextField();
+        dt_sistema = new javax.swing.JTextField();
         txt_Num_OS = new javax.swing.JTextField();
         txt_Solicitante = new javax.swing.JTextField();
         txt_DataSaida = new com.toedter.calendar.JDateChooser();
@@ -103,9 +105,9 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         txt_Valor_Total_Produto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Total", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_Valor_Total_Produto.setEnabled(false);
 
-        txt_Dt_OS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_Dt_OS.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Data OS", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        txt_Dt_OS.setEnabled(false);
+        dt_sistema.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        dt_sistema.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Data OS", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        dt_sistema.setEnabled(false);
 
         txt_Num_OS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Num_OS.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "N° OS", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
@@ -129,7 +131,7 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txt_Dt_OS, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dt_sistema, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_Num_OS, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -154,7 +156,7 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_Dt_OS)
+                        .addComponent(dt_sistema)
                         .addComponent(txt_Num_OS)
                         .addComponent(txt_Tipo_OS))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -219,13 +221,13 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
+                .addGap(134, 134, 134)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
         setBounds(0, 0, 1049, 575);
@@ -294,10 +296,10 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_gerarOS;
     private javax.swing.JButton btn_remover;
+    private javax.swing.JTextField dt_sistema;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_Arquivo;
     private com.toedter.calendar.JDateChooser txt_DataSaida;
-    private javax.swing.JTextField txt_Dt_OS;
     private javax.swing.JComboBox<Object> txt_Empresa;
     private javax.swing.JTextField txt_Num_OS;
     private javax.swing.JTextField txt_Responsavel;
