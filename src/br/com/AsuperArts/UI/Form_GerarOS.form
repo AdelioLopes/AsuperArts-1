@@ -91,29 +91,36 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="dt_sistema" min="-2" pref="148" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txt_Num_OS" min="-2" pref="178" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txt_Tipo_OS" min="-2" pref="180" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_Solicitante" min="-2" pref="260" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="txt_Arquivo" min="-2" pref="376" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_Empresa" min="-2" pref="147" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_Responsavel" min="-2" pref="230" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="txt_DataSaida" min="-2" pref="141" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="txt_Valor_Total_Produto" min="-2" pref="193" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="txt_Arquivo" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="dt_sistema" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txt_Num_OS" min="-2" pref="178" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="txt_Tipo_OS" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txt_Solicitante" min="-2" pref="260" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="txt_Empresa" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txt_Responsavel" min="-2" pref="230" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="211" max="32767" attributes="0"/>
+                  <EmptySpace pref="153" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -133,17 +140,17 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txt_Arquivo" max="32767" attributes="0"/>
-                      <Component id="txt_Responsavel" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
-                      <Component id="txt_Empresa" alignment="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" max="-2" attributes="0">
+                      <Component id="txt_Arquivo" alignment="3" max="32767" attributes="0"/>
+                      <Component id="txt_Empresa" alignment="3" pref="43" max="32767" attributes="0"/>
+                      <Component id="txt_Responsavel" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="txt_DataSaida" min="-2" max="-2" attributes="0"/>
                       <Component id="txt_Valor_Total_Produto" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="323" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
