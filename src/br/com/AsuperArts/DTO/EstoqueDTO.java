@@ -78,6 +78,8 @@ public class EstoqueDTO {
     public void setValorCm(Double valorCm) {
         this.valorCm = valorCm;
     }
+
+    
     
     
 }

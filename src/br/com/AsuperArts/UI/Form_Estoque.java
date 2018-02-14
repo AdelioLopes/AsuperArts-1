@@ -271,12 +271,13 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
             
             dTO.setNome(txt_nome.getText());
             dTO.setCor(txt_cor.getText());
-            dTO.setEspessura(Double.parseDouble(txt_espessura.toString()));
-            dTO.setComprimento(Double.parseDouble(txt_comprimento.toString()));
-            dTO.setLargura(Double.parseDouble(txt_largura.toString()));
-            dTO.setValorCompra(Double.parseDouble(txt_largura.toString()));
-            dTO.setValorCompra(Double.parseDouble(txt_valorcm.toString()));
-            rg.cadastrar(dTO);
+            dTO.setEspessura(Double.valueOf(txt_espessura.toString()));
+            dTO.setComprimento(Double.valueOf(txt_comprimento.toString()));
+            dTO.setLargura(Double.valueOf(txt_largura.toString()));
+            dTO.setValorCompra(Double.valueOf(txt_largura.toString()));
+            dTO.setValorCompra(Double.valueOf(txt_valorcm.toString()));
+            //rg.cadastrar(dTO);
+            
             txt_comprimento.setText("");
             txt_cor.setText("");
             txt_espessura.setText("");
@@ -284,7 +285,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
             txt_nome.setText("");
             txt_valorCompra.setText("");
             txt_valorcm.setText("");
-            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+            //JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
                    
         }else{
             JOptionPane.showMessageDialog(null, "Preencha todos os campos");

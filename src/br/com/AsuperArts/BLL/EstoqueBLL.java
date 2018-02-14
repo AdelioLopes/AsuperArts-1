@@ -50,11 +50,11 @@ public class EstoqueBLL {
                   estoque.setIdEstoque(rs.getInt("id_estoque"));
                   estoque.setNome(rs.getString("nome"));
                   estoque.setCor(rs.getString("cor"));
-                  estoque.setEspessura(Double.parseDouble("espessura"));
-                  estoque.setComprimento(Double.parseDouble("comprimento"));
-                  estoque.setLargura(Double.parseDouble("largura"));
-                  estoque.setValorCompra(Double.parseDouble("valorCompra"));
-                  estoque.setValorCm(Double.parseDouble("valorCm"));
+                  estoque.setEspessura(rs.getDouble("espessura"));
+                  estoque.setComprimento(rs.getDouble("comprimento"));
+                  estoque.setLargura(rs.getDouble("largura"));
+                  estoque.setValorCompra(rs.getDouble("valorCompra"));
+                  estoque.setValorCm(rs.getDouble("valorCm"));
               }
               return produtos;
          } catch (SQLException ex) {
