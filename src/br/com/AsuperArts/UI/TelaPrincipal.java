@@ -19,7 +19,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private Form_Usuario form_cadastroUsuario = null;
     private Form_Funcionario form_cadastroFuncionario = null;
     private Form_GerarOS form_GerarOS = null;
-    private Form_relatorio form_relatorio = null;
     private Form_desenvolvedor form_desenvolvedor = null;
     private Form_Estoque form_Estoque = null;
     
@@ -65,7 +64,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         Funcionario = new javax.swing.JMenuItem();
         GerarOS = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        RelatorioOS = new javax.swing.JMenuItem();
         Usuario = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         FuncGerarOS = new javax.swing.JMenuItem();
@@ -220,16 +218,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(jMenuItem1);
 
-        RelatorioOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
-        RelatorioOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        RelatorioOS.setText("Relatórios OS");
-        RelatorioOS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RelatorioOSActionPerformed(evt);
-            }
-        });
-        restrito.add(RelatorioOS);
-
         Usuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         Usuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Usuario.setText("Usuário do Sistema");
@@ -341,13 +329,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         desktop.add(form_GerarOS);
     }//GEN-LAST:event_GerarOSActionPerformed
 
-    private void RelatorioOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioOSActionPerformed
-        fecharTelas();
-        form_relatorio = new Form_relatorio();
-        form_relatorio.setVisible(true);
-        desktop.add(form_relatorio);
-    }//GEN-LAST:event_RelatorioOSActionPerformed
-
     private void DesenvolvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesenvolvedorActionPerformed
         fecharTelas();
         form_desenvolvedor = new Form_desenvolvedor();
@@ -405,8 +386,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         form_cadastroFuncionario = null;
         if(form_GerarOS != null){form_GerarOS.setVisible(false);}
         form_GerarOS = null;
-        if(form_relatorio != null){form_relatorio.setVisible(false);}
-        form_relatorio = null;       
         if(form_desenvolvedor != null){form_desenvolvedor.setVisible(false);}
         form_desenvolvedor = null;
     }
@@ -417,7 +396,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenuItem FuncGerarOS;
     private javax.swing.JMenuItem Funcionario;
     private javax.swing.JMenuItem GerarOS;
-    private javax.swing.JMenuItem RelatorioOS;
     private javax.swing.JMenuItem Sair;
     private javax.swing.JMenuItem TrocarUsuario;
     private javax.swing.JMenuItem Usuario;
