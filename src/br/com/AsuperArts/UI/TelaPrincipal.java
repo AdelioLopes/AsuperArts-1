@@ -14,7 +14,7 @@ import javax.swing.Timer;
  * @author Equipe senac 2017
  */
 public class TelaPrincipal extends javax.swing.JFrame{
-    private Form_Medidas form_cadastroMedidas = null;
+
     private Form_Cliente form_cadastroCliente = null;
     private Form_Usuario form_cadastroUsuario = null;
     private Form_Funcionario form_cadastroFuncionario = null;
@@ -62,7 +62,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         jMenuItem2 = new javax.swing.JMenuItem();
         Funcionario = new javax.swing.JMenuItem();
         GerarOS = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
         Usuario = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         FuncGerarOS = new javax.swing.JMenuItem();
@@ -206,16 +205,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(GerarOS);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jMenuItem1.setText("Medidas");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        restrito.add(jMenuItem1);
-
         Usuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         Usuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Usuario.setText("Usuário do Sistema");
@@ -337,12 +326,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         desktop.add(form_cadastroFuncionario);
     }//GEN-LAST:event_FuncionarioActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        form_cadastroMedidas = new Form_Medidas();
-        form_cadastroMedidas.setVisible(true);
-        desktop.add(form_cadastroMedidas);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         form_Estoque = new Form_Estoque();
         form_Estoque.setVisible(true);
@@ -383,7 +366,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
