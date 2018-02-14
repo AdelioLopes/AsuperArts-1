@@ -9,11 +9,11 @@ public class EstoqueDTO {
     private Integer idEstoque;
     private String nome;
     private String cor;
-    private Double espessura;
-    private Double comprimento;
-    private Double largura;
-    private Double valorCompra;
-    private Double valorCm;
+    private Integer espessura;
+    private Integer comprimento;
+    private Integer largura;
+    private Integer valorCompra;
+    private Integer valorCm;
 
     public Integer getIdEstoque() {
         return idEstoque;
@@ -39,45 +39,47 @@ public class EstoqueDTO {
         this.cor = cor;
     }
 
-    public Double getEspessura() {
+    public Integer getEspessura() {
         return espessura;
     }
 
-    public void setEspessura(Double espessura) {
+    public void setEspessura(Integer espessura) {
         this.espessura = espessura;
     }
 
-    public Double getComprimento() {
+    public Integer getComprimento() {
         return comprimento;
     }
 
-    public void setComprimento(Double comprimento) {
+    public void setComprimento(Integer comprimento) {
         this.comprimento = comprimento;
     }
 
-    public Double getLargura() {
+    public Integer getLargura() {
         return largura;
     }
 
-    public void setLargura(Double largura) {
+    public void setLargura(Integer largura) {
         this.largura = largura;
     }
 
-    public Double getValorCompra() {
+    public Integer getValorCompra() {
         return valorCompra;
     }
 
-    public void setValorCompra(Double valorCompra) {
+    public void setValorCompra(Integer valorCompra) {
         this.valorCompra = valorCompra;
     }
 
-    public Double getValorCm() {
+    public Integer getValorCm() {
         return valorCm;
     }
 
-    public void setValorCm(Double valorCm) {
+    public void setValorCm(Integer valorCm) {
         this.valorCm = valorCm;
     }
+
+    
 
     
     

@@ -21,16 +21,16 @@ public class EstoqueBLL {
     Connection con = new Conexao().abrirConexao();
     
     public void cadastrar(EstoqueDTO e){
-     sql = "INSERT INTO tb_estoque(nome,cor,espessura,comprimento,largura,valorCompra,valorCm)VALUES(?,?,?,?,?,?,?);";
+     sql = "INSERT INTO tb_estoque(nome, cor, espessura, comprimento, largura, valor_compra, valor_centimetro)VALUES(?,?,?,?,?,?,?);";
          try {
              PreparedStatement ps = con.prepareStatement(sql);
              ps.setString(1, e.getNome());
              ps.setString(2, e.getCor());
-             ps.setDouble(3, e.getEspessura());
-             ps.setDouble(4, e.getComprimento());
-             ps.setDouble(5, e.getLargura());
-             ps.setDouble(6, e.getValorCompra());
-             ps.setDouble(7, e.getValorCm());
+             ps.setInt(3, e.getEspessura());
+             ps.setInt(4, e.getComprimento());
+             ps.setInt(5, e.getLargura());
+             ps.setInt(6, e.getValorCompra());
+             ps.setInt(7, e.getValorCm());
              
              ps.execute();
          } catch (SQLException ex) {
@@ -50,11 +50,11 @@ public class EstoqueBLL {
                   estoque.setIdEstoque(rs.getInt("id_estoque"));
                   estoque.setNome(rs.getString("nome"));
                   estoque.setCor(rs.getString("cor"));
-                  estoque.setEspessura(rs.getDouble("espessura"));
-                  estoque.setComprimento(rs.getDouble("comprimento"));
-                  estoque.setLargura(rs.getDouble("largura"));
-                  estoque.setValorCompra(rs.getDouble("valorCompra"));
-                  estoque.setValorCm(rs.getDouble("valorCm"));
+                  estoque.setEspessura(rs.getInt("espessura"));
+                  estoque.setComprimento(rs.getInt("comprimento"));
+                  estoque.setLargura(rs.getInt("largura"));
+                  estoque.setValorCompra(rs.getInt("valorCompra"));
+                  estoque.setValorCm(rs.getInt("valorCm"));
               }
               return produtos;
          } catch (SQLException ex) {
