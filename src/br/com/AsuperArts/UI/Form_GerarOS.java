@@ -6,8 +6,6 @@ import br.com.AsuperArts.BLL.OrdemServicoBLL;
 import br.com.AsuperArts.BLL.TipoosBLL;
 import br.com.AsuperArts.DTO.ClienteDTO;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
-import br.com.AsuperArts.DTO.ProdutoDTO;
-import br.com.AsuperArts.DTO.TipoosDTO;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -18,10 +16,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
