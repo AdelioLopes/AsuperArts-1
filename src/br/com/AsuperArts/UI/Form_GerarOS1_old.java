@@ -3,7 +3,6 @@ package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.ClienteBLL;
 import br.com.AsuperArts.BLL.OrdemServicoBLL;
-import br.com.AsuperArts.BLL.ProdutoBLL;
 import br.com.AsuperArts.BLL.TipoosBLL;
 import br.com.AsuperArts.DTO.ClienteDTO;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
@@ -38,7 +37,6 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
         btn_gerarOS.setBackground(new Color(255,255,255));
         btn_remover.setBackground(new Color(255,255,255));
         ClienteBLL clienteBLL = new ClienteBLL();
-        ProdutoBLL produtoBLL = new ProdutoBLL();
         TipoosBLL tipoosBLL = new TipoosBLL();
         
         txt_Responsavel.setText(Tela_login.txtUsuario.getText());
@@ -50,11 +48,7 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
         txt_Tipo_OS.removeAllItems();
         for(TipoosDTO tipo:tipoosBLL.listaTipoOs()){
         txt_Tipo_OS.addItem(String.valueOf(tipo));
-        }
-        txt_Produto.removeAllItems();
-        for(ProdutoDTO p : produtoBLL.listaProduto()){
-            txt_Produto.addItem(String.valueOf(p));
-        }     
+        }   
     }
    
     @SuppressWarnings("unchecked")
@@ -390,10 +384,7 @@ public class Form_GerarOS1_old extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txt_EmpresaActionPerformed
 
     private void txt_ProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ProdutoActionPerformed
-            String nomeProduto = txt_Produto.getSelectedItem().toString();
-            ProdutoBLL pb = new ProdutoBLL();
-            ProdutoDTO produto = pb.listarValorUnitarioProduto(nomeProduto);
-           // txtValorUnitario.setText(produto.getValor_unitario().toString());
+
     }//GEN-LAST:event_txt_ProdutoActionPerformed
 
     private void btn_removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_removerActionPerformed
