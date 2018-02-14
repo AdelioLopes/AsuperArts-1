@@ -60,13 +60,11 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         txt_Empresa = new javax.swing.JComboBox<>();
         txt_Arquivo = new javax.swing.JTextField();
-        txtValorUnitario = new javax.swing.JTextField();
         txt_Responsavel = new javax.swing.JTextField();
         txt_Valor_Total_Produto = new javax.swing.JTextField();
         txt_Dt_OS = new javax.swing.JTextField();
         txt_Num_OS = new javax.swing.JTextField();
         txt_Solicitante = new javax.swing.JTextField();
-        txt_Quantidade = new javax.swing.JTextField();
         txt_DataEntrada = new com.toedter.calendar.JDateChooser();
         txt_DataSaida = new com.toedter.calendar.JDateChooser();
         txt_Tipo_OS = new javax.swing.JTextField();
@@ -100,16 +98,6 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         txt_Arquivo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Arquivo.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Arquivo", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
-        txtValorUnitario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtValorUnitario.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtValorUnitario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Valor Unitário", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        txtValorUnitario.setEnabled(false);
-        txtValorUnitario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorUnitarioActionPerformed(evt);
-            }
-        });
-
         txt_Responsavel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Responsavel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Responsável", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_Responsavel.setEnabled(false);
@@ -137,17 +125,6 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         txt_Solicitante.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Solicitante", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_Solicitante.setEnabled(false);
 
-        txt_Quantidade.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_Quantidade.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Quantidade", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        txt_Quantidade.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt_QuantidadeKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_QuantidadeKeyTyped(evt);
-            }
-        });
-
         txt_DataEntrada.setBackground(new java.awt.Color(255, 255, 255));
         txt_DataEntrada.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data de Entrada", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_DataEntrada.setToolTipText("");
@@ -170,30 +147,23 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
                         .addComponent(txt_Dt_OS, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_Num_OS, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_Tipo_OS, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_DataEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
+                        .addGap(22, 22, 22)
                         .addComponent(txt_DataSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_Solicitante, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txt_Quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_Solicitante, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_Arquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txt_Valor_Total_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txt_Valor_Total_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_Empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txt_Responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_Arquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(78, Short.MAX_VALUE))
+                        .addComponent(txt_Empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_Responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,29 +172,27 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_Dt_OS)
-                        .addComponent(txt_Num_OS))
+                        .addComponent(txt_Num_OS)
+                        .addComponent(txt_Tipo_OS))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_DataSaida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_DataEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(txt_Tipo_OS)))
+                        .addComponent(txt_DataEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txt_Solicitante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_Quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_Valor_Total_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_Responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_Solicitante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_Arquivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_Empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(303, 303, 303))
+                        .addComponent(txt_Valor_Total_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_Empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txt_Responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(327, 327, 327))
         );
 
         txt_Valor_Total_OS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -239,11 +207,11 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Empresa", "Produto", "Quantidade", "Valor Unitário", "Total"
+                "Empresa", "Quantidade", "Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -302,7 +270,7 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -337,10 +305,6 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
 
         setBounds(0, 0, 1049, 575);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtValorUnitarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorUnitarioActionPerformed
-       
-    }//GEN-LAST:event_txtValorUnitarioActionPerformed
 
     private void btn_gerarOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gerarOSActionPerformed
         OrdemServicoBLL rg = new OrdemServicoBLL();
@@ -392,17 +356,15 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
         String txt_data_entrada = fd.format(txt_DataEntrada.getDate());
         String txt_data_saida = fd.format(txt_DataSaida.getDate());
         
-        Double res,v1,v2,v3,soma;
-        v1 = Double.valueOf(txt_Quantidade.getText());
-        v2 = Double.valueOf(txtValorUnitario.getText());
-        v3 = Double.valueOf(txt_Valor_Total_OS.getText());
-        res = v1 * v2;
-        soma = res += v3;
+  
+
+        Double.valueOf(txt_Valor_Total_OS.getText());
+
         //txt_Valor_Total_Produto.setText(String.valueOf(res));
         
-        txt_Valor_Total_OS.setText(String.valueOf(soma));
+
          
-         JOptionPane.showMessageDialog(null, soma);
+
          
          DefaultTableModel modelo =  (DefaultTableModel) tb_os.getModel();
          //Object[] dados = {txt_Empresa.getSelectedItem(), txt_Produto.getSelectedItem(), txt_Quantidade.getText(), txtValorUnitario.getText(), txt_Valor_Total_Produto.getText()};
@@ -424,20 +386,6 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
             txt_Solicitante.setText(cliente.getContato());
     }//GEN-LAST:event_txt_EmpresaActionPerformed
 
-    private void txt_QuantidadeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_QuantidadeKeyReleased
-        // TODO add your handling code here:
-        int qt = Integer.valueOf(txt_Quantidade.getText());
-        double vunit  = Double.valueOf(txtValorUnitario.getText());
-        txt_Valor_Total_Produto.setText(String.valueOf(qt*vunit));
-    }//GEN-LAST:event_txt_QuantidadeKeyReleased
-
-    private void txt_QuantidadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_QuantidadeKeyTyped
-        String caracteres ="0123456789";
-        if(!caracteres.contains(evt.getKeyChar()+"")){
-        evt.consume();
-        }
-    }//GEN-LAST:event_txt_QuantidadeKeyTyped
-
     private void txt_ResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ResponsavelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_ResponsavelActionPerformed
@@ -450,14 +398,12 @@ public class Form_GerarOS extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tb_os;
-    private javax.swing.JTextField txtValorUnitario;
     private javax.swing.JTextField txt_Arquivo;
     private com.toedter.calendar.JDateChooser txt_DataEntrada;
     private com.toedter.calendar.JDateChooser txt_DataSaida;
     private javax.swing.JTextField txt_Dt_OS;
     private javax.swing.JComboBox<Object> txt_Empresa;
     private javax.swing.JTextField txt_Num_OS;
-    private javax.swing.JTextField txt_Quantidade;
     private javax.swing.JTextField txt_Responsavel;
     private javax.swing.JTextField txt_Solicitante;
     private javax.swing.JTextField txt_Tipo_OS;

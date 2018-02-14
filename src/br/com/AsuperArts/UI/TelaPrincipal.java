@@ -21,8 +21,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private Form_GerarOS form_GerarOS = null;
     private Form_relatorio form_relatorio = null;
     private Form_desenvolvedor form_desenvolvedor = null;
-    private Form_ManualUso form_ManualUso = null;
-    private Form_TipoOS form_TipoOS = null;
     private Form_Estoque form_Estoque = null;
     
     public TelaPrincipal() {
@@ -68,12 +66,10 @@ public class TelaPrincipal extends javax.swing.JFrame{
         GerarOS = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         RelatorioOS = new javax.swing.JMenuItem();
-        TipoOS = new javax.swing.JMenuItem();
         Usuario = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         FuncGerarOS = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        ManualUso = new javax.swing.JMenuItem();
         Desenvolvedor = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
@@ -234,16 +230,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(RelatorioOS);
 
-        TipoOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK));
-        TipoOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        TipoOS.setText("Tipo OS");
-        TipoOS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TipoOSActionPerformed(evt);
-            }
-        });
-        restrito.add(TipoOS);
-
         Usuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         Usuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Usuario.setText("Usuário do Sistema");
@@ -273,16 +259,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         jMenu4.setText("Ajuda");
         jMenu4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-
-        ManualUso.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_MASK));
-        ManualUso.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        ManualUso.setText("Manual de Uso");
-        ManualUso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ManualUsoActionPerformed(evt);
-            }
-        });
-        jMenu4.add(ManualUso);
 
         Desenvolvedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         Desenvolvedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -400,20 +376,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         desktop.add(form_cadastroFuncionario);
     }//GEN-LAST:event_FuncionarioActionPerformed
 
-    private void ManualUsoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManualUsoActionPerformed
-        fecharTelas();
-        form_ManualUso = new Form_ManualUso();
-        form_ManualUso.setVisible(true);
-        desktop.add(form_ManualUso);
-    }//GEN-LAST:event_ManualUsoActionPerformed
-
-    private void TipoOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoOSActionPerformed
-        fecharTelas();
-        form_TipoOS = new Form_TipoOS();
-        form_TipoOS.setVisible(true);
-        desktop.add(form_TipoOS);
-    }//GEN-LAST:event_TipoOSActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         form_cadastroMedidas = new Form_Medidas();
         form_cadastroMedidas.setVisible(true);
@@ -447,10 +409,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         form_relatorio = null;       
         if(form_desenvolvedor != null){form_desenvolvedor.setVisible(false);}
         form_desenvolvedor = null;
-        if(form_ManualUso != null){form_ManualUso.setVisible(false);}
-        form_ManualUso = null;
-        if(form_TipoOS != null){form_TipoOS.setVisible(false);}
-        form_TipoOS = null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -459,10 +417,8 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenuItem FuncGerarOS;
     private javax.swing.JMenuItem Funcionario;
     private javax.swing.JMenuItem GerarOS;
-    private javax.swing.JMenuItem ManualUso;
     private javax.swing.JMenuItem RelatorioOS;
     private javax.swing.JMenuItem Sair;
-    private javax.swing.JMenuItem TipoOS;
     private javax.swing.JMenuItem TrocarUsuario;
     private javax.swing.JMenuItem Usuario;
     private javax.swing.JDesktopPane desktop;
