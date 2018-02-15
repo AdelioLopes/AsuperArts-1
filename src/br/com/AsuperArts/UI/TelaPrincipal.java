@@ -177,6 +177,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(Cliente);
 
+        jMenuItem2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jMenuItem2.setText("Estoque");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
