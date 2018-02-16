@@ -21,7 +21,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private Form_AbrirOS form_GerarOS = null;
     private Form_Estoque form_Estoque = null;
     private Form_fecharOS form_fecharOS = null;
-    
+    private Form_RelatorioOS form_RelatorioOS = null;
     public TelaPrincipal() {
        initComponents();
        
@@ -65,6 +65,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         GerarOS = new javax.swing.JMenuItem();
         Usuario = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         FuncGerarOS = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -227,6 +228,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(jMenuItem1);
 
+        jMenuItem4.setText("Relatório de OS");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        restrito.add(jMenuItem4);
+
         jMenuBar1.add(restrito);
 
         jMenu2.setText("Funcionário");
@@ -352,6 +361,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
         desktop.add(form_fecharOS);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        form_RelatorioOS = new Form_RelatorioOS();
+        form_RelatorioOS.setVisible(true);
+        desktop.add(form_RelatorioOS);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -389,6 +404,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JLabel lblUsuario;
     private javax.swing.JMenu restrito;
