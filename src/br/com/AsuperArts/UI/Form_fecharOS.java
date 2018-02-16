@@ -31,6 +31,11 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         jTable1 = new javax.swing.JTable();
 
         jButton1.setText("FecharOS");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Buscar");
 
@@ -116,6 +121,12 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Form_ManutencaoOS manutencaoOS = new Form_ManutencaoOS();
+        manutencaoOS.setVisible(true);
+        manutencaoOS.setSize(800, 600);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
