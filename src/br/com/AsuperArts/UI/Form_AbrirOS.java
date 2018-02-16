@@ -134,10 +134,12 @@ public class Form_AbrirOS extends javax.swing.JInternalFrame {
 
         lblInformação.setBorder(javax.swing.BorderFactory.createTitledBorder("Aviso"));
 
-        txt_desc.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
+        txt_desc.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_desc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descrição", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
 
+        txt_estado.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aberta", "Fechada" }));
-        txt_estado.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado de OS"));
+        txt_estado.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Estado de OS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
