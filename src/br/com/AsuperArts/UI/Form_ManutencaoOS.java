@@ -41,7 +41,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_desc = new javax.swing.JTextField();
         btn_gerarOS = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         txt_Num_OS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Num_OS.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "N° OS", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
@@ -66,7 +66,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             }
         });
 
-        txt_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aberta", "Fechada" }));
+        txt_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fechada" }));
         txt_estado.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado de OS"));
 
         txt_Valor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -151,17 +151,18 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_Empresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txt_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(206, 206, 206)
                     .addComponent(txt_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(27, 27, 27)
                     .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(101, Short.MAX_VALUE)))
+                    .addContainerGap(96, Short.MAX_VALUE)))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(817, 439));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_EmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_EmpresaActionPerformed
