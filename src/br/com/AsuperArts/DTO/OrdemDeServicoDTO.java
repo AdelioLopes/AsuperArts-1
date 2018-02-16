@@ -9,12 +9,13 @@ import java.util.Date;
  */
 public class OrdemDeServicoDTO {
     private Integer id_os;
-    private String cliente;
-    private Date data_os;
+    private String data_os;
+    private String servico;
     private String empresa;
     private String solicitante;
     private String responsavel;
-    private String servico;
+    private Double valor;
+    private String Descricao;
 
     public Integer getId_os() {
         return id_os;
@@ -24,20 +25,20 @@ public class OrdemDeServicoDTO {
         this.id_os = id_os;
     }
 
-    public String getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
-    }
-
-    public Date getData_os() {
+    public String getData_os() {
         return data_os;
     }
 
-    public void setData_os(Date data_os) {
+    public void setData_os(String data_os) {
         this.data_os = data_os;
+    }
+
+    public String getServico() {
+        return servico;
+    }
+
+    public void setServico(String servico) {
+        this.servico = servico;
     }
 
     public String getEmpresa() {
@@ -64,12 +65,20 @@ public class OrdemDeServicoDTO {
         this.responsavel = responsavel;
     }
 
-    public String getServico() {
-        return servico;
+    public Double getValor() {
+        return valor;
     }
 
-    public void setServico(String servico) {
-        this.servico = servico;
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public String getDescricao() {
+        return Descricao;
+    }
+
+    public void setDescricao(String Descricao) {
+        this.Descricao = Descricao;
     }
 
     

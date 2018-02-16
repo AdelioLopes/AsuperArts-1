@@ -18,12 +18,17 @@ import java.util.logging.Logger;
 public class OrdemServicoBLL {
     Connection con = new Conexao().abrirConexao();
     String sql;
-    public void gerarOS(OrdemDeServicoDTO os){
-        sql = "INSERT INTO tb_os(cliente,funcionario,servico_solicitado,valor_unitario)VALUES(?,?,?,?);";
+    public void abrir(OrdemDeServicoDTO os){
+        sql = "INSERT INTO tb_os(data_os,servico,empresa,solicitante,responsavel,valor,descricao)VALUES(?,?,?,?,?,?,?);";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            
-            
+            ps.setString(1, os.getData_os());
+            ps.setString(2, os.getServico());
+            ps.setString(3, os.getEmpresa());
+            ps.setString(4, os.getSolicitante());
+            ps.setString(5, os.getResponsavel());
+            ps.setDouble(6, os.getValor());
+            ps.setString(7, os.getDescricao());
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
