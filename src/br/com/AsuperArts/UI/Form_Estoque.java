@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.EstoqueBLL;
 import br.com.AsuperArts.DTO.EstoqueDTO;
+import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,6 +18,11 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
      */
     public Form_Estoque() {
         initComponents();
+        preencherTabela();
+        btn_alterar.setEnabled(false);
+        getContentPane().setBackground(new Color(240,240,240));
+        btn_cancelar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
     }
 
     /**
@@ -32,7 +35,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txt_id = new javax.swing.JTextField();
         txt_cor = new javax.swing.JTextField();
         txt_espessura = new javax.swing.JTextField();
         txt_comprimento = new javax.swing.JTextField();
@@ -42,12 +45,12 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         txt_nome = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        tb_estoque = new javax.swing.JTable();
+        btn_excluir = new javax.swing.JButton();
+        btn_cadastrar = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
+        btn_alterar = new javax.swing.JButton();
+        btn_editar = new javax.swing.JButton();
 
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         setClosable(true);
@@ -57,9 +60,9 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(247, 244, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), " Cadastro", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
 
-        jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Cód", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        txt_id.setEditable(false);
+        txt_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_id.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Cód", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24))); // NOI18N
 
         txt_cor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_cor.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Cor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
@@ -92,44 +95,51 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120)
+                .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_espessura, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_largura, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_cor, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_valorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_valorcm, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txt_cor, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_espessura, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txt_valorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_valorcm, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txt_largura, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_espessura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_largura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_cor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_valorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_valorcm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 18, Short.MAX_VALUE))
+                    .addComponent(txt_cor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_espessura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_comprimento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_largura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_valorcm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_valorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(90, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(txt_nome))
+                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Informações", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tb_estoque.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -137,45 +147,60 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
                 "ID", "Nome", "Cor", "Espessura", "Comprimento", "Largura", "V.Compra", "V.CM²"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tb_estoque);
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
-        jButton1.setText("Excluir");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cadastro_produto.png"))); // NOI18N
-        jButton2.setText("Cadastrar");
-        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_excluir.setBackground(new java.awt.Color(204, 204, 204));
+        btn_excluir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
+        btn_excluir.setText("Excluir");
+        btn_excluir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_excluirActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 204));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
-        jButton3.setText("Desfazer");
-        jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        jButton4.setBackground(new java.awt.Color(204, 204, 204));
-        jButton4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
-        jButton4.setText("Salvar");
-        jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        jButton5.setBackground(new java.awt.Color(204, 204, 204));
-        jButton5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
-        jButton5.setText("Editar");
-        jButton5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn_cadastrar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_cadastrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cadastro_produto.png"))); // NOI18N
+        btn_cadastrar.setText("Cadastrar");
+        btn_cadastrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn_cadastrarActionPerformed(evt);
+            }
+        });
+
+        btn_cancelar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
+        btn_cancelar.setText("Desfazer");
+        btn_cancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
+
+        btn_alterar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_alterar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_alterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
+        btn_alterar.setText("Salvar");
+        btn_alterar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_alterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_alterarActionPerformed(evt);
+            }
+        });
+
+        btn_editar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
+        btn_editar.setText("Editar");
+        btn_editar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editarActionPerformed(evt);
             }
         });
 
@@ -186,18 +211,18 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1349, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 659, Short.MAX_VALUE)))
+                        .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -206,14 +231,14 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btn_cadastrar)
+                        .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_editar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -231,7 +256,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -239,15 +264,54 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+public void preencherTabela() {
+        getContentPane().setBackground(new Color(255,255,255));
+        this.tb_estoque.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        DefaultTableModel modelo = (DefaultTableModel) tb_estoque.getModel();
+        modelo.setNumRows(0);
+        EstoqueBLL rg = new EstoqueBLL();
+        for (EstoqueDTO estoq : rg.ListaEstoque()) {
+            modelo.addRow(new Object[]{
+                estoq.getIdEstoque(),
+                estoq.getNome(),
+                estoq.getCor(),
+                estoq.getEspessura(),
+                estoq.getComprimento(),
+                estoq.getLargura(),
+                estoq.getValorCompra(),
+                estoq.getValorCm()
+            });
+        }
+    }
+    private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
+        EstoqueBLL estoqueBLL = new EstoqueBLL();
+        EstoqueDTO e = new EstoqueDTO();
+        if (this.tb_estoque.getSelectedRowCount() > 0) {
+            int linha = tb_estoque.getSelectedRow();
+            e.setIdEstoque((int) this.tb_estoque.getValueAt(linha, 0));
+            int resposta = 0;
+            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo alterar?");
+            if (resposta == JOptionPane.YES_OPTION) {
+                setandoCampos();
+                btn_cadastrar.setEnabled(false);
+                btn_editar.setEnabled(false);
+                btn_excluir.setEnabled(false);
+                btn_alterar.setEnabled(true);
+                btn_cancelar.setEnabled(true);
+                preencherTabela();
+            }
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
+
+        }
+    }//GEN-LAST:event_btn_editarActionPerformed
 
     private void txt_valorcmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_valorcmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_valorcmActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
         if(!txt_nome.getText().equals("")&&
            !txt_cor.getText().equals("")&&
            !txt_espessura.getText().equals("")&&
@@ -265,9 +329,9 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
             dTO.setComprimento(Integer.parseInt(txt_comprimento.getText()));
             dTO.setLargura(Integer.parseInt(txt_largura.getText()));
             dTO.setValorCompra(Integer.parseInt(txt_valorCompra.getText()));
-            dTO.setValorCompra(Integer.parseInt(txt_valorcm.getText()));
+            dTO.setValorCm(Integer.parseInt(txt_valorcm.getText()));
             rg.cadastrar(dTO);
-            
+            preencherTabela();
             txt_comprimento.setText("");
             txt_cor.setText("");
             txt_espessura.setText("");
@@ -280,23 +344,108 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Preencha todos os campos");
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_cadastrarActionPerformed
 
+    private void btn_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirActionPerformed
+       EstoqueBLL estoqueBLL = new EstoqueBLL();
+       EstoqueDTO e = new EstoqueDTO();
+        if (this.tb_estoque.getSelectedRowCount() > 0) {
+            int linha = this.tb_estoque.getSelectedRow();
+            e.setIdEstoque((int) this.tb_estoque.getValueAt(linha, 0));
+            int resposta = 0;
+            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo excluir?");
+            if (resposta == JOptionPane.YES_OPTION) {
+                estoqueBLL.excluir(e);
+                preencherTabela();
+                JOptionPane.showMessageDialog(null, "Excluído!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
+        }
+    }//GEN-LAST:event_btn_excluirActionPerformed
+
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        btn_alterar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
+        btn_cadastrar.setEnabled(true);
+        btn_editar.setEnabled(true);
+        btn_excluir.setEnabled(true);
+        txt_id.setText("");
+        txt_comprimento.setText("");
+        txt_cor.setText("");
+        txt_espessura.setText("");
+        txt_largura.setText("");
+        txt_nome.setText("");
+        txt_valorCompra.setText("");
+        txt_valorcm.setText("");
+    }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void btn_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alterarActionPerformed
+        if(!txt_nome.getText().equals("")&&
+           !txt_cor.getText().equals("")&&
+           !txt_espessura.getText().equals("")&&
+           !txt_comprimento.getText().equals("")&&
+           !txt_largura.getText().equals("")&&
+           !txt_valorCompra.getText().equals("")&&
+           !txt_valorcm.getText().equals("")){
+                 EstoqueBLL rg = new EstoqueBLL();
+                 EstoqueDTO dto = new EstoqueDTO();        
+                    dto.setIdEstoque(Integer.parseInt(txt_id.getText()));
+                    dto.setNome(txt_nome.getText());
+                    dto.setCor(txt_cor.getText());
+                    dto.setEspessura(Integer.parseInt(txt_espessura.getText()));
+                    dto.setComprimento(Integer.parseInt(txt_comprimento.getText()));
+                    dto.setLargura(Integer.parseInt(txt_largura.getText()));
+                    dto.setValorCompra(Integer.parseInt(txt_valorCompra.getText()));
+                    dto.setValorCm(Integer.parseInt(txt_valorcm.getText()));
+                    
+                        JOptionPane.showMessageDialog(null, "Alterado");
+                        rg.alterar(dto);
+                        preencherTabela();
+                        btn_cadastrar.setEnabled(true);
+                        btn_editar.setEnabled(true);
+                        btn_excluir.setEnabled(true);
+                        btn_alterar.setEnabled(false);
+                        btn_cancelar.setEnabled(false);
+                        txt_id.setText("");
+                        txt_comprimento.setText("");
+                        txt_cor.setText("");
+                        txt_espessura.setText("");
+                        txt_largura.setText("");
+                        txt_nome.setText("");
+                        txt_valorCompra.setText("");
+                        txt_valorcm.setText("");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Campos obrigatórios!");
+                }
+    }//GEN-LAST:event_btn_alterarActionPerformed
+public void setandoCampos(){
+        
+        int linha = tb_estoque.getSelectedRow();
+        txt_id.setText(tb_estoque.getModel().getValueAt(linha, 0).toString());
+        txt_nome.setText(tb_estoque.getModel().getValueAt(linha, 1).toString());
+        txt_cor.setText(tb_estoque.getModel().getValueAt(linha, 2).toString());
+        txt_comprimento.setText(tb_estoque.getModel().getValueAt(linha, 3).toString());
+        txt_espessura.setText(tb_estoque.getModel().getValueAt(linha, 4).toString());
+        txt_largura.setText(tb_estoque.getModel().getValueAt(linha, 5).toString());
+        txt_valorCompra.setText(tb_estoque.getModel().getValueAt(linha, 6).toString());
+        txt_valorcm.setText(tb_estoque.getModel().getValueAt(linha, 7).toString());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btn_alterar;
+    private javax.swing.JButton btn_cadastrar;
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_editar;
+    private javax.swing.JButton btn_excluir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tb_estoque;
     private javax.swing.JTextField txt_comprimento;
     private javax.swing.JTextField txt_cor;
     private javax.swing.JTextField txt_espessura;
+    private javax.swing.JTextField txt_id;
     private javax.swing.JTextField txt_largura;
     private javax.swing.JTextField txt_nome;
     private javax.swing.JTextField txt_valorCompra;
