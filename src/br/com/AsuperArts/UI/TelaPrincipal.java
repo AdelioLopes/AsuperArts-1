@@ -60,12 +60,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
         Sair = new javax.swing.JMenuItem();
         restrito = new javax.swing.JMenu();
         Cliente = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        Estoque = new javax.swing.JMenuItem();
         Funcionario = new javax.swing.JMenuItem();
         GerarOS = new javax.swing.JMenuItem();
         Usuario = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        FecharOS = new javax.swing.JMenuItem();
+        RelatorioOS = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         FuncGerarOS = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -181,14 +181,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(Cliente);
 
-        jMenuItem2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jMenuItem2.setText("Estoque");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        Estoque.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Estoque.setText("Estoque");
+        Estoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                EstoqueActionPerformed(evt);
             }
         });
-        restrito.add(jMenuItem2);
+        restrito.add(Estoque);
 
         Funcionario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
         Funcionario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -220,21 +220,21 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(Usuario);
 
-        jMenuItem1.setText("Fechar OS");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        FecharOS.setText("Fechar OS");
+        FecharOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                FecharOSActionPerformed(evt);
             }
         });
-        restrito.add(jMenuItem1);
+        restrito.add(FecharOS);
 
-        jMenuItem4.setText("Relatório de OS");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        RelatorioOS.setText("Relatório de OS");
+        RelatorioOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                RelatorioOSActionPerformed(evt);
             }
         });
-        restrito.add(jMenuItem4);
+        restrito.add(RelatorioOS);
 
         jMenuBar1.add(restrito);
 
@@ -349,23 +349,26 @@ public class TelaPrincipal extends javax.swing.JFrame{
         desktop.add(form_cadastroFuncionario);
     }//GEN-LAST:event_FuncionarioActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void EstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstoqueActionPerformed
+        fecharTelas();
         form_Estoque = new Form_Estoque();
         form_Estoque.setVisible(true);
         desktop.add(form_Estoque);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_EstoqueActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void FecharOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FecharOSActionPerformed
+        fecharTelas();
         form_fecharOS = new Form_fecharOS();
         form_fecharOS.setVisible(true);
         desktop.add(form_fecharOS);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_FecharOSActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void RelatorioOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioOSActionPerformed
+       fecharTelas();
         form_RelatorioOS = new Form_RelatorioOS();
         form_RelatorioOS.setVisible(true);
         desktop.add(form_RelatorioOS);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_RelatorioOSActionPerformed
 
     public static void main(String args[]) {
 
@@ -384,13 +387,22 @@ public class TelaPrincipal extends javax.swing.JFrame{
         form_cadastroFuncionario = null;
         if(form_GerarOS != null){form_GerarOS.setVisible(false);}
         form_GerarOS = null;
+        if(form_Estoque != null){form_Estoque.setVisible(false);}
+        form_Estoque = null;
+        if(form_fecharOS != null){form_fecharOS.setVisible(false);}
+        form_fecharOS = null;
+        if(form_RelatorioOS != null){form_RelatorioOS.setVisible(false);}
+        form_RelatorioOS = null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Cliente;
+    private javax.swing.JMenuItem Estoque;
+    private javax.swing.JMenuItem FecharOS;
     private javax.swing.JMenuItem FuncGerarOS;
     private javax.swing.JMenuItem Funcionario;
     private javax.swing.JMenuItem GerarOS;
+    private javax.swing.JMenuItem RelatorioOS;
     private javax.swing.JMenuItem Sair;
     private javax.swing.JMenuItem TrocarUsuario;
     private javax.swing.JMenuItem Usuario;
@@ -401,10 +413,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JLabel lblUsuario;
     private javax.swing.JMenu restrito;

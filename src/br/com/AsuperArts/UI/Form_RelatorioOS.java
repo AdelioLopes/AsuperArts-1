@@ -35,6 +35,8 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        setClosable(true);
+
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Ordens de Serviço Fechadas"));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
