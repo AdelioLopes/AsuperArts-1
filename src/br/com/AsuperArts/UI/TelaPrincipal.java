@@ -18,8 +18,9 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private Form_Cliente form_cadastroCliente = null;
     private Form_Usuario form_cadastroUsuario = null;
     private Form_Funcionario form_cadastroFuncionario = null;
-    private Form_GerarOS form_GerarOS = null;
+    private Form_AbrirOS form_GerarOS = null;
     private Form_Estoque form_Estoque = null;
+    private Form_fecharOS form_fecharOS = null;
     
     public TelaPrincipal() {
        initComponents();
@@ -63,6 +64,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         Funcionario = new javax.swing.JMenuItem();
         GerarOS = new javax.swing.JMenuItem();
         Usuario = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         FuncGerarOS = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -217,6 +219,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(Usuario);
 
+        jMenuItem1.setText("Fechar OS");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        restrito.add(jMenuItem1);
+
         jMenuBar1.add(restrito);
 
         jMenu2.setText("Funcionário");
@@ -304,14 +314,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
     private void GerarOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerarOSActionPerformed
         fecharTelas();
-        form_GerarOS  = new Form_GerarOS();
+        form_GerarOS  = new Form_AbrirOS();
         form_GerarOS.setVisible(true);
         desktop.add(form_GerarOS);
     }//GEN-LAST:event_GerarOSActionPerformed
 
     private void FuncGerarOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FuncGerarOSActionPerformed
         fecharTelas();
-        form_GerarOS  = new Form_GerarOS();
+        form_GerarOS  = new Form_AbrirOS();
         form_GerarOS.setVisible(true);
         desktop.add(form_GerarOS);
     }//GEN-LAST:event_FuncGerarOSActionPerformed
@@ -335,6 +345,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
         form_Estoque.setVisible(true);
         desktop.add(form_Estoque);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        form_fecharOS = new Form_fecharOS();
+        form_fecharOS.setVisible(true);
+        desktop.add(form_fecharOS);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     public static void main(String args[]) {
 
@@ -370,6 +386,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;

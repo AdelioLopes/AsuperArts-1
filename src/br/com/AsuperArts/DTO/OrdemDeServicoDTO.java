@@ -16,6 +16,7 @@ public class OrdemDeServicoDTO {
     private String responsavel;
     private Double valor;
     private String Descricao;
+    private String estado;
 
     public Integer getId_os() {
         return id_os;
@@ -79,6 +80,14 @@ public class OrdemDeServicoDTO {
 
     public void setDescricao(String Descricao) {
         this.Descricao = Descricao;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     

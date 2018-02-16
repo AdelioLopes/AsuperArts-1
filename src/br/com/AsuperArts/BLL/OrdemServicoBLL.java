@@ -19,7 +19,7 @@ public class OrdemServicoBLL {
     Connection con = new Conexao().abrirConexao();
     String sql;
     public void abrir(OrdemDeServicoDTO os){
-        sql = "INSERT INTO tb_os(data_os,servico,empresa,solicitante,responsavel,valor,descricao)VALUES(?,?,?,?,?,?,?);";
+        sql = "INSERT INTO tb_os(data_os,servico,empresa,solicitante,responsavel,valor,descricao,estado)VALUES(?,?,?,?,?,?,?,?);";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, os.getData_os());
@@ -29,6 +29,7 @@ public class OrdemServicoBLL {
             ps.setString(5, os.getResponsavel());
             ps.setDouble(6, os.getValor());
             ps.setString(7, os.getDescricao());
+            ps.setString(8, os.getEstado());
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
