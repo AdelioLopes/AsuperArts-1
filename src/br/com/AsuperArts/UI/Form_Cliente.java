@@ -36,7 +36,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
     }
 
     public void preencherTabela() {
-         getContentPane().setBackground(new Color(255,255,255));
+        getContentPane().setBackground(new Color(255,255,255));
         this.jTableCliente.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         DefaultTableModel modelo = (DefaultTableModel) jTableCliente.getModel();
         modelo.setNumRows(0);

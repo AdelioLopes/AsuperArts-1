@@ -1,6 +1,11 @@
 
 package br.com.AsuperArts.UI;
 
+import br.com.AsuperArts.BLL.OrdemServicoBLL;
+import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author casa
@@ -12,8 +17,28 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
      */
     public Form_fecharOS() {
         initComponents();
+        preencherTabela();
     }
-
+    public void preencherTabela() {
+        this.tb_fecharOs.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        DefaultTableModel modelo = (DefaultTableModel) tb_fecharOs.getModel();
+        modelo.setNumRows(0);
+        OrdemServicoBLL rg = new OrdemServicoBLL();
+        for(OrdemDeServicoDTO servico : rg.lista()){
+        modelo.addRow(new Object[]{
+        servico.getId_os(),
+        servico.getData_os(),
+        servico.getServico(),
+        servico.getEmpresa(),
+        servico.getSolicitante(),
+        servico.getResponsavel(),
+        servico.getValor(),
+        servico.getDescricao(),
+        servico.getEstado()
+        });
+        }
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,7 +53,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tb_fecharOs = new javax.swing.JTable();
 
         setClosable(true);
 
@@ -44,7 +69,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ordens de Serviços em aberto", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tb_fecharOs.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -60,17 +85,17 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setResizable(false);
-            jTable1.getColumnModel().getColumn(6).setResizable(false);
-            jTable1.getColumnModel().getColumn(7).setResizable(false);
-            jTable1.getColumnModel().getColumn(8).setResizable(false);
+        jScrollPane1.setViewportView(tb_fecharOs);
+        if (tb_fecharOs.getColumnModel().getColumnCount() > 0) {
+            tb_fecharOs.getColumnModel().getColumn(0).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(1).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(2).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(3).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(4).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(5).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(6).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(7).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(8).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -137,7 +162,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tb_fecharOs;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,7 +7,10 @@ import java.sql.Connection;
 import java.sql.Date;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,4 +39,31 @@ public class OrdemServicoBLL {
         }
     
     }
+    
+     public List<OrdemDeServicoDTO> lista(){
+        try {
+            sql = "SELECT * FROM tb_os WHERE estado='Aberta';";
+            List<OrdemDeServicoDTO> servicos =new ArrayList<>();
+            ResultSet rs = null;
+            PreparedStatement ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+            OrdemDeServicoDTO servico = new OrdemDeServicoDTO();
+            servico.setId_os(rs.getInt("id_os"));
+            servico.setData_os(rs.getString("data_os"));
+            servico.setServico(rs.getString("servico"));
+            servico.setEmpresa(rs.getString("empresa"));
+            servico.setSolicitante(rs.getString("solicitante"));
+            servico.setResponsavel(rs.getString("responsavel"));
+            servico.setValor(rs.getDouble("valor"));
+            servico.setDescricao(rs.getString("descricao"));
+            servico.setEstado(rs.getString("estado"));
+            servicos.add(servico);
+            }
+            return servicos;
+        } catch (SQLException ex) {
+            Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+     }
 }
