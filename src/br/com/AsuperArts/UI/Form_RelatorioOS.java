@@ -5,6 +5,11 @@
  */
 package br.com.AsuperArts.UI;
 
+import br.com.AsuperArts.BLL.OrdemServicoBLL;
+import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Administrador
@@ -16,8 +21,28 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
      */
     public Form_RelatorioOS() {
         initComponents();
+        preencherTabela();
     }
-
+    public void preencherTabela() {
+        this.tb_OsFechadas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        DefaultTableModel modelo = (DefaultTableModel) tb_OsFechadas.getModel();
+        modelo.setNumRows(0);
+        OrdemServicoBLL rg = new OrdemServicoBLL();
+        for(OrdemDeServicoDTO servico : rg.listaFechada()){
+        modelo.addRow(new Object[]{
+        servico.getId_os(),
+        servico.getData_os(),
+        servico.getServico(),
+        servico.getEmpresa(),
+        servico.getSolicitante(),
+        servico.getResponsavel(),
+        servico.getValor(),
+        servico.getDescricao(),
+        servico.getEstado()
+        });
+        }
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,7 +54,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tb_OsFechadas = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,7 +64,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Ordens de Serviço Fechadas"));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tb_OsFechadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -55,7 +80,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tb_OsFechadas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -141,6 +166,6 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tb_OsFechadas;
     // End of variables declaration//GEN-END:variables
 }

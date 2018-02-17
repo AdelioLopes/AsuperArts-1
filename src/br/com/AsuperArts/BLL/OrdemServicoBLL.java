@@ -66,4 +66,30 @@ public class OrdemServicoBLL {
         }
         return null;
      }
+     public List<OrdemDeServicoDTO> listaFechada(){
+        try {
+            sql = "SELECT * FROM tb_os WHERE estado='Fechada';";
+            List<OrdemDeServicoDTO> servicos =new ArrayList<>();
+            ResultSet rs = null;
+            PreparedStatement ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+            OrdemDeServicoDTO servico = new OrdemDeServicoDTO();
+            servico.setId_os(rs.getInt("id_os"));
+            servico.setData_os(rs.getString("data_os"));
+            servico.setServico(rs.getString("servico"));
+            servico.setEmpresa(rs.getString("empresa"));
+            servico.setSolicitante(rs.getString("solicitante"));
+            servico.setResponsavel(rs.getString("responsavel"));
+            servico.setValor(rs.getDouble("valor"));
+            servico.setDescricao(rs.getString("descricao"));
+            servico.setEstado(rs.getString("estado"));
+            servicos.add(servico);
+            }
+            return servicos;
+        } catch (SQLException ex) {
+            Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+     }
 }
