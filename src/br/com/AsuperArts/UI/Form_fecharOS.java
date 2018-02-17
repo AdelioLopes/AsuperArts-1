@@ -3,6 +3,7 @@ package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.OrdemServicoBLL;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -151,9 +152,24 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Form_ManutencaoOS manutencaoOS = new Form_ManutencaoOS();
-        manutencaoOS.setVisible(true);
-        manutencaoOS.setSize(800, 600);
+        
+        OrdemServicoBLL rg = new OrdemServicoBLL();
+        OrdemDeServicoDTO ordemDeServicoDTO = new OrdemDeServicoDTO();
+        
+        if(this.tb_fecharOs.getSelectedRowCount() > 0){
+        int linha = this.tb_fecharOs.getSelectedRow();
+        //OrdemDeServicoDTO.setId_os((int) this.tb_fecharOs.getValueAt(linha, 0));    
+        int resposta = 0;
+        resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo alterar?");
+        if(resposta == JOptionPane.YES_OPTION){
+                Form_ManutencaoOS manutencaoOS = new Form_ManutencaoOS();
+                manutencaoOS.setVisible(true);
+                manutencaoOS.setSize(800, 600);
+                preencherTabela();
+            }
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
