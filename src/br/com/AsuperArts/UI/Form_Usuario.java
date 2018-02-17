@@ -111,7 +111,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(541, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,10 +229,9 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1369, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(btn_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
                         .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,9 +243,11 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
                                 .addGap(80, 80, 80)
                                 .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(74, 74, 74)
-                                .addComponent(jButton1)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(jButton1))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,17 +301,20 @@ public void preencherTabela(){
         this.jTableLogin.getColumnModel().getColumn(0).setMaxWidth(50);
         this.jTableLogin.getColumnModel().getColumn(0).setMinWidth(50);
         
-        this.jTableLogin.getColumnModel().getColumn(1).setPreferredWidth(200);
-        this.jTableLogin.getColumnModel().getColumn(1).setMaxWidth(200);
-        this.jTableLogin.getColumnModel().getColumn(1).setMinWidth(200);
+        this.jTableLogin.getColumnModel().getColumn(1).setPreferredWidth(100);
+        this.jTableLogin.getColumnModel().getColumn(1).setMaxWidth(100);
+        this.jTableLogin.getColumnModel().getColumn(1).setMinWidth(100);
         
         this.jTableLogin.getColumnModel().getColumn(2).setPreferredWidth(0);
         this.jTableLogin.getColumnModel().getColumn(2).setMaxWidth(0);
         this.jTableLogin.getColumnModel().getColumn(2).setMinWidth(0);
         
-        this.jTableLogin.getColumnModel().getColumn(3).setPreferredWidth(100);
-        this.jTableLogin.getColumnModel().getColumn(3).setMaxWidth(100);
-        this.jTableLogin.getColumnModel().getColumn(3).setMinWidth(100);
+        this.jTableLogin.getColumnModel().getColumn(3).setPreferredWidth(50);
+        this.jTableLogin.getColumnModel().getColumn(3).setMaxWidth(50);
+        this.jTableLogin.getColumnModel().getColumn(3).setMinWidth(50);
+        
+        
+        
         DefaultTableCellRenderer centralizado = new DefaultTableCellRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
         this.jTableLogin.getColumnModel().getColumn(3).setCellRenderer(centralizado);
