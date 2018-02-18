@@ -49,12 +49,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="painelLogin" alignment="1" pref="936" max="32767" attributes="0"/>
+          <Component id="painelLogin" alignment="1" pref="944" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="painelLogin" alignment="0" pref="580" max="32767" attributes="0"/>
+          <Component id="painelLogin" alignment="0" pref="592" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -97,9 +97,13 @@
                   <EmptySpace pref="187" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="365" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="240" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="337" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jLocaleChooser1" min="-2" pref="198" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -120,7 +124,8 @@
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btnLogar" min="-2" pref="39" max="-2" attributes="0"/>
-                  <EmptySpace pref="182" max="32767" attributes="0"/>
+                  <EmptySpace pref="174" max="32767" attributes="0"/>
+                  <Component id="jLocaleChooser1" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -238,6 +243,8 @@
               <Image iconType="3" name="/br/com/AsuperArts/UI/img/user.png"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="com.toedter.components.JLocaleChooser" name="jLocaleChooser1">
         </Component>
       </SubComponents>
     </Container>
