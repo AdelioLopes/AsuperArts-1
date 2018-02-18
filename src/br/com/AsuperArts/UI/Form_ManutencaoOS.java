@@ -7,6 +7,7 @@ package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.ClienteBLL;
 import br.com.AsuperArts.DTO.ClienteDTO;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -19,9 +20,11 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
      */
     public Form_ManutencaoOS() {
         initComponents();
+        SimpleDateFormat fd = new  SimpleDateFormat("dd/MM/yyyy");
+        txtDataFechadamento.setText( fd.format(new java.util.Date()));
         
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,12 +38,13 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_data = new javax.swing.JTextField();
         txt_servico = new javax.swing.JTextField();
         txt_Solicitante = new javax.swing.JTextField();
-        txt_Empresa = new javax.swing.JComboBox<>();
-        txt_estado = new javax.swing.JComboBox<>();
         txt_Valor = new javax.swing.JTextField();
         txt_Responsavel = new javax.swing.JTextField();
         txt_desc = new javax.swing.JTextField();
         btn_gerarOS = new javax.swing.JButton();
+        txtDataFechadamento = new javax.swing.JTextField();
+        txt_Empresa = new javax.swing.JTextField();
+        txt_estado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -59,23 +63,10 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_Solicitante.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Solicitante", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_Solicitante.setEnabled(false);
 
-        txt_Empresa.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_Empresa.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Empresa", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        txt_Empresa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_EmpresaActionPerformed(evt);
-            }
-        });
-
-        txt_estado.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fechada" }));
-        txt_estado.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Estado de OS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
-
         txt_Valor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Valor.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txt_Valor.setText("0");
         txt_Valor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Valor", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        txt_Valor.setEnabled(false);
 
         txt_Responsavel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Responsavel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Responsável", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
@@ -104,6 +95,14 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             }
         });
 
+        txtDataFechadamento.setBorder(javax.swing.BorderFactory.createTitledBorder("Data de Fechamento"));
+        txtDataFechadamento.setEnabled(false);
+
+        txt_Empresa.setBorder(javax.swing.BorderFactory.createTitledBorder("Empresa"));
+        txt_Empresa.setEnabled(false);
+
+        txt_estado.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado da OS"));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -121,20 +120,18 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
                         .addComponent(txt_Solicitante, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_Responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txt_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txt_Empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_Empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txt_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(244, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(411, 411, 411)))
+                        .addComponent(txt_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txt_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtDataFechadamento, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,31 +146,22 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
                     .addComponent(txt_Solicitante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_Responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txt_Empresa, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_Valor, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_Empresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(253, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(206, 206, 206)
-                    .addComponent(txt_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(27, 27, 27)
-                    .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(133, Short.MAX_VALUE)))
+                    .addComponent(txtDataFechadamento, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(817, 475));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txt_EmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_EmpresaActionPerformed
-        String nomeEmpresa = txt_Empresa.getSelectedItem().toString();
-        ClienteBLL cb = new ClienteBLL();
-        ClienteDTO cliente = cb.listaClienteNome(nomeEmpresa);
-        txt_Solicitante.setText(cliente.getContato());
-    }//GEN-LAST:event_txt_EmpresaActionPerformed
 
     private void txt_ResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ResponsavelActionPerformed
         // TODO add your handling code here:
@@ -279,14 +267,15 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_gerarOS;
-    private javax.swing.JComboBox<Object> txt_Empresa;
-    private javax.swing.JTextField txt_Num_OS;
-    private javax.swing.JTextField txt_Responsavel;
-    private javax.swing.JTextField txt_Solicitante;
-    private javax.swing.JTextField txt_Valor;
-    private javax.swing.JTextField txt_data;
-    private javax.swing.JTextField txt_desc;
-    private javax.swing.JComboBox<String> txt_estado;
-    private javax.swing.JTextField txt_servico;
+    private javax.swing.JTextField txtDataFechadamento;
+    public static javax.swing.JTextField txt_Empresa;
+    public static javax.swing.JTextField txt_Num_OS;
+    public static javax.swing.JTextField txt_Responsavel;
+    public static javax.swing.JTextField txt_Solicitante;
+    public static javax.swing.JTextField txt_Valor;
+    public static javax.swing.JTextField txt_data;
+    public static javax.swing.JTextField txt_desc;
+    public static javax.swing.JTextField txt_estado;
+    public static javax.swing.JTextField txt_servico;
     // End of variables declaration//GEN-END:variables
 }

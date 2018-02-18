@@ -150,7 +150,9 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+     
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         OrdemServicoBLL rg = new OrdemServicoBLL();
@@ -165,13 +167,26 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
                 Form_ManutencaoOS manutencaoOS = new Form_ManutencaoOS();
                 manutencaoOS.setVisible(true);
                 manutencaoOS.setSize(800, 600);
-                preencherTabela();
+                setandoCampos();
             }
         }else {
             JOptionPane.showMessageDialog(null, "Selecione uma linha!");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+ public void setandoCampos(){
+        
+        int linha = tb_fecharOs.getSelectedRow();
+        Form_ManutencaoOS.txt_Num_OS.setText(tb_fecharOs.getModel().getValueAt(linha, 0).toString());
+        Form_ManutencaoOS.txt_data.setText(tb_fecharOs.getModel().getValueAt(linha, 1).toString());
+        Form_ManutencaoOS.txt_servico.setText(tb_fecharOs.getModel().getValueAt(linha, 2).toString());
+        Form_ManutencaoOS.txt_Empresa.setText(tb_fecharOs.getModel().getValueAt(linha, 3).toString());
+        Form_ManutencaoOS.txt_Solicitante.setText(tb_fecharOs.getModel().getValueAt(linha, 4).toString());
+        Form_ManutencaoOS.txt_Responsavel.setText(tb_fecharOs.getModel().getValueAt(linha, 5).toString());
+        Form_ManutencaoOS.txt_Valor.setText(tb_fecharOs.getModel().getValueAt(linha, 6).toString());
+        Form_ManutencaoOS.txt_desc.setText(tb_fecharOs.getModel().getValueAt(linha, 7).toString());
+        Form_ManutencaoOS.txt_estado.setText(tb_fecharOs.getModel().getValueAt(linha, 8).toString());
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
