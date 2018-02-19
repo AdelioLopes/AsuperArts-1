@@ -219,7 +219,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             ordemDeServicoDTO.setDataFechada(txtDataFechadamento.getText());
             
             rg.fecharOS(ordemDeServicoDTO);
-            JOptionPane.showMessageDialog(null, "Ordem de Serviço Fechada!");
+            JOptionPane.showMessageDialog(null, "Ordem de Serviço Fechada!"); 
             /*txt_servico.setText("");
             txt_desc.setText("");
             txt_Valor.setText("");
