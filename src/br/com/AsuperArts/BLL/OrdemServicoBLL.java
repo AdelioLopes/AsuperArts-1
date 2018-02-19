@@ -70,7 +70,7 @@ public class OrdemServicoBLL {
      }
      public List<OrdemDeServicoDTO> listaFechada(){
         try {
-            sql = "SELECT * FROM tb_os WHERE estado='Fechada';";
+            sql = "SELECT * FROM tb_os  WHERE estado = 'Fechado';";
             List<OrdemDeServicoDTO> servicos =new ArrayList<>();
             ResultSet rs = null;
             PreparedStatement ps = con.prepareStatement(sql);

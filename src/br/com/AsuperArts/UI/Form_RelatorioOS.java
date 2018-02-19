@@ -38,7 +38,8 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         servico.getResponsavel(),
         servico.getValor(),
         servico.getDescricao(),
-        servico.getEstado()
+        servico.getEstado(),
+        servico.getDataFechada()
         });
         }
     
@@ -73,11 +74,11 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "id_os", "data_os", "servico", "empresa", "solicitante", "responsavel", "valor", "descricao", "estado"
+                "id_os", "data_os", "servico", "empresa", "solicitante", "responsavel", "valor", "descricao", "estado", "data_fechada"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false, true, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -85,6 +86,18 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tb_OsFechadas);
+        if (tb_OsFechadas.getColumnModel().getColumnCount() > 0) {
+            tb_OsFechadas.getColumnModel().getColumn(0).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(1).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(2).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(3).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(4).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(5).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(6).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(7).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(8).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(9).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
