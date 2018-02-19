@@ -5,6 +5,8 @@
  */
 package br.com.AsuperArts.UI;
 
+import br.com.AsuperArts.BLL.OrdemServicoBLL;
+import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -20,6 +22,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -198,29 +201,35 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_ResponsavelActionPerformed
 
     private void btn_gerarOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gerarOSActionPerformed
-        /*OrdemServicoBLL rg = new OrdemServicoBLL();
+        OrdemServicoBLL rg = new OrdemServicoBLL();
         OrdemDeServicoDTO ordemDeServicoDTO = new OrdemDeServicoDTO();
 
         if(!txt_servico.getText().equals("")&& !txt_servico.getText().equals("") && !txt_desc.getText().equals("")){
-            SimpleDateFormat fd = new  SimpleDateFormat("yyyy-MM-dd");
-            txt_data.setText( fd.format(new java.util.Date()));
+            //SimpleDateFormat fd = new  SimpleDateFormat("yyyy-MM-dd");
+            //txt_data.setText( fd.format(new java.util.Date()));
+            ordemDeServicoDTO.setId_os(Integer.valueOf(txt_Num_OS.getText()));
             ordemDeServicoDTO.setData_os(txt_data.getText());
             ordemDeServicoDTO.setServico(txt_servico.getText());
-            ordemDeServicoDTO.setEmpresa(txt_Empresa.getSelectedItem().toString());
+            ordemDeServicoDTO.setEmpresa(txt_Empresa.getText());
             ordemDeServicoDTO.setSolicitante(txt_Solicitante.getText());
             ordemDeServicoDTO.setResponsavel(txt_Responsavel.getText());
-            ordemDeServicoDTO.setValor(Double.parseDouble(txt_Valor.getText()));
+            ordemDeServicoDTO.setValor(Double.valueOf(txt_Valor.getText()));
             ordemDeServicoDTO.setDescricao(txt_desc.getText());
-            ordemDeServicoDTO.setEstado(txt_estado.getSelectedItem().toString());
-            rg.abrir(ordemDeServicoDTO);
+            ordemDeServicoDTO.setEstado(txt_estado.getText());
+            ordemDeServicoDTO.setDataFechada(txtDataFechadamento.getText());
+            
+            /*rg.fecharOS(ordemDeServicoDTO);
             txt_servico.setText("");
             txt_desc.setText("");
-            JOptionPane.showMessageDialog(null, "Ordem de Serviço aberta!");
+            txt_Valor.setText("");
+            txt_estado.setText("");
+            JOptionPane.showMessageDialog(null, "Ordem de Serviço Fechada!");*/
+            JOptionPane.showMessageDialog(null, txt_Num_OS.getText()+"\n"+ txt_data.getText()+"\n" +txt_servico.getText() +"\n"+ txt_Solicitante.getText() +"\n"+txt_Empresa.getText()+"\n"+ txtDataFechadamento.getText()  );
         }else{
 
             JOptionPane.showMessageDialog(null, "Campos vazio verifique e tente novamente");
         }
-*/
+
         /*
         Document document = new Document();
 
