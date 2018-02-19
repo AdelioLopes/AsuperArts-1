@@ -269,8 +269,8 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             
             Image image = Image.getInstance("logoadelio.png");
             document.add(image);
-            document.add(new Paragraph(":::::::::::Ordem de Serviços:::::::::::"));
-            document.add(new Paragraph("----------------------------------------------------------------------------------"));
+            document.add(new Paragraph("                                                              Ordem de Serviços                                                     "));
+            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------------"));
             document.add(new Paragraph("NUMERO DE OS :" + "  "+ txt_Num_OS.getText()));
             
             document.add(new Paragraph("DATA DE ENTRADA :" + " "+ txt_data.getText()));
@@ -290,7 +290,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             document.add(new Paragraph("DATA DE FECHAMENTO :" + "  "+ txtDataFechadamento.getText()));
             document.add(new Paragraph("____________________________________________________________________________"));
             
-            
+            document.add(new Paragraph("Obrigado pela preferência e volte sempre."));
         } catch (DocumentException ex) {
             System.out.println("Error:"+ex);
         } catch (FileNotFoundException ex) {
