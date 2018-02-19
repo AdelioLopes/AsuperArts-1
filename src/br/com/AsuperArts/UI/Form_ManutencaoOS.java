@@ -267,8 +267,9 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             PdfWriter.getInstance(document, new FileOutputStream("documento.pdf"));
             document.open();
             
-        
-            document.add(new Paragraph("AsuperArts"));
+            Image image = Image.getInstance("logoadelio.png");
+            document.add(image);
+            document.add(new Paragraph(":::::::::::Ordem de Serviços:::::::::::"));
             document.add(new Paragraph("----------------------------------------------------------------------------------"));
             document.add(new Paragraph("NUMERO DE OS :" + "  "+ txt_Num_OS.getText()));
             
