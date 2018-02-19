@@ -4,8 +4,6 @@ package br.com.AsuperArts.BLL;
 import br.com.AsuperArts.DAL.Conexao;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
 import java.sql.Connection;
-import java.sql.Date;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -105,11 +103,11 @@ public class OrdemServicoBLL {
             ps.setString(3, os.getEmpresa());
             ps.setString(4, os.getSolicitante());
             ps.setString(5, os.getResponsavel());
-            ps.setDouble(7, os.getValor());
-            ps.setString(8, os.getDescricao());
-            ps.setString(9, os.getEstado());
-            ps.setString(10, os.getDataFechada());
-            ps.setInt(11, os.getId_os());
+            ps.setDouble(6, os.getValor());
+            ps.setString(7, os.getDescricao());
+            ps.setString(8, os.getEstado());
+            ps.setString(9, os.getDataFechada());
+            ps.setInt(10, os.getId_os());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);

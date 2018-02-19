@@ -39,7 +39,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txtDataFechadamento.setText( fd.format(new java.util.Date()));
         
     }
-    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -218,13 +218,26 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             ordemDeServicoDTO.setEstado(txt_estado.getText());
             ordemDeServicoDTO.setDataFechada(txtDataFechadamento.getText());
             
-            /*rg.fecharOS(ordemDeServicoDTO);
-            txt_servico.setText("");
+            rg.fecharOS(ordemDeServicoDTO);
+            JOptionPane.showMessageDialog(null, "Ordem de Serviço Fechada!");
+            /*txt_servico.setText("");
             txt_desc.setText("");
             txt_Valor.setText("");
             txt_estado.setText("");
-            JOptionPane.showMessageDialog(null, "Ordem de Serviço Fechada!");*/
-            JOptionPane.showMessageDialog(null, txt_Num_OS.getText()+"\n"+ txt_data.getText()+"\n" +txt_servico.getText() +"\n"+ txt_Solicitante.getText() +"\n"+txt_Empresa.getText()+"\n"+ txtDataFechadamento.getText()  );
+            
+            JOptionPane.showMessageDialog(null, 
+                    txt_Num_OS.getText()
+                    +"\n"+ txt_data.getText()
+                    +"\n" +txt_servico.getText()
+                    +"\n"+txt_Empresa.getText()
+                    +"\n"+ txt_Solicitante.getText()
+                    +"\n"+ txt_Responsavel.getText()
+                    +"\n"+ txt_Valor.getText()
+                    +"\n"+ txt_desc.getText()
+                    +"\n"+ txt_estado.getText()
+                    +"\n"+ txtDataFechadamento.getText()
+                    
+            );*/
         }else{
 
             JOptionPane.showMessageDialog(null, "Campos vazio verifique e tente novamente");
