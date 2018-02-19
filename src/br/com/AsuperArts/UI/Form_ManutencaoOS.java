@@ -7,7 +7,18 @@ package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.ClienteBLL;
 import br.com.AsuperArts.DTO.ClienteDTO;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -46,6 +57,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_estado = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_desc = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -106,6 +118,13 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_desc.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
         jScrollPane1.setViewportView(txt_desc);
 
+        jButton1.setText("Imprimir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,7 +143,10 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
                         .addComponent(txt_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txt_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -160,7 +182,9 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26))
         );
 
@@ -235,6 +259,48 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         }*/
     }//GEN-LAST:event_btn_gerarOSActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Document document = new Document();
+
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("documento.pdf"));
+
+            document.open();
+            document.add(new Paragraph("AsuperArts"));
+            document.add(new Paragraph("____________________________________________________________________________"));
+            document.add(new Paragraph("NUMERO DE OS :" + "  "+ txt_Num_OS.getText()));
+            
+            document.add(new Paragraph("DATA DE ENTRADA :" + " "+ txt_data.getText()));
+            
+            document.add(new Paragraph("SERVIÇO SOLICITADO :" + " "+ txt_servico.getText()));
+            
+            document.add(new Paragraph("SOLICITANTE :" + " "+ txt_Solicitante.getText()));
+            
+            document.add(new Paragraph("RESPONSÁVEL :" + "  "+ txt_Responsavel.getText()));
+            
+            document.add(new Paragraph("EMPRESA :" + "  "+ txt_Empresa.getText()));
+            
+            document.add(new Paragraph("DESCRIÇÃO :" + "  "+ txt_desc.getText()));
+            
+            document.add(new Paragraph("VALOR TOTAL :" + "  "+ txt_Valor.getText()));
+            
+            document.add(new Paragraph("DATA DE FECHAMENTO :" + "  "+ txtDataFechadamento.getText()));
+            
+        } catch (DocumentException ex) {
+            System.out.println("Error:"+ex);
+        } catch (FileNotFoundException ex) {
+            System.out.println("Error:"+ex);
+        }finally{
+            document.close();
+        }
+
+        try {
+            Desktop.getDesktop().open(new File("documento.pdf"));
+        } catch (IOException ex) {
+            System.out.println("Error:"+ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -272,6 +338,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_gerarOS;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtDataFechadamento;
     public static javax.swing.JTextField txt_Empresa;
