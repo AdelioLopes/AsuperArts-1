@@ -5,10 +5,10 @@
  */
 package br.com.AsuperArts.UI;
 
-import br.com.AsuperArts.BLL.ClienteBLL;
-import br.com.AsuperArts.DTO.ClienteDTO;
+import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Desktop;
@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -264,10 +265,11 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
 
         try {
             PdfWriter.getInstance(document, new FileOutputStream("documento.pdf"));
-
             document.open();
+            
+        
             document.add(new Paragraph("AsuperArts"));
-            document.add(new Paragraph("____________________________________________________________________________"));
+            document.add(new Paragraph("----------------------------------------------------------------------------------"));
             document.add(new Paragraph("NUMERO DE OS :" + "  "+ txt_Num_OS.getText()));
             
             document.add(new Paragraph("DATA DE ENTRADA :" + " "+ txt_data.getText()));
@@ -285,11 +287,15 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             document.add(new Paragraph("VALOR TOTAL :" + "  "+ txt_Valor.getText()));
             
             document.add(new Paragraph("DATA DE FECHAMENTO :" + "  "+ txtDataFechadamento.getText()));
+            document.add(new Paragraph("____________________________________________________________________________"));
+            
             
         } catch (DocumentException ex) {
             System.out.println("Error:"+ex);
         } catch (FileNotFoundException ex) {
             System.out.println("Error:"+ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Form_ManutencaoOS.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             document.close();
         }
