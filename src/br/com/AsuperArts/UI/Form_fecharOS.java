@@ -75,12 +75,19 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "id_os", "data_os", "servico", "empresa", "solicitante", "responsavel", "valor", "descricao", "estado"
+                "id_os", "data_os", "servico", "empresa", "solicitante", "responsavel", "valor", "descricao", "estado", "data_fechada"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false, true, false
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -97,6 +104,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
             tb_fecharOs.getColumnModel().getColumn(6).setResizable(false);
             tb_fecharOs.getColumnModel().getColumn(7).setResizable(false);
             tb_fecharOs.getColumnModel().getColumn(8).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(9).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

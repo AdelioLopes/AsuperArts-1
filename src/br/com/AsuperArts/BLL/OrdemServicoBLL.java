@@ -22,7 +22,7 @@ public class OrdemServicoBLL {
     Connection con = new Conexao().abrirConexao();
     String sql;
     public void abrir(OrdemDeServicoDTO os){
-        sql = "INSERT INTO tb_os(data_os,servico,empresa,solicitante,responsavel,valor,descricao,estado)VALUES(?,?,?,?,?,?,?,?);";
+        sql = "INSERT INTO tb_os(data_os,servico,empresa,solicitante,responsavel,valor,descricao,estado,data_fechada)VALUES(?,?,?,?,?,?,?,?,?);";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, os.getData_os());
@@ -33,6 +33,7 @@ public class OrdemServicoBLL {
             ps.setDouble(6, os.getValor());
             ps.setString(7, os.getDescricao());
             ps.setString(8, os.getEstado());
+            ps.setString(9, os.getDataFechada());
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
@@ -58,6 +59,7 @@ public class OrdemServicoBLL {
             servico.setValor(rs.getDouble("valor"));
             servico.setDescricao(rs.getString("descricao"));
             servico.setEstado(rs.getString("estado"));
+            servico.setDataFechada(rs.getString("data_fechada"));
             servicos.add(servico);
             }
             return servicos;
@@ -84,6 +86,7 @@ public class OrdemServicoBLL {
             servico.setValor(rs.getDouble("valor"));
             servico.setDescricao(rs.getString("descricao"));
             servico.setEstado(rs.getString("estado"));
+            servico.setDataFechada(rs.getString("data_fechada"));
             servicos.add(servico);
             }
             return servicos;
@@ -92,4 +95,25 @@ public class OrdemServicoBLL {
         }
         return null;
      }
+     
+     public void fecharOS(OrdemDeServicoDTO os){
+         sql="UPDATE tb_os SET data_os=?,servico=?,empresa=?,solicitante=?,responsavel=?,valor=?,descricao=?,estado=?,data_fechada=? WHERE id_os=?;";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, os.getData_os());
+            ps.setString(2, os.getServico());
+            ps.setString(3, os.getEmpresa());
+            ps.setString(4, os.getSolicitante());
+            ps.setString(5, os.getResponsavel());
+            ps.setDouble(7, os.getValor());
+            ps.setString(8, os.getDescricao());
+            ps.setString(9, os.getEstado());
+            ps.setString(10, os.getDataFechada());
+            ps.setInt(11, os.getId_os());
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+     } 
 }

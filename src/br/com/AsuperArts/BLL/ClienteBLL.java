@@ -80,7 +80,7 @@ public class ClienteBLL {
         return null;
     }
     public void alterar(ClienteDTO c){
-        sql = "UPDATE tb_cliente SET nome=?,contato=?,ddd=?,telefone=?, email=? WHERE id_cliente=?";
+        sql = "UPDATE tb_cliente SET nome=?,contato=?,ddd=?,telefone=?, email=? WHERE id_cliente=?;";
         
         try {
             PreparedStatement ps = con.prepareStatement(sql);

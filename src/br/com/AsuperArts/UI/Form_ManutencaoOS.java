@@ -20,7 +20,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
      */
     public Form_ManutencaoOS() {
         initComponents();
-        SimpleDateFormat fd = new  SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat fd = new  SimpleDateFormat("YYYY-MM-dd");
         txtDataFechadamento.setText( fd.format(new java.util.Date()));
         
     }

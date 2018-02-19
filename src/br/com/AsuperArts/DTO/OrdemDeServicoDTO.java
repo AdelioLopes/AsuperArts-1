@@ -17,7 +17,7 @@ public class OrdemDeServicoDTO {
     private Double valor;
     private String Descricao;
     private String estado;
-
+    private String dataFechada;
     public Integer getId_os() {
         return id_os;
     }
@@ -90,6 +90,14 @@ public class OrdemDeServicoDTO {
         this.estado = estado;
     }
 
+    public String getDataFechada() {
+        return dataFechada;
+    }
+
+    public void setDataFechada(String dataFechada) {
+        this.dataFechada = dataFechada;
+    }
+    
     
 
 
