@@ -5,18 +5,8 @@ import br.com.AsuperArts.BLL.ClienteBLL;
 import br.com.AsuperArts.BLL.OrdemServicoBLL;
 import br.com.AsuperArts.DTO.ClienteDTO;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Color;
-import java.awt.Desktop;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -31,7 +21,7 @@ public class Form_AbrirOS extends javax.swing.JInternalFrame {
     
     public Form_AbrirOS() {
         initComponents();
-        
+        getContentPane().setBackground(new Color(255,255,255));
         
         
         SimpleDateFormat fd = new  SimpleDateFormat("dd/MM/yyyy");

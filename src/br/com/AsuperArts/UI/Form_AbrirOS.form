@@ -143,7 +143,7 @@
                       <Component id="txt_Valor" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="data_fechada" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace pref="31" max="32767" attributes="0"/>
                   <Component id="btn_gerarOS" min="-2" pref="36" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
