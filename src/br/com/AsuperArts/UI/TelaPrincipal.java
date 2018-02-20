@@ -85,6 +85,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
             }
         });
 
+        desktop.setBackground(new java.awt.Color(204, 204, 204));
         desktop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         desktop.setMaximumSize(new java.awt.Dimension(1050, 550));
         desktop.setMinimumSize(new java.awt.Dimension(1050, 550));
