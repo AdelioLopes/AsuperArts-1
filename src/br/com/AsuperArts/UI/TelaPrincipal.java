@@ -74,7 +74,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("A super Art's Sistema de Ordens de Serviços");
-        setResizable(false);
+        setBackground(new java.awt.Color(204, 204, 204));
         setSize(new java.awt.Dimension(1396, 617));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -281,12 +281,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        setSize(new java.awt.Dimension(1412, 663));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        //this.setSize(1148, 669);
+
         this.setExtendedState(MAXIMIZED_BOTH); 
     }//GEN-LAST:event_formWindowOpened
 
