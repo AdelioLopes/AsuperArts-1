@@ -164,11 +164,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         jMenuBar1.add(jMenu6);
 
-        restrito.setText("Restrito");
+        restrito.setText("Admin");
         restrito.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         Cliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         Cliente.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-customer-32.png"))); // NOI18N
         Cliente.setText("Clientes");
         Cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +178,9 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(Cliente);
 
+        Estoque.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         Estoque.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-new-product-32.png"))); // NOI18N
         Estoque.setText("Estoque");
         Estoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,6 +191,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         Funcionario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
         Funcionario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-administrator-male-32.png"))); // NOI18N
         Funcionario.setText("Funcionário");
         Funcionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,6 +202,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         GerarOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK));
         GerarOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        GerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-documents-32.png"))); // NOI18N
         GerarOS.setText("Abrir OS");
         GerarOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,6 +213,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         Usuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         Usuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-person-32.png"))); // NOI18N
         Usuario.setText("Usuários");
         Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,6 +222,9 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(Usuario);
 
+        FecharOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
+        FecharOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        FecharOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-pdf-32.png"))); // NOI18N
         FecharOS.setText("Fechar OS");
         FecharOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,6 +233,9 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(FecharOS);
 
+        RelatorioOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
+        RelatorioOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        RelatorioOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-pdf-e32.png"))); // NOI18N
         RelatorioOS.setText("Relatório de OS");
         RelatorioOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +251,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         FuncGerarOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK));
         FuncGerarOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        FuncGerarOS.setText("Gerar OS");
+        FuncGerarOS.setText("Abrir OS");
         FuncGerarOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FuncGerarOSActionPerformed(evt);
