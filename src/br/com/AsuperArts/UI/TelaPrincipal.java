@@ -139,7 +139,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         jMenuBar1.setEnabled(false);
 
-        jMenu6.setText("Logout/Sair");
+        jMenu6.setText("Arquivo");
         jMenu6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         TrocarUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
