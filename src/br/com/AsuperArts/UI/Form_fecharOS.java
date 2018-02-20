@@ -3,6 +3,7 @@ package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.OrdemServicoBLL;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
@@ -19,6 +20,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
     public Form_fecharOS() {
         initComponents();
         preencherTabela();
+        getContentPane().setBackground(new Color(255,255,255));
     }
     public void preencherTabela() {
         this.tb_fecharOs.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -68,6 +70,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setText("Buscar");
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ordens de Serviços em aberto", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         tb_fecharOs.setModel(new javax.swing.table.DefaultTableModel(

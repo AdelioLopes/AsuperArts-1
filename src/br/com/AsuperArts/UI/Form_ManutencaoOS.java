@@ -12,6 +12,7 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Color;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -35,7 +36,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         initComponents();
         SimpleDateFormat fd = new  SimpleDateFormat("YYYY-MM-dd");
         txtDataFechadamento.setText( fd.format(new java.util.Date()));
-        
+        getContentPane().setBackground(new Color(255,255,255));
     }
    
     /**
@@ -62,6 +63,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         txt_Num_OS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Num_OS.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "N° OS", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
@@ -83,6 +85,8 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_Valor.setText("0");
         txt_Valor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Valor", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
+        txt_Responsavel.setEditable(false);
+        txt_Responsavel.setBackground(new java.awt.Color(255, 255, 255));
         txt_Responsavel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Responsavel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Responsável", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_Responsavel.setEnabled(false);
