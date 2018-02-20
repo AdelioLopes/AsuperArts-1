@@ -1,11 +1,6 @@
 package br.com.AsuperArts.UI;
-
-
-//import java.awt.Image;
-//import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import javax.swing.Timer;
