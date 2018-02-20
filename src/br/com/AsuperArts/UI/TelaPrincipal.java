@@ -164,7 +164,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         jMenuBar1.add(jMenu6);
 
-        restrito.setText("Admin");
+        restrito.setText("Administrador");
         restrito.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         Cliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
@@ -251,6 +251,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         FuncGerarOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK));
         FuncGerarOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        FuncGerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-documents-32.png"))); // NOI18N
         FuncGerarOS.setText("Abrir OS");
         FuncGerarOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
