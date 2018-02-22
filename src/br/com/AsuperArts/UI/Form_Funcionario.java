@@ -16,6 +16,9 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
     public Form_Funcionario() {
         initComponents();
         preencherTabela();
+        btn_salvar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
     }
     public void preencherTabela(){
     

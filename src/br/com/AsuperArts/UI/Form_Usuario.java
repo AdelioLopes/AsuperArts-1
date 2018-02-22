@@ -28,6 +28,9 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
     public Form_Usuario() {
         initComponents();
         preencherTabela();
+        btn_salvar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -38,13 +41,13 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         txtSenha = new javax.swing.JPasswordField();
         txtAcesso = new javax.swing.JComboBox<>();
         txt_id = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btn_cadastrar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        btn_cancelar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        btn_alterar = new javax.swing.JButton();
+        btn_salvar = new javax.swing.JButton();
         btn_excluir = new javax.swing.JButton();
         btn_editar = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableLogin = new javax.swing.JTable();
@@ -92,14 +95,14 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         txt_id.setEnabled(false);
         txt_id.setPreferredSize(new java.awt.Dimension(16, 46));
 
-        jButton1.setBackground(new java.awt.Color(255, 229, 203));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cadastro_user.png"))); // NOI18N
-        jButton1.setText("Cadastrar");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_cadastrar.setBackground(new java.awt.Color(255, 229, 203));
+        btn_cadastrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cadastro_user.png"))); // NOI18N
+        btn_cadastrar.setText("Cadastrar");
+        btn_cadastrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_cadastrarActionPerformed(evt);
             }
         });
 
@@ -109,7 +112,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(101, 101, 101))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -138,42 +141,27 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
                 .addGap(30, 30, 30)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(141, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Informações", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
 
-        btn_cancelar.setBackground(new java.awt.Color(204, 204, 204));
-        btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
-        btn_cancelar.setText("Desfazer");
-        btn_cancelar.setToolTipText("Cancelar");
-        btn_cancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_cancelar.setMargin(new java.awt.Insets(41, 41, 41, 41));
-        btn_cancelar.setPreferredSize(new java.awt.Dimension(60, 60));
-        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelarActionPerformed(evt);
-            }
-        });
-
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btn_alterar.setBackground(new java.awt.Color(203, 255, 229));
-        btn_alterar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_alterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
-        btn_alterar.setText("Salvar");
-        btn_alterar.setToolTipText("Salvar Alteração");
-        btn_alterar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btn_alterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_alterar.setPreferredSize(new java.awt.Dimension(60, 60));
-        btn_alterar.addActionListener(new java.awt.event.ActionListener() {
+        btn_salvar.setBackground(new java.awt.Color(203, 255, 229));
+        btn_salvar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
+        btn_salvar.setText("Salvar");
+        btn_salvar.setToolTipText("Salvar Alteração");
+        btn_salvar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_salvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_salvar.setPreferredSize(new java.awt.Dimension(60, 60));
+        btn_salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_alterarActionPerformed(evt);
+                btn_salvarActionPerformed(evt);
             }
         });
 
@@ -207,17 +195,37 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
             }
         });
 
+        btn_cancelar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
+        btn_cancelar.setText("Desfazer");
+        btn_cancelar.setToolTipText("Cancelar");
+        btn_cancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cancelar.setMargin(new java.awt.Insets(41, 41, 41, 41));
+        btn_cancelar.setPreferredSize(new java.awt.Dimension(60, 60));
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -228,8 +236,10 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         btn_editar.getAccessibleContext().setAccessibleDescription("");
@@ -293,27 +303,20 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(434, 434, 434)
-                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(41, 41, 41)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -389,10 +392,10 @@ public void preencherTabela(){
         resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo alterar?");
         if(resposta == JOptionPane.YES_OPTION){
                 setar_campos();                
-                jButton1.setEnabled(false);
+                btn_cadastrar.setEnabled(false);
                 btn_editar.setEnabled(false);
                 btn_excluir.setEnabled(false);
-                btn_alterar.setEnabled(true);
+                btn_salvar.setEnabled(true);
                 btn_cancelar.setEnabled(true);
                 preencherTabela();
             }
@@ -401,46 +404,17 @@ public void preencherTabela(){
         }
     }//GEN-LAST:event_btn_editarActionPerformed
 
-    private void btn_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alterarActionPerformed
-        LoginBLL rg = new LoginBLL();
-        LoginDTO loginDTO = new LoginDTO();
-        if(!txtUsuario.getText().equals("") && !String.valueOf(txtSenha.getPassword()).equals("") && !"".equals(txtAcesso.getSelectedItem())){
-            try {
-                loginDTO.setId_login(Integer.parseInt(txt_id.getText()));
-                loginDTO.setUsuario(txtUsuario.getText());
-                loginDTO.setSenha(convertPasswordToMD5(txtSenha.getPassword()));
-                loginDTO.setTipoUser(Integer.parseInt(txtAcesso.getSelectedItem().toString()));
-                
-                rg.Alterar(loginDTO);
-                preencherTabela();
-                jButton1.setEnabled(true);
-                btn_editar.setEnabled(true);
-                btn_excluir.setEnabled(true);
-                btn_alterar.setEnabled(false);
-                btn_cancelar.setEnabled(false);
-                txt_id.setText("");
-                txtUsuario.setText("");
-                txtSenha.setText("");
-                txtAcesso.setSelectedItem("");                
-                JOptionPane.showMessageDialog(null, "Alterado");
-            } catch (NoSuchAlgorithmException ex) {
-                Logger.getLogger(Form_Usuario.class.getName()).log(Level.SEVERE, null, ex);
-            }
-             }else {
-                 JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
-            }
-    }//GEN-LAST:event_btn_alterarActionPerformed
-
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         // TODO add your handling code here:
-        btn_alterar.setEnabled(false);
+        btn_salvar.setEnabled(false);
         btn_cancelar.setEnabled(false);
-        jButton1.setEnabled(true);
+        btn_cadastrar.setEnabled(true);
         btn_editar.setEnabled(true);
         btn_excluir.setEnabled(true);
         txt_id.setText("");
         txtUsuario.setText("");
         txtSenha.setText("");
+        txtAcesso.setSelectedItem("-");  
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void btn_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirActionPerformed
@@ -461,16 +435,57 @@ public void preencherTabela(){
         } 
     }//GEN-LAST:event_btn_excluirActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
+
+    private void txtAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAcessoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAcessoActionPerformed
+
+    private void btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarActionPerformed
         LoginBLL rg = new LoginBLL();
         LoginDTO loginDTO = new LoginDTO();
-        if(!txtUsuario.getText().equals("") && !txtSenha.getPassword().equals("") && !"".equals(txtAcesso.getSelectedItem())){
+        if(!txtUsuario.getText().equals("") && !String.valueOf(txtSenha.getPassword()).equals("") && !"".equals(txtAcesso.getSelectedItem())){
+            try {
+                loginDTO.setId_login(Integer.parseInt(txt_id.getText()));
+                loginDTO.setUsuario(txtUsuario.getText());
+                loginDTO.setSenha(convertPasswordToMD5(txtSenha.getPassword()));
+                loginDTO.setTipoUser(Integer.parseInt(txtAcesso.getSelectedItem().toString()));
+                
+                rg.Alterar(loginDTO);
+                preencherTabela();
+                btn_cadastrar.setEnabled(true);
+                btn_editar.setEnabled(true);
+                btn_excluir.setEnabled(true);
+                btn_salvar.setEnabled(false);
+                btn_cancelar.setEnabled(false);
+                txt_id.setText("");
+                txtUsuario.setText("");
+                txtSenha.setText("");
+                txtAcesso.setSelectedItem("-");                
+                JOptionPane.showMessageDialog(null, "Alterado");
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(Form_Usuario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+             }else {
+                 JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
+            }
+    }//GEN-LAST:event_btn_salvarActionPerformed
+
+    private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
+        LoginBLL rg = new LoginBLL();
+        LoginDTO loginDTO = new LoginDTO();
+        if(!txtUsuario.getText().equals("") && !txtSenha.getPassword().equals("") && !"-".equals(txtAcesso.getSelectedItem())){
             try {
                 loginDTO.setUsuario(txtUsuario.getText());
                 loginDTO.setSenha(convertPasswordToMD5(txtSenha.getPassword()));
                 loginDTO.setTipoUser(Integer.parseInt(txtAcesso.getSelectedItem().toString()));
                 rg.Inserir(loginDTO);
                 preencherTabela();
+                txtUsuario.setText("");
+                txtSenha.setText("");
+                txtAcesso.setSelectedItem("-");
 
                 JOptionPane.showMessageDialog(null, "Usuário cadastrado");
             } catch (NoSuchAlgorithmException ex) {
@@ -479,15 +494,7 @@ public void preencherTabela(){
         }else {
             JOptionPane.showMessageDialog(null, "Campos vazios verifique e tente novamente");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenhaActionPerformed
-
-    private void txtAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAcessoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAcessoActionPerformed
+    }//GEN-LAST:event_btn_cadastrarActionPerformed
 public void setar_campos(){
     int setar = jTableLogin.getSelectedRow();
     txt_id.setText(jTableLogin.getModel().getValueAt(setar, 0).toString());
@@ -502,11 +509,11 @@ public static String convertPasswordToMD5(char[] cadeia) throws NoSuchAlgorithmE
                    return String.format("%32x", hash);
                }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_alterar;
+    private javax.swing.JButton btn_cadastrar;
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton btn_editar;
     private javax.swing.JButton btn_excluir;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_salvar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

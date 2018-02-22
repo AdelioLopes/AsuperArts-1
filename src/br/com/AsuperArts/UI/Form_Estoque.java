@@ -19,6 +19,9 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
     public Form_Estoque() {
         initComponents();
         preencherTabela();
+        btn_salvar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
     }
 
     /**
@@ -107,24 +110,22 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
                     .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_valorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_valorcm, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 155, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_nome)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txt_cor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 227, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_cor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_comprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(txt_espessura, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txt_largura, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(txt_nome)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -197,6 +198,11 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
         btn_excluir.setText("Excluir");
         btn_excluir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_excluirActionPerformed(evt);
+            }
+        });
 
         btn_cancelar.setBackground(new java.awt.Color(255, 255, 255));
         btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -214,6 +220,11 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         btn_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
         btn_salvar.setText("Salvar");
         btn_salvar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salvarActionPerformed(evt);
+            }
+        });
 
         btn_editar.setBackground(new java.awt.Color(203, 244, 255));
         btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -361,24 +372,6 @@ public void preencherTabela() {
         }
     }//GEN-LAST:event_btn_cadastrarActionPerformed
 
-    private void btn_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirActionPerformed
-       EstoqueBLL estoqueBLL = new EstoqueBLL();
-       EstoqueDTO e = new EstoqueDTO();
-        if (this.tb_estoque.getSelectedRowCount() > 0) {
-            int linha = this.tb_estoque.getSelectedRow();
-            e.setIdEstoque((int) this.tb_estoque.getValueAt(linha, 0));
-            int resposta = 0;
-            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo excluir?");
-            if (resposta == JOptionPane.YES_OPTION) {
-                estoqueBLL.excluir(e);
-                preencherTabela();
-                JOptionPane.showMessageDialog(null, "Excluído!");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
-        }
-    }//GEN-LAST:event_btn_excluirActionPerformed
-
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         btn_salvar.setEnabled(false);
         btn_cancelar.setEnabled(false);
@@ -395,7 +388,7 @@ public void preencherTabela() {
         txt_valorcm.setText("");
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
-    private void btn_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alterarActionPerformed
+    private void btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarActionPerformed
         if(!txt_nome.getText().equals("")&&
            !txt_cor.getText().equals("")&&
            !txt_espessura.getText().equals("")&&
@@ -403,37 +396,55 @@ public void preencherTabela() {
            !txt_largura.getText().equals("")&&
            !txt_valorCompra.getText().equals("")&&
            !txt_valorcm.getText().equals("")){
-                 EstoqueBLL rg = new EstoqueBLL();
-                 EstoqueDTO dto = new EstoqueDTO();        
-                    dto.setIdEstoque(Integer.parseInt(txt_id.getText()));
-                    dto.setNome(txt_nome.getText());
-                    dto.setCor(txt_cor.getText());
-                    dto.setEspessura(Integer.parseInt(txt_espessura.getText()));
-                    dto.setComprimento(Integer.parseInt(txt_comprimento.getText()));
-                    dto.setLargura(Integer.parseInt(txt_largura.getText()));
-                    dto.setValorCompra(Integer.parseInt(txt_valorCompra.getText()));
-                    dto.setValorCm(Integer.parseInt(txt_valorcm.getText()));
-                    
-                        JOptionPane.showMessageDialog(null, "Alterado");
-                        rg.alterar(dto);
-                        preencherTabela();
-                        btn_cadastrar.setEnabled(true);
-                        btn_editar.setEnabled(true);
-                        btn_excluir.setEnabled(true);
-                        btn_salvar.setEnabled(false);
-                        btn_cancelar.setEnabled(false);
-                        txt_id.setText("");
-                        txt_comprimento.setText("");
-                        txt_cor.setText("");
-                        txt_espessura.setText("");
-                        txt_largura.setText("");
-                        txt_nome.setText("");
-                        txt_valorCompra.setText("");
-                        txt_valorcm.setText("");
+            EstoqueBLL rg = new EstoqueBLL();
+            EstoqueDTO dTO = new EstoqueDTO();
+            
+            dTO.setIdEstoque(Integer.parseInt(txt_id.getText()));
+            dTO.setNome(txt_nome.getText());
+            dTO.setCor(txt_cor.getText());
+            dTO.setEspessura(Integer.parseInt(txt_espessura.getText()));
+            dTO.setComprimento(Integer.parseInt(txt_comprimento.getText()));
+            dTO.setLargura(Integer.parseInt(txt_largura.getText()));
+            dTO.setValorCompra(Integer.parseInt(txt_valorCompra.getText()));
+            dTO.setValorCm(Integer.parseInt(txt_valorcm.getText()));           
+            
+            JOptionPane.showMessageDialog(null, "Alterado");
+            rg.alterar(dTO);
+            preencherTabela();
+            btn_cadastrar.setEnabled(true);
+            btn_editar.setEnabled(true);
+            btn_excluir.setEnabled(true);
+            btn_salvar.setEnabled(false);
+            btn_cancelar.setEnabled(false);
+            txt_comprimento.setText("");
+            txt_cor.setText("");
+            txt_espessura.setText("");
+            txt_largura.setText("");
+            txt_nome.setText("");
+            txt_valorCompra.setText("");
+            txt_valorcm.setText("");
                 }else{
                     JOptionPane.showMessageDialog(null, "Campos obrigatórios!");
                 }
-    }//GEN-LAST:event_btn_alterarActionPerformed
+    }//GEN-LAST:event_btn_salvarActionPerformed
+
+    private void btn_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirActionPerformed
+        EstoqueBLL estoqueBLL = new EstoqueBLL();
+       EstoqueDTO e = new EstoqueDTO();
+        if (this.tb_estoque.getSelectedRowCount() > 0) {
+            int linha = this.tb_estoque.getSelectedRow();
+            e.setIdEstoque((int) this.tb_estoque.getValueAt(linha, 0));
+            int resposta = 0;
+            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo excluir?");
+            if (resposta == JOptionPane.YES_OPTION) {
+                estoqueBLL.excluir(e);
+                preencherTabela();
+                JOptionPane.showMessageDialog(null, "Excluído!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
+        }
+    }//GEN-LAST:event_btn_excluirActionPerformed
 public void setandoCampos(){
         
         int linha = tb_estoque.getSelectedRow();
