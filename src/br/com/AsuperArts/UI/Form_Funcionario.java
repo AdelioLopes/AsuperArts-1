@@ -15,15 +15,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
 
     public Form_Funcionario() {
         initComponents();
-        preencherTabela();
-        btn_salvar.setEnabled(false);
-        btn_cancelar.setEnabled(false);
-        btn_salvar.setBackground(new Color(51,255,0));
-        btn_cadastrar.setBackground(new Color(51,102,255));
-        btn_cancelar.setBackground(new Color(255,255,255));
-        btn_editar.setBackground(new Color(204,204,204));
-        btn_excluir.setBackground(new Color(255,51,51));
-        this.tb_funcionario.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
     }
     public void preencherTabela(){
     
@@ -74,7 +66,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         btn_cancelar = new javax.swing.JButton();
         btn_salvar = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(247, 244, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         setClosable(true);
         setForeground(new java.awt.Color(51, 51, 51));
@@ -103,7 +95,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_cadastrar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_cadastrar.setBackground(new java.awt.Color(255, 229, 203));
         btn_cadastrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cadastro_user.png"))); // NOI18N
         btn_cadastrar.setText("Cadastrar");
@@ -192,7 +184,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             tb_funcionario.getColumnModel().getColumn(3).setMaxWidth(200);
         }
 
-        btn_editar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_editar.setBackground(new java.awt.Color(203, 244, 255));
         btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
         btn_editar.setText("Editar");
@@ -206,7 +198,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_excluir.setBackground(new java.awt.Color(204, 204, 204));
+        btn_excluir.setBackground(new java.awt.Color(255, 203, 203));
         btn_excluir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
         btn_excluir.setText("Excluir");
@@ -220,10 +212,10 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_cancelar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_cancelar.setBackground(new java.awt.Color(255, 255, 255));
         btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cancelar.png"))); // NOI18N
-        btn_cancelar.setText("Cancelar");
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
+        btn_cancelar.setText("Desfazer");
         btn_cancelar.setToolTipText("Cancelar");
         btn_cancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -233,7 +225,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_salvar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_salvar.setBackground(new java.awt.Color(203, 255, 229));
         btn_salvar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
         btn_salvar.setText("Salvar ");
@@ -263,16 +255,16 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
+                        .addGap(13, 13, 13)
                         .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 

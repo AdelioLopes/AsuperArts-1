@@ -27,17 +27,7 @@ import javax.swing.table.TableModel;
 public class Form_Usuario extends javax.swing.JInternalFrame {
     public Form_Usuario() {
         initComponents();
-        preencherTabela();
-        btn_alterar.setEnabled(false);
-        btn_cancelar.setEnabled(false);
-        /*txtAcesso.setBackground(new Color(255,255,255));
-        btn_alterar.setBackground(new Color(255,255,255));
-        btn_cadastrar.setBackground(new Color(255,255,255));
-        btn_cancelar.setBackground(new Color(255,255,255));
-        btn_editar.setBackground(new Color(255,255,255));
-        btn_excluir.setBackground(new Color(255,255,255));*/
         
-        //getContentPane().setBackground(new Color(255,255,255));
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -85,7 +75,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
 
         txtAcesso.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtAcesso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "1", "2" }));
-        txtAcesso.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Nível", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
+        txtAcesso.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Nível", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
         txtAcesso.setPreferredSize(new java.awt.Dimension(46, 43));
         txtAcesso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +90,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         txt_id.setEnabled(false);
         txt_id.setPreferredSize(new java.awt.Dimension(16, 46));
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setBackground(new java.awt.Color(255, 229, 203));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Cadastro_user.png"))); // NOI18N
         jButton1.setText("Cadastrar");
@@ -126,11 +116,11 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(296, 296, 296))))
+                        .addGap(296, 296, 296))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,8 +132,8 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(192, 192, 192)
-                .addComponent(jButton1)
+                .addGap(183, 183, 183)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -184,7 +174,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
             jTableLogin.getColumnModel().getColumn(3).setMaxWidth(100);
         }
 
-        btn_excluir.setBackground(new java.awt.Color(204, 204, 204));
+        btn_excluir.setBackground(new java.awt.Color(255, 203, 203));
         btn_excluir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
         btn_excluir.setText("Excluir");
@@ -198,7 +188,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_editar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_editar.setBackground(new java.awt.Color(203, 244, 255));
         btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
         btn_editar.setText("Editar ");
@@ -229,7 +219,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_alterar.setBackground(new java.awt.Color(204, 204, 204));
+        btn_alterar.setBackground(new java.awt.Color(203, 255, 229));
         btn_alterar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_alterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
         btn_alterar.setText("Salvar");
