@@ -1,5 +1,6 @@
 package br.com.AsuperArts.DTO;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -97,6 +98,9 @@ public class OrdemDeServicoDTO {
     public void setDataFechada(String dataFechada) {
         this.dataFechada = dataFechada;
     }
+
+
+
     
     
 

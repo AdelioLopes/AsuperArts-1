@@ -3,11 +3,14 @@ package br.com.AsuperArts.BLL;
 
 import br.com.AsuperArts.DAL.Conexao;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
+import br.com.AsuperArts.UI.Form_RelatorioOS;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -112,6 +115,25 @@ public class OrdemServicoBLL {
         } catch (SQLException ex) {
             Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
         }
+     }
      
-     } 
+     public List<OrdemDeServicoDTO> relatorio(){
+        try {
+            
+            sql = "select sum(valor)AS valor from tb_os where data_fechada >= '2018-02-01' and data_fechada  <= '2018-02-28'  and estado ='Fechado';";
+            List<OrdemDeServicoDTO> servicos =new ArrayList<>();
+            ResultSet rs = null;
+            PreparedStatement ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+            OrdemDeServicoDTO servico = new OrdemDeServicoDTO();
+            servico.setValor(rs.getDouble("valor"));
+            servicos.add(servico);
+            }
+            return servicos;
+        } catch (SQLException ex) {
+            Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+     }
 }
