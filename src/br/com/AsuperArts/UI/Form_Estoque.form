@@ -84,16 +84,18 @@
                       <Component id="txt_valorCompra" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
                       <Component id="txt_valorcm" alignment="0" min="-2" pref="182" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="155" max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txt_nome" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="txt_cor" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="227" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btn_cadastrar" min="-2" pref="124" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txt_cor" min="-2" pref="100" max="-2" attributes="0"/>
                               <Component id="txt_comprimento" min="-2" pref="111" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
@@ -102,11 +104,6 @@
                               <Component id="txt_largura" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Component id="txt_nome" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="btn_cadastrar" min="-2" pref="124" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>

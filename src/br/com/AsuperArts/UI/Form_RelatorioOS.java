@@ -51,7 +51,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         servico.getEmpresa(),
         servico.getSolicitante(),
         servico.getResponsavel(),
-        servico.getValor(),
+        servico.getValor().toString().replace(".", ","),
         servico.getDescricao(),
         servico.getEstado(),
         servico.getDataFechada()
@@ -274,16 +274,8 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
             document.open();
             Image image = Image.getInstance("logoadelio.png");
             document.add(image);
-            /*document.add(new Paragraph("O.S NÚMERO: "+ tb_OsFechadas.getValueAt(linha, 0)));
-            document.add(new Paragraph("DATA DE ENTRADA: "+ tb_OsFechadas.getValueAt(linha, 1)));
-            document.add(new Paragraph("SERVIÇO: "+ tb_OsFechadas.getValueAt(linha, 2)));
-            document.add(new Paragraph("EMPRESA: "+ tb_OsFechadas.getValueAt(linha, 3)));
-            document.add(new Paragraph("SOLICITANTE: "+ tb_OsFechadas.getValueAt(linha, 4)));
-            document.add(new Paragraph("RESPONSÁVEL: "+ tb_OsFechadas.getValueAt(linha, 5)));
-            document.add(new Paragraph("VALOR TOTAL: "+ tb_OsFechadas.getValueAt(linha, 6)));
-            document.add(new Paragraph("DESCRIÇÃO: "+ tb_OsFechadas.getValueAt(linha, 7)));
-            document.add(new Paragraph("ESTADO DE O.S: "+ tb_OsFechadas.getValueAt(linha, 8)));
-            document.add(new Paragraph("DATA DE FECHAMENTO: "+ tb_OsFechadas.getValueAt(linha, 9)));*/
+            document.add(new Paragraph(" "));
+            document.add(new Paragraph("Entre em contato conosco: (61) 3458-4612"));
             document.add(new Paragraph(" "));
             PdfPTable tabela = new PdfPTable(2);
             tabela.addCell("Número de Ordem de serviço");
@@ -302,14 +294,22 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
             tabela.addCell(tb_OsFechadas.getValueAt(linha, 6).toString().replace(".", ","));
             tabela.addCell("Descrição");
             tabela.addCell(tb_OsFechadas.getValueAt(linha, 7).toString());
-            tabela.addCell("Estado de Ordem de Serviço");
-            tabela.addCell(tb_OsFechadas.getValueAt(linha, 8).toString());
+            //tabela.addCell("Estado de Ordem de Serviço");
+            //tabela.addCell(tb_OsFechadas.getValueAt(linha, 8).toString());
             tabela.addCell("Data de Fechamento");
             tabela.addCell(tb_OsFechadas.getValueAt(linha, 9).toString());
-            
             document.add(tabela);
             document.add(new Paragraph(" "));
+            document.add(new Paragraph("Recebido por:______________________________________________   Data:__ /__ /_____"));
+            document.add(new Paragraph(" "));
             document.add(new Paragraph("Obrigado pela preferência e volte sempre! "));
+            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------------"));
+            document.add(new Paragraph(" "));
+            document.add(tabela);
+            document.add(new Paragraph(" "));
+            document.add(new Paragraph("Recebido por:__________________________________________________   Data:__ /__ /_____"));
+            
+            
             
         } catch (DocumentException ex) {
             System.out.println("Error:"+ex);

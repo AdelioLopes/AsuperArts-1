@@ -18,7 +18,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
      */
     public Form_Estoque() {
         initComponents();
-        
+        preencherTabela();
     }
 
     /**
