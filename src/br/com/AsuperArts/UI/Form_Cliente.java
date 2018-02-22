@@ -22,7 +22,10 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
 
     public Form_Cliente() {
         initComponents();
-        preencherTabela();     
+        preencherTabela();
+        btn_salvar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
+        btn_cancelar.setEnabled(false);
         
     }
 
