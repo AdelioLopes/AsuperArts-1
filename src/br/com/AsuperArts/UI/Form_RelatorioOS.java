@@ -7,6 +7,21 @@ package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.OrdemServicoBLL;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -64,6 +79,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         data_final = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        btn_imprimir = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -123,17 +139,17 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1113, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Gerar Relatórios ou Imprimir O.S", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Total de Ganhos ao mês");
@@ -146,7 +162,6 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
 
         jButton1.setBackground(new java.awt.Color(244, 244, 244));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/calcular-iloveimg-resized.png"))); // NOI18N
         jButton1.setText("Calcular");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
@@ -160,28 +175,41 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Até:");
 
+        btn_imprimir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_imprimir.setText("Imprimir O.S");
+        btn_imprimir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btn_imprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_imprimirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(data_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(data_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(data_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(data_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(158, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,18 +218,16 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(data_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(data_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(41, 41, 41))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addComponent(data_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(data_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,14 +240,14 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(679, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -229,8 +255,88 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imprimirActionPerformed
+       OrdemDeServicoDTO ordemDeServicoDTO = new OrdemDeServicoDTO();
+       OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
+       
+       if (this.tb_OsFechadas.getSelectedRowCount() > 0) {
+            int linha = tb_OsFechadas.getSelectedRow();
+            ordemDeServicoDTO.setId_os((int) this.tb_OsFechadas.getValueAt(linha, 0));
+            int resposta = 0;
+            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo alterar?");
+            if (resposta == JOptionPane.YES_OPTION) {
+                
+                Document document = new Document();
+
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("documento.pdf"));
+
+            document.open();
+            Image image = Image.getInstance("logoadelio.png");
+            document.add(image);
+            /*document.add(new Paragraph("O.S NÚMERO: "+ tb_OsFechadas.getValueAt(linha, 0)));
+            document.add(new Paragraph("DATA DE ENTRADA: "+ tb_OsFechadas.getValueAt(linha, 1)));
+            document.add(new Paragraph("SERVIÇO: "+ tb_OsFechadas.getValueAt(linha, 2)));
+            document.add(new Paragraph("EMPRESA: "+ tb_OsFechadas.getValueAt(linha, 3)));
+            document.add(new Paragraph("SOLICITANTE: "+ tb_OsFechadas.getValueAt(linha, 4)));
+            document.add(new Paragraph("RESPONSÁVEL: "+ tb_OsFechadas.getValueAt(linha, 5)));
+            document.add(new Paragraph("VALOR TOTAL: "+ tb_OsFechadas.getValueAt(linha, 6)));
+            document.add(new Paragraph("DESCRIÇÃO: "+ tb_OsFechadas.getValueAt(linha, 7)));
+            document.add(new Paragraph("ESTADO DE O.S: "+ tb_OsFechadas.getValueAt(linha, 8)));
+            document.add(new Paragraph("DATA DE FECHAMENTO: "+ tb_OsFechadas.getValueAt(linha, 9)));*/
+            document.add(new Paragraph(" "));
+            PdfPTable tabela = new PdfPTable(2);
+            tabela.addCell("Número de Ordem de serviço");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 0).toString());
+            tabela.addCell("Data de Entrada");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 1).toString());
+            tabela.addCell("Serviço Solicitado");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 2).toString());
+            tabela.addCell("Empresa");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 3).toString());
+            tabela.addCell("Solicitante");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 4).toString());
+            tabela.addCell("Responsável");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 5).toString());
+            tabela.addCell("Valor Total");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 6).toString().replace(".", ","));
+            tabela.addCell("Descrição");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 7).toString());
+            tabela.addCell("Estado de Ordem de Serviço");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 8).toString());
+            tabela.addCell("Data de Fechamento");
+            tabela.addCell(tb_OsFechadas.getValueAt(linha, 9).toString());
+            
+            document.add(tabela);
+            document.add(new Paragraph(" "));
+            document.add(new Paragraph("Obrigado pela preferência e volte sempre! "));
+            
+        } catch (DocumentException ex) {
+            System.out.println("Error:"+ex);
+        } catch (FileNotFoundException ex) {
+            System.out.println("Error:"+ex);
+        } catch (IOException ex) {
+                    Logger.getLogger(Form_RelatorioOS.class.getName()).log(Level.SEVERE, null, ex);
+                }finally{
+            document.close();
+        }
+
+        try {
+            Desktop.getDesktop().open(new File("documento.pdf"));
+        } catch (IOException ex) {
+            System.out.println("Error:"+ex);
+        }
+            }
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
+
+        }
+    }//GEN-LAST:event_btn_imprimirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_imprimir;
     private com.toedter.calendar.JDateChooser data_final;
     private com.toedter.calendar.JDateChooser data_inicial;
     private javax.swing.JButton jButton1;

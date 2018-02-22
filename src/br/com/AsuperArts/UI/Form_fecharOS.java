@@ -35,7 +35,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         servico.getEmpresa(),
         servico.getSolicitante(),
         servico.getResponsavel(),
-        servico.getValor(),
+        servico.getValor().toString().replace(".", ","),
         servico.getDescricao(),
         servico.getEstado()
         });
@@ -208,7 +208,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         Form_ManutencaoOS.txt_Responsavel.setText(tb_fecharOs.getModel().getValueAt(linha, 5).toString());
         Form_ManutencaoOS.txt_Valor.setText(tb_fecharOs.getModel().getValueAt(linha, 6).toString());
         Form_ManutencaoOS.txt_desc.setText(tb_fecharOs.getModel().getValueAt(linha, 7).toString());
-        Form_ManutencaoOS.txt_estado.setText(tb_fecharOs.getModel().getValueAt(linha, 8).toString());
+        //Form_ManutencaoOS.txt_estado.setText(tb_fecharOs.getModel().getValueAt(linha, 8).toString());
         
     }
 
