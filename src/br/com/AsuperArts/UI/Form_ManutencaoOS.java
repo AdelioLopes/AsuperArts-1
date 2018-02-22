@@ -83,12 +83,12 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_Valor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_Valor.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txt_Valor.setText("0");
-        txt_Valor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Valor", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        txt_Valor.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Valor", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         txt_Responsavel.setEditable(false);
         txt_Responsavel.setBackground(new java.awt.Color(255, 255, 255));
         txt_Responsavel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_Responsavel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Responsável", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        txt_Responsavel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Responsável", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_Responsavel.setEnabled(false);
         txt_Responsavel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,10 +97,11 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         });
 
         btn_gerarOS.setBackground(new java.awt.Color(204, 204, 204));
-        btn_gerarOS.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btn_gerarOS.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_gerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-documents-32.png"))); // NOI18N
         btn_gerarOS.setText("FecharOS");
         btn_gerarOS.setToolTipText("GERAR OS");
+        btn_gerarOS.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn_gerarOS.setMaximumSize(new java.awt.Dimension(60, 60));
         btn_gerarOS.setMinimumSize(new java.awt.Dimension(60, 60));
         btn_gerarOS.setPreferredSize(new java.awt.Dimension(60, 60));
@@ -110,22 +111,27 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             }
         });
 
-        txtDataFechadamento.setBorder(javax.swing.BorderFactory.createTitledBorder("Data de Fechamento"));
+        txtDataFechadamento.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtDataFechadamento.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Data de Fechamento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txtDataFechadamento.setEnabled(false);
 
-        txt_Empresa.setBorder(javax.swing.BorderFactory.createTitledBorder("Empresa"));
+        txt_Empresa.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_Empresa.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Empresa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         txt_Empresa.setEnabled(false);
 
-        txt_estado.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado da OS"));
+        txt_estado.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_estado.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Estado da OS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         txt_desc.setColumns(20);
+        txt_desc.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_desc.setRows(5);
-        txt_desc.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
+        txt_desc.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Descrição", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jScrollPane1.setViewportView(txt_desc);
 
-        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-pdf-e32.png"))); // NOI18N
         jButton1.setText("Imprimir");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

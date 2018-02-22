@@ -14,7 +14,7 @@
     </Property>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,58,0,0,3,-1"/>
+    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,58,0,0,4,-115"/>
     <SyntheticProperty name="formPosition" type="java.awt.Point" value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,97,119,116,46,80,111,105,110,116,-74,-60,-118,114,52,126,-56,38,2,0,2,73,0,1,120,73,0,1,121,120,112,0,0,0,0,0,0,0,0"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="0"/>
     <SyntheticProperty name="generatePosition" type="boolean" value="true"/>
@@ -81,18 +81,22 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
+                          <EmptySpace min="195" pref="205" max="32767" attributes="0"/>
                           <Component id="btn_cadastrar" min="-2" pref="122" max="-2" attributes="0"/>
                       </Group>
                       <Component id="txt_nome" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="txt_espessura" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txt_cor" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <Component id="txt_largura" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <Component id="txt_comprimento" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="txt_cor" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace min="11" pref="227" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txt_comprimento" min="-2" pref="111" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <Component id="txt_espessura" min="-2" pref="91" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="txt_largura" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -102,8 +106,8 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="txt_id" min="-2" pref="69" max="-2" attributes="0"/>
-                      <Component id="txt_valorCompra" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
-                      <Component id="txt_valorcm" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                      <Component id="txt_valorCompra" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
+                      <Component id="txt_valorcm" alignment="0" min="-2" pref="182" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -168,7 +172,7 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="14" style="0"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -185,7 +189,7 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="14" style="0"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -202,7 +206,7 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="14" style="0"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -219,7 +223,7 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="14" style="0"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -236,7 +240,7 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="14" style="0"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -253,7 +257,7 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="14" style="0"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -270,7 +274,7 @@
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
                   </Border>
-                  <Font PropertyName="font" name="Arial" size="14" style="0"/>
+                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -324,8 +328,8 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btn_cancelar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="326" max="32767" attributes="0"/>
+                  <Component id="btn_cancelar" min="-2" pref="107" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btn_salvar" min="-2" pref="89" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -334,18 +338,20 @@
                   <Component id="btn_editar" min="-2" pref="86" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
-              <Component id="jScrollPane1" pref="644" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn_excluir" alignment="3" max="32767" attributes="0"/>
-                      <Component id="btn_editar" alignment="3" max="32767" attributes="0"/>
-                      <Component id="btn_salvar" alignment="3" max="32767" attributes="0"/>
-                      <Component id="btn_cancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btn_excluir" alignment="3" max="32767" attributes="0"/>
+                          <Component id="btn_editar" alignment="3" max="32767" attributes="0"/>
+                          <Component id="btn_salvar" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="btn_cancelar" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="435" max="-2" attributes="0"/>
@@ -366,19 +372,39 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="8" rowCount="0">
-                    <Column editable="true" title="ID" type="java.lang.Object"/>
-                    <Column editable="true" title="Nome" type="java.lang.Object"/>
-                    <Column editable="true" title="Cor" type="java.lang.Object"/>
-                    <Column editable="true" title="Espessura" type="java.lang.Object"/>
-                    <Column editable="true" title="Comprimento" type="java.lang.Object"/>
-                    <Column editable="true" title="Largura" type="java.lang.Object"/>
-                    <Column editable="true" title="V.Compra" type="java.lang.Object"/>
-                    <Column editable="true" title="V.CM&#xb2;" type="java.lang.Object"/>
+                    <Column editable="false" title="ID" type="java.lang.Object"/>
+                    <Column editable="false" title="Nome" type="java.lang.Object"/>
+                    <Column editable="false" title="Cor" type="java.lang.Object"/>
+                    <Column editable="false" title="Espessura" type="java.lang.Object"/>
+                    <Column editable="false" title="Comprimento" type="java.lang.Object"/>
+                    <Column editable="false" title="Largura" type="java.lang.Object"/>
+                    <Column editable="false" title="V.Compra" type="java.lang.Object"/>
+                    <Column editable="false" title="V.CM&#xb2;" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                    <Column maxWidth="100" minWidth="50" prefWidth="10" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="200" minWidth="130" prefWidth="10" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="200" minWidth="90" prefWidth="10" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="150" minWidth="110" prefWidth="10" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="150" minWidth="120" prefWidth="10" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
@@ -393,27 +419,7 @@
                       <Editor/>
                       <Renderer/>
                     </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                    <Column maxWidth="200" minWidth="80" prefWidth="10" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>

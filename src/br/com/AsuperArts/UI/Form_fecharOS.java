@@ -62,13 +62,14 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-documents-32.png"))); // NOI18N
         jButton1.setText("FecharOS");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Buscar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Buscar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Ordens de Serviços em aberto", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
@@ -78,7 +79,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "id_os", "data_os", "servico", "empresa", "solicitante", "responsavel", "valor", "descricao", "estado", "data_fechada"
+                "ID_OS", "Dt_OS", "Servico", "Empresa", "Solicitante", "Responsavel", "Valor", "Descricao", "Estado", "Dt_Fechada"
             }
         ) {
             Class[] types = new Class [] {
@@ -98,16 +99,33 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tb_fecharOs);
         if (tb_fecharOs.getColumnModel().getColumnCount() > 0) {
-            tb_fecharOs.getColumnModel().getColumn(0).setResizable(false);
-            tb_fecharOs.getColumnModel().getColumn(1).setResizable(false);
-            tb_fecharOs.getColumnModel().getColumn(2).setResizable(false);
-            tb_fecharOs.getColumnModel().getColumn(3).setResizable(false);
-            tb_fecharOs.getColumnModel().getColumn(4).setResizable(false);
-            tb_fecharOs.getColumnModel().getColumn(5).setResizable(false);
-            tb_fecharOs.getColumnModel().getColumn(6).setResizable(false);
-            tb_fecharOs.getColumnModel().getColumn(7).setResizable(false);
-            tb_fecharOs.getColumnModel().getColumn(8).setResizable(false);
-            tb_fecharOs.getColumnModel().getColumn(9).setResizable(false);
+            tb_fecharOs.getColumnModel().getColumn(0).setMinWidth(70);
+            tb_fecharOs.getColumnModel().getColumn(0).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(0).setMaxWidth(100);
+            tb_fecharOs.getColumnModel().getColumn(1).setMinWidth(100);
+            tb_fecharOs.getColumnModel().getColumn(1).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(1).setMaxWidth(120);
+            tb_fecharOs.getColumnModel().getColumn(2).setMinWidth(170);
+            tb_fecharOs.getColumnModel().getColumn(2).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(2).setMaxWidth(200);
+            tb_fecharOs.getColumnModel().getColumn(3).setMinWidth(150);
+            tb_fecharOs.getColumnModel().getColumn(3).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(3).setMaxWidth(200);
+            tb_fecharOs.getColumnModel().getColumn(4).setMinWidth(150);
+            tb_fecharOs.getColumnModel().getColumn(4).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(4).setMaxWidth(200);
+            tb_fecharOs.getColumnModel().getColumn(5).setMinWidth(150);
+            tb_fecharOs.getColumnModel().getColumn(5).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(5).setMaxWidth(200);
+            tb_fecharOs.getColumnModel().getColumn(6).setMinWidth(100);
+            tb_fecharOs.getColumnModel().getColumn(6).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(6).setMaxWidth(120);
+            tb_fecharOs.getColumnModel().getColumn(7).setMinWidth(170);
+            tb_fecharOs.getColumnModel().getColumn(7).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(7).setMaxWidth(200);
+            tb_fecharOs.getColumnModel().getColumn(9).setMinWidth(130);
+            tb_fecharOs.getColumnModel().getColumn(9).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(9).setMaxWidth(150);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -116,8 +134,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 997, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,14 +151,14 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addGap(0, 958, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,10 +166,10 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(27, 27, 27))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
