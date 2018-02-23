@@ -117,25 +117,6 @@ public class OrdemServicoBLL {
         }
      }
      
-     public List<OrdemDeServicoDTO> relatorio(){
-        try {
-            
-            sql = "select sum(valor)AS valor from tb_os where data_fechada >= '2018-02-01' and data_fechada  <= '2018-02-28'  and estado ='Fechado';";
-            List<OrdemDeServicoDTO> servicos =new ArrayList<>();
-            ResultSet rs = null;
-            PreparedStatement ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-            OrdemDeServicoDTO servico = new OrdemDeServicoDTO();
-            servico.setValor(rs.getDouble("valor"));
-            servicos.add(servico);
-            }
-            return servicos;
-        } catch (SQLException ex) {
-            Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-     }
      public String valorSomatorio(String data1,String data2){
         sql = "SELECT sum(valor) AS valor FROM bd_adelio.tb_os WHERE data_fechada BETWEEN '" + data1 + "' and '" + data2 + "'  and estado ='Fechado';";
         ResultSet rs = null;

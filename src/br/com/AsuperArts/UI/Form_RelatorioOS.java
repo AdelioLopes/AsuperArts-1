@@ -8,6 +8,14 @@ package br.com.AsuperArts.UI;
 import br.com.AsuperArts.BLL.OrdemServicoBLL;
 import br.com.AsuperArts.DAL.Conexao;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
+import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Empresa;
+import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Num_OS;
+import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Responsavel;
+import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Solicitante;
+import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Valor;
+import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_data;
+import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_desc;
+import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_servico;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -48,18 +56,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         initComponents();
         preencherTabela();
     }
-    public void preencherTabela2() {
-        OrdemServicoBLL rg = new OrdemServicoBLL();
-        this.tb_valor.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        DefaultTableModel modelo = (DefaultTableModel) tb_valor.getModel();
-        modelo.setNumRows(0);
-        for(OrdemDeServicoDTO servico : rg.relatorio()){
-        modelo.addRow(new Object[]{
-        servico.getValor()
-        });
-        }
-        
-    }
+    
     public void preencherTabela() {
         this.tb_OsFechadas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         DefaultTableModel modelo = (DefaultTableModel) tb_OsFechadas.getModel();
@@ -94,16 +91,16 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_OsFechadas = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btn_calc = new javax.swing.JButton();
         data_final = new com.toedter.calendar.JDateChooser();
         data_inicial = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btn_imprimir = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tb_valor = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
         txt_valor = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        btn_calc = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Relatório - asuperArt's");
@@ -129,36 +126,26 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tb_OsFechadas);
         if (tb_OsFechadas.getColumnModel().getColumnCount() > 0) {
-            tb_OsFechadas.getColumnModel().getColumn(0).setMinWidth(40);
+            tb_OsFechadas.getColumnModel().getColumn(0).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(0).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(0).setMaxWidth(100);
-            tb_OsFechadas.getColumnModel().getColumn(1).setMinWidth(80);
+            tb_OsFechadas.getColumnModel().getColumn(1).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(1).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(1).setMaxWidth(100);
-            tb_OsFechadas.getColumnModel().getColumn(2).setMinWidth(140);
+            tb_OsFechadas.getColumnModel().getColumn(2).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(2).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(2).setMaxWidth(200);
-            tb_OsFechadas.getColumnModel().getColumn(3).setMinWidth(120);
+            tb_OsFechadas.getColumnModel().getColumn(3).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(3).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(3).setMaxWidth(190);
-            tb_OsFechadas.getColumnModel().getColumn(4).setMinWidth(120);
+            tb_OsFechadas.getColumnModel().getColumn(4).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(4).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(4).setMaxWidth(190);
-            tb_OsFechadas.getColumnModel().getColumn(5).setMinWidth(120);
+            tb_OsFechadas.getColumnModel().getColumn(5).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(5).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(5).setMaxWidth(190);
-            tb_OsFechadas.getColumnModel().getColumn(6).setMinWidth(50);
+            tb_OsFechadas.getColumnModel().getColumn(6).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(6).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(6).setMaxWidth(100);
-            tb_OsFechadas.getColumnModel().getColumn(7).setMinWidth(260);
+            tb_OsFechadas.getColumnModel().getColumn(7).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(7).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(7).setMaxWidth(300);
-            tb_OsFechadas.getColumnModel().getColumn(8).setMinWidth(120);
+            tb_OsFechadas.getColumnModel().getColumn(8).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(8).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(8).setMaxWidth(190);
-            tb_OsFechadas.getColumnModel().getColumn(9).setMinWidth(50);
+            tb_OsFechadas.getColumnModel().getColumn(9).setResizable(false);
             tb_OsFechadas.getColumnModel().getColumn(9).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(9).setMaxWidth(200);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -167,7 +154,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1279, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,20 +165,6 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Gerar Relatórios ou Imprimir O.S", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel1.setText("Total de Lucros");
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, null, null));
-
-        btn_calc.setBackground(new java.awt.Color(244, 244, 244));
-        btn_calc.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_calc.setText("Calcular");
-        btn_calc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btn_calc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_calcActionPerformed(evt);
-            }
-        });
 
         data_final.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
@@ -212,88 +185,108 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
             }
         });
 
-        tb_valor.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        jPanel3.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-            },
-            new String [] {
-                ""
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Double.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tb_valor);
-
+        txt_valor.setEditable(false);
         txt_valor.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txt_valor.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setText("Total de Lucros");
+        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, null, null));
+
+        btn_calc.setBackground(new java.awt.Color(244, 244, 244));
+        btn_calc.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_calc.setText("Calcular");
+        btn_calc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btn_calc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_calcActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_calc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_calc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        jButton1.setText("Imprimir Lucro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(data_inicial, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                            .addComponent(data_final, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(162, 162, 162)
-                                .addComponent(txt_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(76, 76, 76)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(151, 151, 151)
-                                .addComponent(btn_calc, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
-                                .addComponent(btn_imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGap(335, 335, 335)
-                        .addComponent(jLabel1)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(btn_imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(data_final, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(data_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(18, 18, 18))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(5, 5, 5)
-                                        .addComponent(jLabel3))
-                                    .addComponent(data_inicial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(data_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4))
-                                .addGap(27, 27, 27))
+                            .addComponent(data_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(txt_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_calc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
+                                .addGap(5, 5, 5)
+                                .addComponent(jLabel3)))
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(data_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 3, Short.MAX_VALUE)
+                        .addComponent(btn_imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -306,7 +299,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 464, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -316,7 +309,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -336,7 +329,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                 Document document = new Document();
 
         try {
-            PdfWriter.getInstance(document, new FileOutputStream("documento.pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream("OrdemServico.pdf"));
 
             document.open();
             Image image = Image.getInstance("logoadelio.png");
@@ -410,19 +403,51 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         String data1 = fd.format(texto);
         String data2 = fd.format(texto2);
         txt_valor.setText(rg.valorSomatorio(data1,data2));
-        //preencherTabela2();
+        
     }//GEN-LAST:event_btn_calcActionPerformed
- 
-    
-    private String CalculaTotal() {
-        Double Orcamento = 0.0;
-        for ( int i = 0; i < tb_OsFechadas.getRowCount(); i++){
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        
+        SimpleDateFormat fd = new  SimpleDateFormat("dd/MM/yyyy");
+        Date texto = data_inicial.getDate();
+        Date texto2 = data_final.getDate();
+        String data1 = fd.format(texto);
+        String data2 = fd.format(texto2);
+        
+        Document document = new Document();
+
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("TotalLucro.pdf"));
+            document.open();
+            
+            Image image = Image.getInstance("logoadelio.png");
+            document.add(image);
+            document.add(new Paragraph(" "));
+            document.add(new Paragraph("Total de Lucros da Empresa"));
+            document.add(new Paragraph("DE: "+data1));
+            document.add(new Paragraph("ATÉ: "+data2));
+            document.add(new Paragraph("Faturou um total de "+ txt_valor.getText()));
             
             
-            Orcamento += Double.parseDouble( tb_OsFechadas.getValueAt(i, 6).toString());
+        } catch (DocumentException ex) {
+            System.out.println("Error:"+ex);
+        } catch (FileNotFoundException ex) {
+            System.out.println("Error:"+ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Form_ManutencaoOS.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            document.close();
         }
-        return Orcamento.toString();        
-    }
+
+        try {
+            Desktop.getDesktop().open(new File("TotalLucro.pdf"));
+        } catch (IOException ex) {
+            System.out.println("Error:"+ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+ 
+ 
    
 	
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -430,15 +455,15 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
     private javax.swing.JButton btn_imprimir;
     public static com.toedter.calendar.JDateChooser data_final;
     public static com.toedter.calendar.JDateChooser data_inicial;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tb_OsFechadas;
-    private javax.swing.JTable tb_valor;
     private javax.swing.JTextField txt_valor;
     // End of variables declaration//GEN-END:variables
 }
