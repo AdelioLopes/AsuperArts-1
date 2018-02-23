@@ -58,6 +58,8 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         btn_ajuda = new javax.swing.JButton();
 
         setClosable(true);
+        setTitle("Fechar Ordem de Serviço - asuperArt's");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/IconeAsuperArts.png"))); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-documents-32.png"))); // NOI18N
@@ -77,7 +79,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID_OS", "Dt_OS", "Servico", "Empresa", "Solicitante", "Responsavel", "Valor", "Descricao", "Estado", "Dt_Fechada"
+                "ID_OS", "Dt_OS", "Serviço", "Empresa", "Solicitante", "Responsável", "Valor", "Descrição", "Estado", "Dt_Fechada"
             }
         ) {
             Class[] types = new Class [] {
@@ -97,42 +99,46 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tb_fecharOs);
         if (tb_fecharOs.getColumnModel().getColumnCount() > 0) {
-            tb_fecharOs.getColumnModel().getColumn(0).setMinWidth(70);
+            tb_fecharOs.getColumnModel().getColumn(0).setMinWidth(20);
             tb_fecharOs.getColumnModel().getColumn(0).setPreferredWidth(10);
-            tb_fecharOs.getColumnModel().getColumn(0).setMaxWidth(100);
-            tb_fecharOs.getColumnModel().getColumn(1).setMinWidth(100);
+            tb_fecharOs.getColumnModel().getColumn(0).setMaxWidth(50);
+            tb_fecharOs.getColumnModel().getColumn(1).setMinWidth(50);
             tb_fecharOs.getColumnModel().getColumn(1).setPreferredWidth(10);
-            tb_fecharOs.getColumnModel().getColumn(1).setMaxWidth(120);
-            tb_fecharOs.getColumnModel().getColumn(2).setMinWidth(170);
+            tb_fecharOs.getColumnModel().getColumn(1).setMaxWidth(70);
+            tb_fecharOs.getColumnModel().getColumn(2).setMinWidth(50);
             tb_fecharOs.getColumnModel().getColumn(2).setPreferredWidth(10);
-            tb_fecharOs.getColumnModel().getColumn(2).setMaxWidth(200);
-            tb_fecharOs.getColumnModel().getColumn(3).setMinWidth(150);
+            tb_fecharOs.getColumnModel().getColumn(2).setMaxWidth(70);
+            tb_fecharOs.getColumnModel().getColumn(3).setMinWidth(50);
             tb_fecharOs.getColumnModel().getColumn(3).setPreferredWidth(10);
-            tb_fecharOs.getColumnModel().getColumn(3).setMaxWidth(200);
-            tb_fecharOs.getColumnModel().getColumn(4).setMinWidth(150);
+            tb_fecharOs.getColumnModel().getColumn(3).setMaxWidth(70);
+            tb_fecharOs.getColumnModel().getColumn(4).setMinWidth(50);
             tb_fecharOs.getColumnModel().getColumn(4).setPreferredWidth(10);
-            tb_fecharOs.getColumnModel().getColumn(4).setMaxWidth(200);
-            tb_fecharOs.getColumnModel().getColumn(5).setMinWidth(150);
+            tb_fecharOs.getColumnModel().getColumn(4).setMaxWidth(70);
+            tb_fecharOs.getColumnModel().getColumn(5).setMinWidth(50);
             tb_fecharOs.getColumnModel().getColumn(5).setPreferredWidth(10);
-            tb_fecharOs.getColumnModel().getColumn(5).setMaxWidth(200);
-            tb_fecharOs.getColumnModel().getColumn(6).setMinWidth(100);
+            tb_fecharOs.getColumnModel().getColumn(5).setMaxWidth(80);
+            tb_fecharOs.getColumnModel().getColumn(6).setMinWidth(30);
             tb_fecharOs.getColumnModel().getColumn(6).setPreferredWidth(10);
-            tb_fecharOs.getColumnModel().getColumn(6).setMaxWidth(120);
-            tb_fecharOs.getColumnModel().getColumn(7).setMinWidth(170);
+            tb_fecharOs.getColumnModel().getColumn(6).setMaxWidth(50);
+            tb_fecharOs.getColumnModel().getColumn(7).setMinWidth(250);
             tb_fecharOs.getColumnModel().getColumn(7).setPreferredWidth(10);
-            tb_fecharOs.getColumnModel().getColumn(7).setMaxWidth(200);
-            tb_fecharOs.getColumnModel().getColumn(9).setMinWidth(130);
+            tb_fecharOs.getColumnModel().getColumn(7).setMaxWidth(300);
+            tb_fecharOs.getColumnModel().getColumn(8).setMinWidth(20);
+            tb_fecharOs.getColumnModel().getColumn(8).setPreferredWidth(10);
+            tb_fecharOs.getColumnModel().getColumn(8).setMaxWidth(50);
+            tb_fecharOs.getColumnModel().getColumn(9).setMinWidth(50);
             tb_fecharOs.getColumnModel().getColumn(9).setPreferredWidth(10);
-            tb_fecharOs.getColumnModel().getColumn(9).setMaxWidth(150);
+            tb_fecharOs.getColumnModel().getColumn(9).setMaxWidth(70);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1271, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 883, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(237, 237, 237))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,20 +162,21 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_ajuda)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(12, 12, 12)
                 .addComponent(btn_ajuda, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)

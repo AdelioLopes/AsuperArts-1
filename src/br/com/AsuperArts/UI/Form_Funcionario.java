@@ -74,7 +74,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         setClosable(true);
         setForeground(new java.awt.Color(51, 51, 51));
         setResizable(true);
-        setTitle("A super Art's");
+        setTitle("Cadastro de Funcionários - asuperArt's");
         setToolTipText("");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/IconeAsuperArts.png"))); // NOI18N
         setPreferredSize(new java.awt.Dimension(1023, 555));
@@ -162,7 +162,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Nome", "Data de Nascimento", "E-mail"
+                "ID", "Nome", "Dt_ Nascimento", "E-mail"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -176,11 +176,15 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
         tb_funcionario.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tb_funcionario);
         if (tb_funcionario.getColumnModel().getColumnCount() > 0) {
-            tb_funcionario.getColumnModel().getColumn(0).setMinWidth(50);
+            tb_funcionario.getColumnModel().getColumn(0).setMinWidth(10);
             tb_funcionario.getColumnModel().getColumn(0).setPreferredWidth(10);
-            tb_funcionario.getColumnModel().getColumn(0).setMaxWidth(100);
-            tb_funcionario.getColumnModel().getColumn(1).setResizable(false);
-            tb_funcionario.getColumnModel().getColumn(2).setResizable(false);
+            tb_funcionario.getColumnModel().getColumn(0).setMaxWidth(30);
+            tb_funcionario.getColumnModel().getColumn(1).setMinWidth(30);
+            tb_funcionario.getColumnModel().getColumn(1).setPreferredWidth(10);
+            tb_funcionario.getColumnModel().getColumn(1).setMaxWidth(50);
+            tb_funcionario.getColumnModel().getColumn(2).setMinWidth(30);
+            tb_funcionario.getColumnModel().getColumn(2).setPreferredWidth(10);
+            tb_funcionario.getColumnModel().getColumn(2).setMaxWidth(100);
             tb_funcionario.getColumnModel().getColumn(3).setMinWidth(150);
             tb_funcionario.getColumnModel().getColumn(3).setPreferredWidth(10);
             tb_funcionario.getColumnModel().getColumn(3).setMaxWidth(200);
@@ -188,7 +192,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
 
         btn_editar.setBackground(new java.awt.Color(203, 244, 255));
         btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
+        btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar2.png"))); // NOI18N
         btn_editar.setText("Editar");
         btn_editar.setToolTipText("Editar");
         btn_editar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -202,7 +206,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
 
         btn_excluir.setBackground(new java.awt.Color(255, 203, 203));
         btn_excluir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
+        btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir2.png"))); // NOI18N
         btn_excluir.setText("Excluir");
         btn_excluir.setToolTipText("Excluir");
         btn_excluir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -216,7 +220,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
 
         btn_cancelar.setBackground(new java.awt.Color(255, 255, 255));
         btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer-iloveimg-resized.png"))); // NOI18N
         btn_cancelar.setText("Desfazer");
         btn_cancelar.setToolTipText("Cancelar");
         btn_cancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -229,7 +233,7 @@ public class Form_Funcionario extends javax.swing.JInternalFrame {
 
         btn_salvar.setBackground(new java.awt.Color(203, 255, 229));
         btn_salvar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
+        btn_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar2.png"))); // NOI18N
         btn_salvar.setText("Salvar ");
         btn_salvar.setToolTipText("Salvar Edição");
         btn_salvar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));

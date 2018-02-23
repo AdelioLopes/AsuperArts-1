@@ -136,4 +136,21 @@ public class OrdemServicoBLL {
         }
         return null;
      }
+     public String valorSomatorio(String data1,String data2){
+        sql = "SELECT sum(valor) AS valor FROM bd_adelio.tb_os WHERE data_fechada BETWEEN '" + data1 + "' and '" + data2 + "'  and estado ='Fechado';";
+        ResultSet rs = null;
+        PreparedStatement ps;
+        try {
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            String valor="";
+            while (rs.next()) {
+                valor = String.valueOf(rs.getDouble("valor"));
+            }
+            return valor;
+        } catch (SQLException ex) {
+            Logger.getLogger(OrdemServicoBLL.class.getName()).log(Level.SEVERE, null, ex);
+            return ex.getMessage();
+        }
+     }
 }

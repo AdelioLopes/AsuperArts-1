@@ -53,7 +53,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
 
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         setClosable(true);
-        setTitle("Cadastro de Estoque");
+        setTitle("Cadastro de Estoque - asuperArt's");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/IconeAsuperArts.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(247, 244, 255));
@@ -173,29 +173,35 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tb_estoque);
         if (tb_estoque.getColumnModel().getColumnCount() > 0) {
-            tb_estoque.getColumnModel().getColumn(0).setMinWidth(50);
+            tb_estoque.getColumnModel().getColumn(0).setMinWidth(20);
             tb_estoque.getColumnModel().getColumn(0).setPreferredWidth(10);
-            tb_estoque.getColumnModel().getColumn(0).setMaxWidth(100);
-            tb_estoque.getColumnModel().getColumn(1).setMinWidth(130);
+            tb_estoque.getColumnModel().getColumn(0).setMaxWidth(30);
+            tb_estoque.getColumnModel().getColumn(1).setMinWidth(50);
             tb_estoque.getColumnModel().getColumn(1).setPreferredWidth(10);
-            tb_estoque.getColumnModel().getColumn(1).setMaxWidth(200);
-            tb_estoque.getColumnModel().getColumn(2).setMinWidth(90);
+            tb_estoque.getColumnModel().getColumn(1).setMaxWidth(70);
+            tb_estoque.getColumnModel().getColumn(2).setMinWidth(30);
             tb_estoque.getColumnModel().getColumn(2).setPreferredWidth(10);
-            tb_estoque.getColumnModel().getColumn(2).setMaxWidth(200);
-            tb_estoque.getColumnModel().getColumn(3).setMinWidth(110);
+            tb_estoque.getColumnModel().getColumn(2).setMaxWidth(40);
+            tb_estoque.getColumnModel().getColumn(3).setMinWidth(80);
             tb_estoque.getColumnModel().getColumn(3).setPreferredWidth(10);
-            tb_estoque.getColumnModel().getColumn(3).setMaxWidth(150);
-            tb_estoque.getColumnModel().getColumn(4).setMinWidth(120);
+            tb_estoque.getColumnModel().getColumn(3).setMaxWidth(10);
+            tb_estoque.getColumnModel().getColumn(4).setMinWidth(80);
             tb_estoque.getColumnModel().getColumn(4).setPreferredWidth(10);
-            tb_estoque.getColumnModel().getColumn(4).setMaxWidth(150);
-            tb_estoque.getColumnModel().getColumn(7).setMinWidth(80);
+            tb_estoque.getColumnModel().getColumn(4).setMaxWidth(100);
+            tb_estoque.getColumnModel().getColumn(5).setMinWidth(50);
+            tb_estoque.getColumnModel().getColumn(5).setPreferredWidth(10);
+            tb_estoque.getColumnModel().getColumn(5).setMaxWidth(80);
+            tb_estoque.getColumnModel().getColumn(6).setMinWidth(50);
+            tb_estoque.getColumnModel().getColumn(6).setPreferredWidth(10);
+            tb_estoque.getColumnModel().getColumn(6).setMaxWidth(70);
+            tb_estoque.getColumnModel().getColumn(7).setMinWidth(50);
             tb_estoque.getColumnModel().getColumn(7).setPreferredWidth(10);
-            tb_estoque.getColumnModel().getColumn(7).setMaxWidth(200);
+            tb_estoque.getColumnModel().getColumn(7).setMaxWidth(70);
         }
 
         btn_excluir.setBackground(new java.awt.Color(255, 203, 203));
         btn_excluir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir.png"))); // NOI18N
+        btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Excluir2.png"))); // NOI18N
         btn_excluir.setText("Excluir");
         btn_excluir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn_excluir.addActionListener(new java.awt.event.ActionListener() {
@@ -206,7 +212,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
 
         btn_cancelar.setBackground(new java.awt.Color(255, 255, 255));
         btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer.png"))); // NOI18N
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Desfazer-iloveimg-resized.png"))); // NOI18N
         btn_cancelar.setText("Desfazer");
         btn_cancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +223,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
 
         btn_salvar.setBackground(new java.awt.Color(203, 255, 229));
         btn_salvar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar.png"))); // NOI18N
+        btn_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/Salvar2.png"))); // NOI18N
         btn_salvar.setText("Salvar");
         btn_salvar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn_salvar.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +234,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
 
         btn_editar.setBackground(new java.awt.Color(203, 244, 255));
         btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar.png"))); // NOI18N
+        btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/editar2.png"))); // NOI18N
         btn_editar.setText("Editar");
         btn_editar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn_editar.addActionListener(new java.awt.event.ActionListener() {
@@ -242,7 +248,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(326, Short.MAX_VALUE)
                 .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,7 +257,9 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

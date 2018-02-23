@@ -125,7 +125,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_desc.setColumns(20);
         txt_desc.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_desc.setRows(5);
-        txt_desc.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Descrição", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        txt_desc.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Descrição", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jScrollPane1.setViewportView(txt_desc);
 
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -139,8 +139,9 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         });
 
         txt_servico.setColumns(20);
+        txt_servico.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_servico.setRows(5);
-        txt_servico.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Serviço Solicitado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        txt_servico.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Serviço Solicitado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jScrollPane2.setViewportView(txt_servico);
 
         jRadioButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N

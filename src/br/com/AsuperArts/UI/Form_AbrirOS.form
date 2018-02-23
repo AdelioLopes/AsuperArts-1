@@ -8,7 +8,7 @@
       </Border>
     </Property>
     <Property name="closable" type="boolean" value="true"/>
-    <Property name="title" type="java.lang.String" value="Ordem de Servi&#xe7;os - AsuperArts"/>
+    <Property name="title" type="java.lang.String" value="Abrir Ordem de Servi&#xe7;o - asuperArt&apos;s"/>
     <Property name="frameIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
       <Image iconType="3" name="/br/com/AsuperArts/UI/img/IconeAsuperArts.png"/>
     </Property>
@@ -335,10 +335,10 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Descri&#xe7;&#xe3;o">
-                      <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true"/>
+                      <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                        <EmptyBorder/>
                       </Border>
-                      <Font PropertyName="font" name="Arial" size="14" style="0"/>
+                      <Font PropertyName="font" name="Arial" size="14" style="1"/>
                     </TitledBorder>
                   </Border>
                 </Property>
@@ -378,10 +378,10 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Servi&#xe7;o Solicitado">
-                      <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true"/>
+                      <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                        <EmptyBorder/>
                       </Border>
-                      <Font PropertyName="font" name="Arial" size="14" style="0"/>
+                      <Font PropertyName="font" name="Arial" size="14" style="1"/>
                     </TitledBorder>
                   </Border>
                 </Property>
