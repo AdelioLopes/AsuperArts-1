@@ -105,6 +105,7 @@ public class Tela_login extends javax.swing.JFrame {
         btnLogar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         btnLogar.setForeground(new java.awt.Color(102, 102, 102));
         btnLogar.setText("Entrar");
+        btnLogar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogarActionPerformed(evt);
@@ -118,14 +119,13 @@ public class Tela_login extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
                                 .addComponent(jLabel3)
                                 .addGap(10, 10, 10)
                                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
                                 .addComponent(jLabel2)
                                 .addGap(10, 10, 10)
                                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
