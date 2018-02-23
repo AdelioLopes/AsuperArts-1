@@ -301,7 +301,7 @@ public class Form_AbrirOS extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txt_ResponsavelActionPerformed
 
     private void txt_ValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_ValorKeyTyped
-        String caracteres="0987654321";
+        String caracteres="0987654321,.";
         if(!caracteres.contains(evt.getKeyChar()+"")){
         evt.consume();
         }

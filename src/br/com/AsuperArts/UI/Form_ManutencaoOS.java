@@ -245,7 +245,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             ordemDeServicoDTO.setEmpresa(txt_Empresa.getText());
             ordemDeServicoDTO.setSolicitante(txt_Solicitante.getText());
             ordemDeServicoDTO.setResponsavel(txt_Responsavel.getText());
-            ordemDeServicoDTO.setValor(Double.valueOf(txt_Valor.getText()));
+            ordemDeServicoDTO.setValor(Double.valueOf(txt_Valor.getText().replace(",", ".")));
             ordemDeServicoDTO.setDescricao(txt_desc.getText());
             //ordemDeServicoDTO.setEstado(txt_estado.getText());
             ordemDeServicoDTO.setDataFechada(txtDataFechadamento.getText());
@@ -365,7 +365,7 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txt_ValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_ValorKeyTyped
-        String caracteres="0987654321";
+        String caracteres="0987654321,.";
         if(!caracteres.contains(evt.getKeyChar()+"")){
         evt.consume();
         }
