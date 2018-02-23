@@ -138,6 +138,11 @@ public class Form_AbrirOS extends javax.swing.JInternalFrame {
         jScrollPane2.setViewportView(txt_servico);
 
         txt_Valor.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Total", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        txt_Valor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_ValorKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -294,6 +299,13 @@ public class Form_AbrirOS extends javax.swing.JInternalFrame {
     private void txt_ResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ResponsavelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_ResponsavelActionPerformed
+
+    private void txt_ValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_ValorKeyTyped
+        String caracteres="0987654321";
+        if(!caracteres.contains(evt.getKeyChar()+"")){
+        evt.consume();
+        }
+    }//GEN-LAST:event_txt_ValorKeyTyped
      
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

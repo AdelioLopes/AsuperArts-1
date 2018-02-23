@@ -87,6 +87,11 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_Valor.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txt_Valor.setText("0");
         txt_Valor.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Valor", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        txt_Valor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_ValorKeyTyped(evt);
+            }
+        });
 
         txt_Responsavel.setEditable(false);
         txt_Responsavel.setBackground(new java.awt.Color(255, 255, 255));
@@ -358,6 +363,13 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             System.out.println("Error:"+ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txt_ValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_ValorKeyTyped
+        String caracteres="0987654321";
+        if(!caracteres.contains(evt.getKeyChar()+"")){
+        evt.consume();
+        }
+    }//GEN-LAST:event_txt_ValorKeyTyped
 
     /**
      * @param args the command line arguments

@@ -1,6 +1,9 @@
 package br.com.AsuperArts.UI;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import javax.swing.Timer;
@@ -27,9 +30,9 @@ public class TelaPrincipal extends javax.swing.JFrame{
     }
  public TelaPrincipal(Integer tipo) {
         initComponents();
-        /*URL url = this.getClass().getResource("img/IconeAsuperArts.png");  
+        URL url = this.getClass().getResource("img/IconeAsuperArts.png");  
         Image icone = Toolkit.getDefaultToolkit().getImage(url);  
-        this.setIconImage(icone);*/
+        this.setIconImage(icone);
         
         if(tipo == 1){
             restrito.setEnabled(true);
