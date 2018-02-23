@@ -104,9 +104,9 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             }
         });
 
-        btn_gerarOS.setBackground(new java.awt.Color(204, 204, 204));
+        btn_gerarOS.setBackground(new java.awt.Color(244, 244, 244));
         btn_gerarOS.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_gerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-documents-32.png"))); // NOI18N
+        btn_gerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/os-iloveimg-resized.png"))); // NOI18N
         btn_gerarOS.setText("FecharOS");
         btn_gerarOS.setToolTipText("GERAR OS");
         btn_gerarOS.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -133,8 +133,9 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_desc.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Descrição", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jScrollPane1.setViewportView(txt_desc);
 
+        jButton1.setBackground(new java.awt.Color(244, 244, 244));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-pdf-e32.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/pdf3-iloveimg-resized.png"))); // NOI18N
         jButton1.setText("Imprimir");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {

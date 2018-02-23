@@ -104,7 +104,7 @@ public class Form_AbrirOS extends javax.swing.JInternalFrame {
 
         btn_gerarOS.setBackground(new java.awt.Color(204, 204, 204));
         btn_gerarOS.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_gerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-documents-32.png"))); // NOI18N
+        btn_gerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/os2-iloveimg-resized.png"))); // NOI18N
         btn_gerarOS.setText("Abrir OS");
         btn_gerarOS.setToolTipText("GERAR OS");
         btn_gerarOS.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));

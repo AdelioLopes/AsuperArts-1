@@ -238,13 +238,13 @@
     <Component class="javax.swing.JButton" name="btn_gerarOS">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f4" green="f4" red="f4" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/AsuperArts/UI/img/icons8-documents-32.png"/>
+          <Image iconType="3" name="/br/com/AsuperArts/UI/img/os-iloveimg-resized.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="FecharOS"/>
         <Property name="toolTipText" type="java.lang.String" value="GERAR OS"/>
@@ -339,11 +339,14 @@
     </Container>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f4" green="f4" red="f4" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/AsuperArts/UI/img/icons8-pdf-e32.png"/>
+          <Image iconType="3" name="/br/com/AsuperArts/UI/img/pdf3-iloveimg-resized.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Imprimir"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

@@ -141,7 +141,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Informações", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
 
-        jTableLogin.setBorder(new javax.swing.border.MatteBorder(null));
+        jTableLogin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jTableLogin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -161,18 +161,18 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         jTableLogin.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTableLogin);
         if (jTableLogin.getColumnModel().getColumnCount() > 0) {
-            jTableLogin.getColumnModel().getColumn(0).setMinWidth(20);
+            jTableLogin.getColumnModel().getColumn(0).setMinWidth(15);
             jTableLogin.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jTableLogin.getColumnModel().getColumn(0).setMaxWidth(30);
+            jTableLogin.getColumnModel().getColumn(0).setMaxWidth(25);
             jTableLogin.getColumnModel().getColumn(1).setMinWidth(40);
             jTableLogin.getColumnModel().getColumn(1).setPreferredWidth(10);
             jTableLogin.getColumnModel().getColumn(1).setMaxWidth(50);
-            jTableLogin.getColumnModel().getColumn(2).setMinWidth(30);
+            jTableLogin.getColumnModel().getColumn(2).setMinWidth(40);
             jTableLogin.getColumnModel().getColumn(2).setPreferredWidth(10);
             jTableLogin.getColumnModel().getColumn(2).setMaxWidth(50);
             jTableLogin.getColumnModel().getColumn(3).setMinWidth(20);
             jTableLogin.getColumnModel().getColumn(3).setPreferredWidth(10);
-            jTableLogin.getColumnModel().getColumn(3).setMaxWidth(50);
+            jTableLogin.getColumnModel().getColumn(3).setMaxWidth(45);
         }
 
         btn_editar.setBackground(new java.awt.Color(203, 244, 255));
@@ -240,7 +240,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btn_editar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -251,18 +251,18 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btn_editar.getAccessibleContext().setAccessibleDescription("");
@@ -282,7 +282,7 @@ public class Form_Usuario extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 658, 419);
+        setBounds(0, 0, 860, 419);
     }// </editor-fold>//GEN-END:initComponents
     
 public void preencherTabela(){    

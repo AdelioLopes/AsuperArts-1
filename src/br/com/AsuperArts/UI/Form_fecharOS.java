@@ -63,8 +63,9 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         setTitle("Fechar Ordem de Serviço - asuperArt's");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/IconeAsuperArts.png"))); // NOI18N
 
+        jButton1.setBackground(new java.awt.Color(244, 244, 244));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-documents-32.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/os-iloveimg-resized.png"))); // NOI18N
         jButton1.setText("FecharOS");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +77,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Ordens de Serviços em aberto", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
+        tb_fecharOs.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         tb_fecharOs.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -137,7 +139,9 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +151,11 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        btn_ajuda.setBackground(new java.awt.Color(244, 244, 244));
+        btn_ajuda.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/ajuda-iloveimg-resized.png"))); // NOI18N
         btn_ajuda.setText("Ajuda");
+        btn_ajuda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn_ajuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ajudaActionPerformed(evt);
