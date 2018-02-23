@@ -102,7 +102,9 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         btn_calc = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         setClosable(true);
+        setMaximizable(true);
         setTitle("Relatório - asuperArt's");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/IconeAsuperArts.png"))); // NOI18N
 
@@ -126,26 +128,36 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tb_OsFechadas);
         if (tb_OsFechadas.getColumnModel().getColumnCount() > 0) {
-            tb_OsFechadas.getColumnModel().getColumn(0).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(0).setMinWidth(40);
             tb_OsFechadas.getColumnModel().getColumn(0).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(1).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(0).setMaxWidth(50);
+            tb_OsFechadas.getColumnModel().getColumn(1).setMinWidth(50);
             tb_OsFechadas.getColumnModel().getColumn(1).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(2).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(1).setMaxWidth(70);
+            tb_OsFechadas.getColumnModel().getColumn(2).setMinWidth(80);
             tb_OsFechadas.getColumnModel().getColumn(2).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(3).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(2).setMaxWidth(100);
+            tb_OsFechadas.getColumnModel().getColumn(3).setMinWidth(80);
             tb_OsFechadas.getColumnModel().getColumn(3).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(4).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(3).setMaxWidth(100);
+            tb_OsFechadas.getColumnModel().getColumn(4).setMinWidth(70);
             tb_OsFechadas.getColumnModel().getColumn(4).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(5).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(4).setMaxWidth(100);
+            tb_OsFechadas.getColumnModel().getColumn(5).setMinWidth(76);
             tb_OsFechadas.getColumnModel().getColumn(5).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(6).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(5).setMaxWidth(100);
+            tb_OsFechadas.getColumnModel().getColumn(6).setMinWidth(50);
             tb_OsFechadas.getColumnModel().getColumn(6).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(7).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(6).setMaxWidth(80);
+            tb_OsFechadas.getColumnModel().getColumn(7).setMinWidth(250);
             tb_OsFechadas.getColumnModel().getColumn(7).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(8).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(7).setMaxWidth(300);
+            tb_OsFechadas.getColumnModel().getColumn(8).setMinWidth(70);
             tb_OsFechadas.getColumnModel().getColumn(8).setPreferredWidth(10);
-            tb_OsFechadas.getColumnModel().getColumn(9).setResizable(false);
+            tb_OsFechadas.getColumnModel().getColumn(8).setMaxWidth(100);
+            tb_OsFechadas.getColumnModel().getColumn(9).setMinWidth(70);
             tb_OsFechadas.getColumnModel().getColumn(9).setPreferredWidth(10);
+            tb_OsFechadas.getColumnModel().getColumn(9).setMaxWidth(100);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -154,14 +166,13 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1279, Short.MAX_VALUE))
+                .addComponent(jScrollPane1))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Gerar Relatórios ou Imprimir O.S", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
@@ -185,19 +196,21 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
             }
         });
 
-        jPanel3.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 244));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         txt_valor.setEditable(false);
+        txt_valor.setBackground(new java.awt.Color(255, 255, 255));
         txt_valor.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txt_valor.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel1.setText("Total de Lucros");
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, null, null));
+        jLabel1.setText("          Total de Lucros");
+        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btn_calc.setBackground(new java.awt.Color(244, 244, 244));
         btn_calc.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_calc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/calcular-iloveimg-resized-iloveimg-resized.png"))); // NOI18N
         btn_calc.setText("Calcular");
         btn_calc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn_calc.addActionListener(new java.awt.event.ActionListener() {
@@ -210,14 +223,13 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_calc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_calc, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                    .addComponent(txt_valor))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -227,9 +239,8 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_calc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(btn_calc))
         );
 
         jButton1.setText("Imprimir Lucro");
@@ -249,8 +260,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn_imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jButton1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -262,8 +272,8 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(data_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 649, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18))
         );
         jPanel2Layout.setVerticalGroup(
@@ -294,22 +304,17 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
