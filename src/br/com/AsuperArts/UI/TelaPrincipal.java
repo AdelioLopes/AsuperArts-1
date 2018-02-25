@@ -32,7 +32,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     }
  public TelaPrincipal(Integer tipo) {
         initComponents();
-        JLabel background = new JLabel(new javax.swing.ImageIcon(getClass().getResource("img/logoprincipal.png")));
+       // JLabel background = new JLabel(new javax.swing.ImageIcon(getClass().getResource("img/logoprincipal.png")));
         URL url = this.getClass().getResource("img/IconeAsuperArts.png");  
         Image icone = Toolkit.getDefaultToolkit().getImage(url);  
         this.setIconImage(icone);
@@ -51,7 +51,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         jMenuItem3 = new javax.swing.JMenuItem();
         desktop = new javax.swing.JDesktopPane();
-        JLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblUsuario = new javax.swing.JLabel();
         dt_sistema = new javax.swing.JLabel();
@@ -93,25 +92,15 @@ public class TelaPrincipal extends javax.swing.JFrame{
         desktop.setMinimumSize(new java.awt.Dimension(1050, 550));
         desktop.setRequestFocusEnabled(false);
 
-        JLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/logoprincipal.png"))); // NOI18N
-
-        desktop.setLayer(JLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
         desktopLayout.setHorizontalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, desktopLayout.createSequentialGroup()
-                .addContainerGap(290, Short.MAX_VALUE)
-                .addComponent(JLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(275, 275, 275))
+            .addGap(0, 1384, Short.MAX_VALUE)
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(desktopLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         lblUsuario.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
@@ -426,7 +415,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenuItem FuncGerarOS;
     private javax.swing.JMenuItem Funcionario;
     private javax.swing.JMenuItem GerarOS;
-    private javax.swing.JLabel JLabel;
     private javax.swing.JMenuItem RelatorioOS;
     private javax.swing.JMenuItem Sair;
     private javax.swing.JMenuItem TrocarUsuario;
