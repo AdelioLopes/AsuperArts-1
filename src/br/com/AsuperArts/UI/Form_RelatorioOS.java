@@ -28,18 +28,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -320,7 +313,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
             int linha = tb_OsFechadas.getSelectedRow();
             ordemDeServicoDTO.setId_os((int) this.tb_OsFechadas.getValueAt(linha, 0));
             int resposta = 0;
-            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo alterar?");
+            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo gerar PDF?");
             if (resposta == JOptionPane.YES_OPTION) {
                 
                 Document document = new Document();
@@ -379,7 +372,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         }
 
         try {
-            Desktop.getDesktop().open(new File("documento.pdf"));
+            Desktop.getDesktop().open(new File("OrdemServico.pdf"));
         } catch (IOException ex) {
             System.out.println("Error:"+ex);
         }
