@@ -371,7 +371,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         }
 
         try {
-            Desktop.getDesktop().open(new File("Relatorios.pdf"));
+            Desktop.getDesktop().open(new File("Relatorio.pdf"));
         } catch (IOException ex) {
             System.out.println("Error:"+ex);
         }
