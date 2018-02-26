@@ -7,20 +7,8 @@ package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.OrdemServicoBLL;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Image;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Color;
-import java.awt.Desktop;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -238,6 +226,10 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             ordemDeServicoDTO.setEstado(jRadioButton1.getText());
             rg.fecharOS(ordemDeServicoDTO);
             JOptionPane.showMessageDialog(null, "Ordem de Serviço Fechada!"); 
+            
+            this.dispose();
+            
+            
             /*txt_servico.setText("");
             txt_desc.setText("");
             txt_Valor.setText("");

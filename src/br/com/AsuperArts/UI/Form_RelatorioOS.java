@@ -6,17 +6,7 @@
 package br.com.AsuperArts.UI;
 
 import br.com.AsuperArts.BLL.OrdemServicoBLL;
-import br.com.AsuperArts.DAL.Conexao;
 import br.com.AsuperArts.DTO.OrdemDeServicoDTO;
-import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Empresa;
-import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Num_OS;
-import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Responsavel;
-import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Solicitante;
-import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_Valor;
-import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_data;
-import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_desc;
-import static br.com.AsuperArts.UI.Form_ManutencaoOS.txt_servico;
-import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Image;
@@ -318,7 +308,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
                 Document document = new Document();
 
         try {
-            PdfWriter.getInstance(document, new FileOutputStream("Relatorio.pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream("Recibo.pdf"));
 
             document.open();
             Image image = Image.getInstance("logoadelio.png");
@@ -371,7 +361,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         }
 
         try {
-            Desktop.getDesktop().open(new File("Relatorio.pdf"));
+            Desktop.getDesktop().open(new File("Recibo.pdf"));
         } catch (IOException ex) {
             System.out.println("Error:"+ex);
         }

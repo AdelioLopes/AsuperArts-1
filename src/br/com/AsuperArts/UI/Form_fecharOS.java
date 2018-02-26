@@ -22,7 +22,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
         preencherTabela();
         getContentPane().setBackground(new Color(255,255,255));
     }
-    public void preencherTabela() {
+    public  void preencherTabela() {
         this.tb_fecharOs.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         DefaultTableModel modelo = (DefaultTableModel) tb_fecharOs.getModel();
         modelo.setNumRows(0);
@@ -204,6 +204,7 @@ public class Form_fecharOS extends javax.swing.JInternalFrame {
                 manutencaoOS.setVisible(true);
                 manutencaoOS.setSize(800, 600);
                 setandoCampos();
+                this.dispose();
             }
         }else {
             JOptionPane.showMessageDialog(null, "Selecione uma linha!");
