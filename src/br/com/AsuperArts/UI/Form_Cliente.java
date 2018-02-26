@@ -182,7 +182,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtCodArea, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)))
+                                .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)))
                         .addGap(75, 75, 75)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -219,7 +219,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Cliente", "Contato", "DDD", "Telefone", "E-mail"
+                "id_cliente", "cliente", "contato", "ddd", "telefone", "email"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -230,7 +230,6 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTableCliente.getTableHeader().setReorderingAllowed(false);
         jTableCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTableClienteKeyReleased(evt);
@@ -238,24 +237,12 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTableCliente);
         if (jTableCliente.getColumnModel().getColumnCount() > 0) {
-            jTableCliente.getColumnModel().getColumn(0).setMinWidth(20);
-            jTableCliente.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jTableCliente.getColumnModel().getColumn(0).setMaxWidth(30);
-            jTableCliente.getColumnModel().getColumn(1).setMinWidth(50);
-            jTableCliente.getColumnModel().getColumn(1).setPreferredWidth(10);
-            jTableCliente.getColumnModel().getColumn(1).setMaxWidth(70);
-            jTableCliente.getColumnModel().getColumn(2).setMinWidth(50);
-            jTableCliente.getColumnModel().getColumn(2).setPreferredWidth(10);
-            jTableCliente.getColumnModel().getColumn(2).setMaxWidth(70);
-            jTableCliente.getColumnModel().getColumn(3).setMinWidth(40);
-            jTableCliente.getColumnModel().getColumn(3).setPreferredWidth(10);
-            jTableCliente.getColumnModel().getColumn(3).setMaxWidth(50);
-            jTableCliente.getColumnModel().getColumn(4).setMinWidth(60);
-            jTableCliente.getColumnModel().getColumn(4).setPreferredWidth(10);
-            jTableCliente.getColumnModel().getColumn(4).setMaxWidth(70);
-            jTableCliente.getColumnModel().getColumn(5).setMinWidth(120);
-            jTableCliente.getColumnModel().getColumn(5).setPreferredWidth(10);
-            jTableCliente.getColumnModel().getColumn(5).setMaxWidth(150);
+            jTableCliente.getColumnModel().getColumn(0).setResizable(false);
+            jTableCliente.getColumnModel().getColumn(1).setResizable(false);
+            jTableCliente.getColumnModel().getColumn(2).setResizable(false);
+            jTableCliente.getColumnModel().getColumn(3).setResizable(false);
+            jTableCliente.getColumnModel().getColumn(4).setResizable(false);
+            jTableCliente.getColumnModel().getColumn(5).setResizable(false);
         }
 
         btn_cancelar.setBackground(new java.awt.Color(204, 204, 204));
@@ -331,17 +318,17 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(166, 166, 166))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(100, 100, 100))))
@@ -350,7 +337,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -368,10 +355,10 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,7 +366,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1105, 582);
+        setBounds(0, 0, 1217, 582);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed

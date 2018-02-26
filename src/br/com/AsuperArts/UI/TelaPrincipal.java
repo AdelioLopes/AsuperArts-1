@@ -69,7 +69,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
         RelatorioOS = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         FuncGerarOS = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -268,10 +267,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         jMenuBar1.add(jMenu2);
 
-        jMenu4.setText("Ajuda");
-        jMenu4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jMenuBar1.add(jMenu4);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -423,7 +418,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JLabel dt_sistema;
     private javax.swing.JLabel h_sistema;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem3;

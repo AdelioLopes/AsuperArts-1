@@ -307,19 +307,18 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
 
     private void btn_imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imprimirActionPerformed
        OrdemDeServicoDTO ordemDeServicoDTO = new OrdemDeServicoDTO();
-       OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
        
        if (this.tb_OsFechadas.getSelectedRowCount() > 0) {
             int linha = tb_OsFechadas.getSelectedRow();
             ordemDeServicoDTO.setId_os((int) this.tb_OsFechadas.getValueAt(linha, 0));
             int resposta = 0;
-            resposta = JOptionPane.showConfirmDialog(null, "deseja mesmo gerar PDF?");
+            resposta = JOptionPane.showConfirmDialog(null, "Clique em sim para gerar PDF");
             if (resposta == JOptionPane.YES_OPTION) {
                 
                 Document document = new Document();
 
         try {
-            PdfWriter.getInstance(document, new FileOutputStream("OrdemServico.pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream("Relatorio.pdf"));
 
             document.open();
             Image image = Image.getInstance("logoadelio.png");
@@ -372,7 +371,7 @@ public class Form_RelatorioOS extends javax.swing.JInternalFrame {
         }
 
         try {
-            Desktop.getDesktop().open(new File("OrdemServico.pdf"));
+            Desktop.getDesktop().open(new File("Relatorios.pdf"));
         } catch (IOException ex) {
             System.out.println("Error:"+ex);
         }
