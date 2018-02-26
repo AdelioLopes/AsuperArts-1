@@ -62,7 +62,6 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_Empresa = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_desc = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txt_servico = new javax.swing.JTextArea();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -104,9 +103,9 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
             }
         });
 
-        btn_gerarOS.setBackground(new java.awt.Color(204, 204, 204));
+        btn_gerarOS.setBackground(new java.awt.Color(244, 244, 244));
         btn_gerarOS.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_gerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-documents-32.png"))); // NOI18N
+        btn_gerarOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/os-iloveimg-resized.png"))); // NOI18N
         btn_gerarOS.setText("FecharOS");
         btn_gerarOS.setToolTipText("GERAR OS");
         btn_gerarOS.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -132,16 +131,6 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         txt_desc.setRows(5);
         txt_desc.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Descrição", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jScrollPane1.setViewportView(txt_desc);
-
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-pdf-e32.png"))); // NOI18N
-        jButton1.setText("Imprimir");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         txt_servico.setColumns(20);
         txt_servico.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -182,11 +171,10 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txt_Valor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(txt_Valor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,23 +192,21 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(txt_Responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_Solicitante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton1)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addComponent(txt_Valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btn_gerarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -314,56 +300,6 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
         }*/
     }//GEN-LAST:event_btn_gerarOSActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Document document = new Document();
-
-        try {
-            PdfWriter.getInstance(document, new FileOutputStream("documento.pdf"));
-            document.open();
-            
-            Image image = Image.getInstance("logoadelio.png");
-            document.add(image);
-            document.add(new Paragraph("                                                              Ordem de Serviços                                                     "));
-            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------------"));
-            document.add(new Paragraph("NUMERO DE OS :" + "  "+ txt_Num_OS.getText()));
-            
-            document.add(new Paragraph("DATA DE ENTRADA :" + " "+ txt_data.getText()));
-            
-            document.add(new Paragraph("SERVIÇO SOLICITADO :" + " "+ txt_servico.getText()));
-            
-            document.add(new Paragraph("SOLICITANTE :" + " "+ txt_Solicitante.getText()));
-            
-            document.add(new Paragraph("RESPONSÁVEL :" + "  "+ txt_Responsavel.getText()));
-            
-            document.add(new Paragraph("EMPRESA :" + "  "+ txt_Empresa.getText()));
-            
-            document.add(new Paragraph("DESCRIÇÃO :" + "  "+ txt_desc.getText()));
-            
-            document.add(new Paragraph("VALOR TOTAL :" + "  "+ txt_Valor.getText()));
-            
-            document.add(new Paragraph("ESTADO O.S :" + "  "+ jRadioButton1.getText()));
-            
-            document.add(new Paragraph("DATA DE FECHAMENTO :" + "  "+ txtDataFechadamento.getText()));
-            document.add(new Paragraph("____________________________________________________________________________"));
-            
-            document.add(new Paragraph("Obrigado pela preferência e volte sempre."));
-        } catch (DocumentException ex) {
-            System.out.println("Error:"+ex);
-        } catch (FileNotFoundException ex) {
-            System.out.println("Error:"+ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Form_ManutencaoOS.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
-            document.close();
-        }
-
-        try {
-            Desktop.getDesktop().open(new File("documento.pdf"));
-        } catch (IOException ex) {
-            System.out.println("Error:"+ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void txt_ValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_ValorKeyTyped
         String caracteres="0987654321,.";
         if(!caracteres.contains(evt.getKeyChar()+"")){
@@ -409,7 +345,6 @@ public class Form_ManutencaoOS extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_gerarOS;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;

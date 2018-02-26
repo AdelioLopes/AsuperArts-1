@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import javax.swing.JLabel;
 import javax.swing.Timer;
 
 /**
@@ -23,6 +24,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     public TelaPrincipal() {
        initComponents();
        
+       
 
        Tela_login tl = new Tela_login();
        tl.txtUsuario.setText("no login");
@@ -30,6 +32,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     }
  public TelaPrincipal(Integer tipo) {
         initComponents();
+       // JLabel background = new JLabel(new javax.swing.ImageIcon(getClass().getResource("img/logoprincipal.png")));
         URL url = this.getClass().getResource("img/IconeAsuperArts.png");  
         Image icone = Toolkit.getDefaultToolkit().getImage(url);  
         this.setIconImage(icone);
