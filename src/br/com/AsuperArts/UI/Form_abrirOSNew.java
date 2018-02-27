@@ -9,8 +9,11 @@ import br.com.AsuperArts.BLL.ClienteBLL;
 import br.com.AsuperArts.BLL.EstoqueBLL;
 import br.com.AsuperArts.DTO.ClienteDTO;
 import br.com.AsuperArts.DTO.EstoqueDTO;
+import static br.com.AsuperArts.UI.Form_RelatorioOS.data_inicial;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,6 +30,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         ClienteBLL clienteBLL = new ClienteBLL();
         EstoqueBLL estoqueBLL= new EstoqueBLL();
         initComponents();
+        txt_responsavel.setText(Tela_login.txtUsuario.getText());
         SimpleDateFormat fd = new  SimpleDateFormat("dd/MM/yyyy");
         txt_dtEntrada.setText( fd.format(new java.util.Date()));
        
@@ -169,6 +173,11 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         txt_total.setText("0.0");
 
         btn_add.setText("Adicionar");
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addActionPerformed(evt);
+            }
+        });
 
         btn_fechar.setText("Fechar_O.S");
 
@@ -179,11 +188,11 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Código", "Data de Entrada", "Cliente", "Responsavel", "Solicitante", "Observações", "Valor Unitário", "Pintura", "Data de Entrega"
+                "Data de Entrada", "Cliente", "Responsavel", "Solicitante", "Observações", "Valor Unitário", "Pintura", "Data de Entrega"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -200,7 +209,6 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
             tb_os.getColumnModel().getColumn(5).setResizable(false);
             tb_os.getColumnModel().getColumn(6).setResizable(false);
             tb_os.getColumnModel().getColumn(7).setResizable(false);
-            tb_os.getColumnModel().getColumn(8).setResizable(false);
         }
 
         jScrollPane3.setViewportView(jScrollPane2);
@@ -393,18 +401,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
                 DefaultTableModel modelo = (DefaultTableModel) tb_os.getModel();
                 modelo.setNumRows(0);
                 EstoqueBLL rg = new EstoqueBLL();
-                for (EstoqueDTO estoq : rg.ListaEstoque()) {
-                    modelo.addRow(new Object[]{
-                        estoq.getIdEstoque(),
-                        estoq.getNome(),
-                        estoq.getCor(),
-                        estoq.getEspessura(),
-                        estoq.getComprimento(),
-                        estoq.getLargura(),
-                        estoq.getValorCompra(),
-                        estoq.getValorCm()
-                    });
-                }
+              
             }
     private void txt_produtosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_produtosActionPerformed
         String NomeProduto = txt_produtos.getSelectedItem().toString();
@@ -420,6 +417,29 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
             ClienteDTO cliente = cb.listaClienteNome(nomeEmpresa);
             txt_solicitante.setText(cliente.getContato());
     }//GEN-LAST:event_txt_empresaActionPerformed
+
+    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
+        //String id = txt_cod.getText().trim();
+        String dt_entrada = txt_dtEntrada.getText().trim();
+        String empresa = txt_empresa.getSelectedItem().toString();
+        String responsavel = txt_responsavel.getText();
+        String solicitante = txt_solicitante.getText();
+        String observacoes = txt_observacoes.getText();
+        String unitario = txt_unitario.getText();
+        String pintura = txt_pintura.getText();
+        SimpleDateFormat fd = new  SimpleDateFormat("yyyy-MM-dd");
+        Date texto = txt_entrega.getDate();
+        String data1 = fd.format(texto);
+        
+        this.tb_os.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        DefaultTableModel modelo = (DefaultTableModel) tb_os.getModel();
+        modelo.setNumRows(0);
+        
+        modelo.addRow(new String[]{dt_entrada,empresa,responsavel,solicitante,observacoes,unitario,pintura,data1});
+        
+                
+        
+    }//GEN-LAST:event_btn_addActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
