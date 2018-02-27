@@ -63,7 +63,31 @@ public class EstoqueBLL {
          }
          return null;
     }
+        public EstoqueDTO listaEstoqueNome(String nome){
     
+        ResultSet rs = null;
+        sql = "SELECT * FROM tb_estoque WHERE nome='" + nome + "';";
+        EstoqueDTO estoque = new EstoqueDTO();
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                estoque.setIdEstoque(rs.getInt("id_estoque"));
+                  estoque.setNome(rs.getString("nome"));
+                  estoque.setCor(rs.getString("cor"));
+                  estoque.setEspessura(rs.getInt("espessura"));
+                  estoque.setComprimento(rs.getInt("comprimento"));
+                  estoque.setLargura(rs.getInt("largura"));
+                  estoque.setValorCompra(rs.getInt("valorCompra"));
+                  estoque.setValorCm(rs.getInt("valorCm"));
+                  
+            }
+            return estoque;
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
     public void alterar(EstoqueDTO e){
         sql = "UPDATE tb_estoque SET nome=?,cor=?,espessura=?,comprimento=?,largura=?,valorCompra=?,valorCm=? WHERE id_estoque=?;";
          try {
