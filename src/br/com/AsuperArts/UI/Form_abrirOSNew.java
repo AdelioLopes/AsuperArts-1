@@ -11,6 +11,8 @@ import br.com.AsuperArts.DTO.ClienteDTO;
 import br.com.AsuperArts.DTO.EstoqueDTO;
 
 import java.text.SimpleDateFormat;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -103,19 +105,19 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(192, 192, 192)
+                .addGap(262, 262, 262)
                 .addComponent(jLabel10)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setText("CÓD");
@@ -386,7 +388,24 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+        public void preencherTabela() {
+                this.tb_os.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                DefaultTableModel modelo = (DefaultTableModel) tb_os.getModel();
+                modelo.setNumRows(0);
+                EstoqueBLL rg = new EstoqueBLL();
+                for (EstoqueDTO estoq : rg.ListaEstoque()) {
+                    modelo.addRow(new Object[]{
+                        estoq.getIdEstoque(),
+                        estoq.getNome(),
+                        estoq.getCor(),
+                        estoq.getEspessura(),
+                        estoq.getComprimento(),
+                        estoq.getLargura(),
+                        estoq.getValorCompra(),
+                        estoq.getValorCm()
+                    });
+                }
+            }
     private void txt_produtosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_produtosActionPerformed
         String NomeProduto = txt_produtos.getSelectedItem().toString();
         EstoqueBLL cb = new EstoqueBLL();
