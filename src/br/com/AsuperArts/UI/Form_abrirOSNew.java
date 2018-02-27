@@ -427,7 +427,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         String observacoes = txt_observacoes.getText();
         String unitario = txt_unitario.getText();
         String pintura = txt_pintura.getText();
-        SimpleDateFormat fd = new  SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat fd = new  SimpleDateFormat("dd/MM/yyyy");
         Date texto = txt_entrega.getDate();
         String data1 = fd.format(texto);
         
