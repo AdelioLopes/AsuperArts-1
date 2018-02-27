@@ -80,7 +80,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         txt_entrega = new com.toedter.calendar.JDateChooser();
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        txt_pintura = new javax.swing.JRadioButton();
         jLabel15 = new javax.swing.JLabel();
         txt_cor = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
@@ -211,8 +211,8 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
 
         jLabel14.setText("Pintura");
 
-        jRadioButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jRadioButton1.setText("Sim");
+        txt_pintura.setBackground(new java.awt.Color(204, 204, 204));
+        txt_pintura.setText("Sim");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -222,7 +222,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel14)
                 .addGap(1, 1, 1)
-                .addComponent(jRadioButton1)
+                .addComponent(txt_pintura)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -230,7 +230,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
+                    .addComponent(txt_pintura)
                     .addComponent(jLabel14))
                 .addContainerGap())
         );
@@ -427,7 +427,6 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tb_os;
@@ -437,6 +436,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> txt_empresa;
     private com.toedter.calendar.JDateChooser txt_entrega;
     private javax.swing.JTextField txt_observacoes;
+    private javax.swing.JRadioButton txt_pintura;
     private javax.swing.JComboBox<String> txt_produtos;
     private javax.swing.JTextField txt_responsavel;
     private javax.swing.JTextField txt_servico;
