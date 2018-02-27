@@ -182,6 +182,11 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         btn_fechar.setText("Fechar_O.S");
 
         btn_del.setText("Remover");
+        btn_del.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_delActionPerformed(evt);
+            }
+        });
 
         tb_os.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -431,7 +436,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         Date texto = txt_entrega.getDate();
         String data1 = fd.format(texto);
         
-        this.tb_os.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        //this.tb_os.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         DefaultTableModel modelo = (DefaultTableModel) tb_os.getModel();
         //modelo.setNumRows(0);
         
@@ -443,6 +448,14 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         txt_servico.requestFocus();
         
     }//GEN-LAST:event_btn_addActionPerformed
+
+    private void btn_delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delActionPerformed
+        if (this.tb_os.getSelectedRowCount() > 0) {
+        ((DefaultTableModel) tb_os.getModel()).removeRow(tb_os.getSelectedRow());
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha!");
+        }
+    }//GEN-LAST:event_btn_delActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
