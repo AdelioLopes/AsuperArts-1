@@ -433,11 +433,14 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         
         this.tb_os.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         DefaultTableModel modelo = (DefaultTableModel) tb_os.getModel();
-        modelo.setNumRows(0);
+        //modelo.setNumRows(0);
         
         modelo.addRow(new String[]{dt_entrada,empresa,responsavel,solicitante,observacoes,unitario,pintura,data1});
-        
-                
+        txt_empresa.setSelectedItem("-");
+        txt_produtos.setSelectedItem("-");
+        txt_servico.setText("");
+        txt_observacoes.setText("");
+        txt_servico.requestFocus();
         
     }//GEN-LAST:event_btn_addActionPerformed
 
