@@ -17,7 +17,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private Form_Cliente form_cadastroCliente = null;
     private Form_Usuario form_cadastroUsuario = null;
     private Form_Funcionario form_cadastroFuncionario = null;
-    private Form_AbrirOS form_GerarOS = null;
+    private Form_abrirOSNew form_GerarOSNew = null;
     private Form_Estoque form_Estoque = null;
     private Form_fecharOS form_fecharOS = null;
     private Form_RelatorioOS form_RelatorioOS = null;
@@ -331,16 +331,16 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
     private void GerarOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerarOSActionPerformed
         fecharTelas();
-        form_GerarOS  = new Form_AbrirOS();
-        form_GerarOS.setVisible(true);
-        desktop.add(form_GerarOS);
+        form_GerarOSNew  = new Form_abrirOSNew();
+        form_GerarOSNew.setVisible(true);
+        desktop.add(form_GerarOSNew);
     }//GEN-LAST:event_GerarOSActionPerformed
 
     private void FuncGerarOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FuncGerarOSActionPerformed
         fecharTelas();
-        form_GerarOS  = new Form_AbrirOS();
-        form_GerarOS.setVisible(true);
-        desktop.add(form_GerarOS);
+        form_GerarOSNew  = new Form_abrirOSNew();
+        form_GerarOSNew.setVisible(true);
+        desktop.add(form_GerarOSNew);
     }//GEN-LAST:event_FuncGerarOSActionPerformed
 
     private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
@@ -393,8 +393,8 @@ public class TelaPrincipal extends javax.swing.JFrame{
         form_cadastroUsuario = null; 
         if(form_cadastroFuncionario != null){form_cadastroFuncionario.setVisible(false);}
         form_cadastroFuncionario = null;
-        if(form_GerarOS != null){form_GerarOS.setVisible(false);}
-        form_GerarOS = null;
+        if(form_GerarOSNew != null){form_GerarOSNew.setVisible(false);}
+        form_GerarOSNew = null;
         if(form_Estoque != null){form_Estoque.setVisible(false);}
         form_Estoque = null;
         if(form_fecharOS != null){form_fecharOS.setVisible(false);}
