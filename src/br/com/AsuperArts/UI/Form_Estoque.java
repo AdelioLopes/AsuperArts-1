@@ -95,6 +95,8 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         });
 
         txt_valorCompra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_valorCompra.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txt_valorCompra.setText("0,0");
         txt_valorCompra.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_valorCompraKeyTyped(evt);
@@ -102,6 +104,8 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         });
 
         txt_valorcm.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_valorcm.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txt_valorcm.setText("0,0");
         txt_valorcm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_valorcmActionPerformed(evt);
