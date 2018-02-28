@@ -8,6 +8,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import javax.swing.JLabel;
 import javax.swing.Timer;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  * @author Equipe senac 2017
@@ -24,14 +32,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private Form_Servicos form_Servicos = null;
     public TelaPrincipal() {
        initComponents();
-       
-       
-
        Tela_login tl = new Tela_login();
        tl.txtUsuario.setText("no login");
        lblUsuario.setText("no login");
     }
- public TelaPrincipal(Integer tipo) {
+   
+    public TelaPrincipal(Integer tipo) {
         initComponents();
        // JLabel background = new JLabel(new javax.swing.ImageIcon(getClass().getResource("img/logoprincipal.png")));
         URL url = this.getClass().getResource("img/IconeAsuperArts.png");  
@@ -89,22 +95,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
             }
         });
 
-        desktop.setBackground(new java.awt.Color(204, 204, 204));
+        desktop.setBackground(new java.awt.Color(255, 255, 255));
         desktop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         desktop.setMaximumSize(new java.awt.Dimension(1050, 550));
         desktop.setMinimumSize(new java.awt.Dimension(1050, 550));
         desktop.setRequestFocusEnabled(false);
-
-        javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
-        desktop.setLayout(desktopLayout);
-        desktopLayout.setHorizontalGroup(
-            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1384, Short.MAX_VALUE)
-        );
-        desktopLayout.setVerticalGroup(
-            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        desktop.setLayout(new javax.swing.OverlayLayout(desktop));
 
         lblUsuario.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(102, 102, 255));
@@ -126,7 +122,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 916, Short.MAX_VALUE)
                 .addComponent(h_sistema, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(dt_sistema, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,7 +249,9 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(RelatorioOS);
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-work-32.png"))); // NOI18N
         jMenuItem1.setText("Serviços ");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -374,6 +372,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         form_GerarOSNew  = new Form_abrirOSNew();
         form_GerarOSNew.setVisible(true);
         desktop.add(form_GerarOSNew);
+        
     }//GEN-LAST:event_FuncGerarOSActionPerformed
 
     private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
@@ -381,6 +380,8 @@ public class TelaPrincipal extends javax.swing.JFrame{
         form_cadastroCliente = new Form_Cliente();
         form_cadastroCliente.setVisible(true);
         desktop.add(form_cadastroCliente);
+       
+        
     }//GEN-LAST:event_ClienteActionPerformed
 
     private void FuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FuncionarioActionPerformed

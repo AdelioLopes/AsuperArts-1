@@ -35,7 +35,7 @@ public class ClienteBLL {
     public List<ClienteDTO> listaCliente(){
         
         ResultSet rs = null;
-        sql = "SELECT * FROM tb_cliente;";
+        sql = "SELECT * FROM tb_cliente";
         List<ClienteDTO> clientes =new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
