@@ -21,6 +21,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private Form_fecharOS form_fecharOS = null;
     private Form_RelatorioOS form_RelatorioOS = null;
     private Form_Servicos form_Servicos = null;
+    private Form_Producao form_Producao = null;
     public TelaPrincipal() {
        initComponents();
        Tela_login tl = new Tela_login();
@@ -65,6 +66,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         FecharOS = new javax.swing.JMenuItem();
         RelatorioOS = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         FuncGerarOS = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -250,6 +252,16 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         restrito.add(jMenuItem1);
 
+        jMenuItem5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-preço-baixo-32.png"))); // NOI18N
+        jMenuItem5.setText("Produção");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        restrito.add(jMenuItem5);
+
         jMenuBar1.add(restrito);
 
         jMenu2.setText("Funcionário");
@@ -424,6 +436,13 @@ public class TelaPrincipal extends javax.swing.JFrame{
         desktop.add(form_Estoque);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        fecharTelas();
+        form_Producao = new Form_Producao();
+        form_Producao.setVisible(true);
+        desktop.add(form_Producao);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -449,6 +468,8 @@ public class TelaPrincipal extends javax.swing.JFrame{
         form_RelatorioOS = null;
         if(form_Servicos != null){form_Servicos.setVisible(false);}
         form_Servicos = null;
+        if(form_Producao != null){form_Producao.setVisible(false);}
+        form_Producao = null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -472,6 +493,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JLabel lblUsuario;
     private javax.swing.JMenu restrito;
