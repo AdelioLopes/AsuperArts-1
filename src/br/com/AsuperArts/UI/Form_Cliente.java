@@ -172,6 +172,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("ID");
 
         txtCodigo.setEditable(false);
@@ -180,6 +181,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
         txtCodigo.setEnabled(false);
         txtCodigo.setPreferredSize(new java.awt.Dimension(16, 46));
 
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("Nome");
 
         txtCliente.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -191,6 +193,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setText("Contato");
 
         txtContato.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -201,6 +204,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("DDD");
 
         txtCodArea.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -217,6 +221,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setText("Telefone");
 
         txtTelefone.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -228,6 +233,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setText("E-mail");
 
         txtEmail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -403,7 +409,7 @@ public class Form_Cliente extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)))
+                        .addComponent(txtCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))
                 .addGap(68, 68, 68)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)

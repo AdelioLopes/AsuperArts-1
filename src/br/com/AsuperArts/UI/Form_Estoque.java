@@ -63,6 +63,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_estoque = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(204, 204, 204));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         setClosable(true);
         setTitle("Cadastro de Estoque - asuperArt's");
@@ -118,7 +119,8 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,7 +137,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(261, 261, 261)
                 .addComponent(jLabel10)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -150,26 +152,35 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("ID");
 
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("Nome");
 
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setText("Cor");
 
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Lagura (mm)");
 
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setText("Comprimento (mm)");
 
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setText("Espessura");
 
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setText("Valor de Compra");
 
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel9.setText("Preço Venda");
 
-        jPanel2.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btn_cadastrar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-inserir-24.png"))); // NOI18N
+        btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-inserir-19.png"))); // NOI18N
         btn_cadastrar.setText("Cadastrar");
         btn_cadastrar.setMaximumSize(new java.awt.Dimension(114, 37));
         btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +190,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         });
 
         btn_editar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-editar-24.png"))); // NOI18N
+        btn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-editar-19.png"))); // NOI18N
         btn_editar.setText("Editar");
         btn_editar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,7 +199,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         });
 
         btn_salvar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-salvar-24.png"))); // NOI18N
+        btn_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-salvar-19.png"))); // NOI18N
         btn_salvar.setText("Salvar");
         btn_salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,7 +208,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         });
 
         btn_excluir.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-lixo-24.png"))); // NOI18N
+        btn_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-lixo-19.png"))); // NOI18N
         btn_excluir.setText("Excluir");
         btn_excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,7 +217,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         });
 
         btn_cancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-desfazer-24.png"))); // NOI18N
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/AsuperArts/UI/img/icons8-desfazer-19.png"))); // NOI18N
         btn_cancelar.setText("Desfazer");
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,6 +259,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         );
 
         tb_estoque.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        tb_estoque.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tb_estoque.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -264,6 +276,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        tb_estoque.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tb_estoque);
         if (tb_estoque.getColumnModel().getColumnCount() > 0) {
             tb_estoque.getColumnModel().getColumn(0).setResizable(false);
