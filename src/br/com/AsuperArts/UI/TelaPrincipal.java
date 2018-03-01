@@ -6,16 +6,7 @@ import java.awt.event.ActionListener;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import javax.swing.JLabel;
 import javax.swing.Timer;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 /**
  * @author Equipe senac 2017
@@ -39,7 +30,6 @@ public class TelaPrincipal extends javax.swing.JFrame{
    
     public TelaPrincipal(Integer tipo) {
         initComponents();
-       // JLabel background = new JLabel(new javax.swing.ImageIcon(getClass().getResource("img/logoprincipal.png")));
         URL url = this.getClass().getResource("img/IconeAsuperArts.png");  
         Image icone = Toolkit.getDefaultToolkit().getImage(url);  
         this.setIconImage(icone);
@@ -457,6 +447,8 @@ public class TelaPrincipal extends javax.swing.JFrame{
         form_fecharOS = null;
         if(form_RelatorioOS != null){form_RelatorioOS.setVisible(false);}
         form_RelatorioOS = null;
+        if(form_Servicos != null){form_Servicos.setVisible(false);}
+        form_Servicos = null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
