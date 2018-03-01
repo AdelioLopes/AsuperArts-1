@@ -94,7 +94,7 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -188,7 +188,7 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
         txt_valorI.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txt_valorI.setText("0,0");
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel2.setBackground(new java.awt.Color(51, 102, 255));
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton1.setText("Cadastrar");
