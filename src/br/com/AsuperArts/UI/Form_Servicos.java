@@ -8,6 +8,8 @@ package br.com.AsuperArts.UI;
 import br.com.AsuperArts.BLL.ServicosBLL;
 import br.com.AsuperArts.DTO.ServicosDTO;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,9 +21,46 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
      * Creates new form Form_Servicos
      */
     public Form_Servicos() {
+        
         initComponents();
+        preencherTabela();
+        msg.setText("<html>Serviços prestados com valores mínimos.</html>");
     }
-    
+    public void preencherTabela() {
+        
+        this.tb_01.getColumnModel().getColumn(0).setPreferredWidth(50);
+        this.tb_01.getColumnModel().getColumn(0).setMaxWidth(50);
+        this.tb_01.getColumnModel().getColumn(0).setMinWidth(50);
+        
+        this.tb_01.getColumnModel().getColumn(1).setPreferredWidth(100);
+        this.tb_01.getColumnModel().getColumn(1).setMaxWidth(100);
+        this.tb_01.getColumnModel().getColumn(1).setMinWidth(100);
+        
+        this.tb_01.getColumnModel().getColumn(2).setPreferredWidth(100);
+        this.tb_01.getColumnModel().getColumn(2).setMaxWidth(100);
+        this.tb_01.getColumnModel().getColumn(2).setMinWidth(100);
+        
+        this.tb_01.getColumnModel().getColumn(3).setPreferredWidth(100);
+        this.tb_01.getColumnModel().getColumn(3).setMaxWidth(100);
+        this.tb_01.getColumnModel().getColumn(3).setMinWidth(100);
+
+
+        //getContentPane().setBackground(new Color(255,255,255));
+        this.tb_01.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        DefaultTableModel modelo = (DefaultTableModel) tb_01.getModel();
+        modelo.setNumRows(0);
+        ServicosBLL rg = new ServicosBLL();
+
+        for (ServicosDTO servico : rg.lista01()) {
+            modelo.addRow(new Object[]{
+                servico.getId_servico(),
+                servico.getServico(),
+                servico.getValorH(),
+                servico.getValorI(),
+                servico.getMetro()
+            });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,22 +79,24 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
         radio_laser = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txt_valorH = new javax.swing.JTextField();
         radio_fresa = new javax.swing.JRadioButton();
         radio_impressora = new javax.swing.JRadioButton();
-        radio_producao = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txt_valorI = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        txt_metro = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jPanel3 = new javax.swing.JPanel();
+        tb_1 = new javax.swing.JScrollPane();
+        tb_01 = new javax.swing.JTable();
+        msg = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -89,58 +130,66 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
                 .addGap(0, 13, Short.MAX_VALUE))
         );
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel2.setText("ID");
 
         jTextField1.setEditable(false);
 
         buttonGroup2.add(radio_laser);
+        radio_laser.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         radio_laser.setText("Laser");
         radio_laser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 radio_laserMouseClicked(evt);
             }
         });
+        radio_laser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio_laserActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setText("Serviço");
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setText("Serviços");
 
         jLabel4.setText("Valor Hora");
 
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField3.setText("0,0");
+        txt_valorH.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txt_valorH.setText("0,0");
 
         buttonGroup2.add(radio_fresa);
+        radio_fresa.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         radio_fresa.setText("Fresa");
         radio_fresa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 radio_fresaMouseClicked(evt);
             }
         });
+        radio_fresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio_fresaActionPerformed(evt);
+            }
+        });
 
         buttonGroup2.add(radio_impressora);
+        radio_impressora.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         radio_impressora.setText("Impressora");
         radio_impressora.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 radio_impressoraMouseClicked(evt);
             }
         });
-
-        buttonGroup2.add(radio_producao);
-        radio_producao.setText("Produção");
-        radio_producao.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                radio_producaoMouseClicked(evt);
+        radio_impressora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio_impressoraActionPerformed(evt);
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel5.setText("Valor Impressão");
 
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField2.setText("0,0");
-
-        jLabel6.setText("Valor Produção");
-
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField4.setText("0,0");
+        txt_valorI.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txt_valorI.setText("0,0");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -178,12 +227,12 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 54, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(82, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,28 +241,60 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        txt_metro.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLabel7.setText("Metragem");
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 255));
+
+        tb_01.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Serviço", "Valor Hora", "Valor Impressão", "Valor Produção"
+                "ID", "Serviço", "Valor Hora", "Valor Impressão", "Metragem"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
+                false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
+        tb_1.setViewportView(tb_01);
+        if (tb_01.getColumnModel().getColumnCount() > 0) {
+            tb_01.getColumnModel().getColumn(0).setResizable(false);
+            tb_01.getColumnModel().getColumn(1).setResizable(false);
+            tb_01.getColumnModel().getColumn(2).setResizable(false);
+            tb_01.getColumnModel().getColumn(3).setResizable(false);
         }
+
+        msg.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        msg.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tb_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tb_1, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                    .addComponent(msg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -222,112 +303,155 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(radio_laser)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(radio_fresa)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel4))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(radio_impressora)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel5)))
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_valorH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_valorI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(radio_laser)
-                                .addGap(27, 27, 27)
-                                .addComponent(radio_fresa)
-                                .addGap(26, 26, 26)
-                                .addComponent(radio_impressora)
-                                .addGap(18, 18, 18)
-                                .addComponent(radio_producao))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_metro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jSeparator1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radio_laser)
                     .addComponent(radio_fresa)
-                    .addComponent(radio_impressora)
-                    .addComponent(radio_producao))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_valorH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radio_impressora)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_valorI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_metro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void radio_laserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_radio_laserMouseClicked
-        if(!radio_fresa.isSelected()){
-            radio_fresa.getActionCommand();
-            JOptionPane.showMessageDialog(null, "laser");
-        }
         
+        if (!radio_laser.isSelected()){
+            radio_laser.getActionCommand();
+            
+        }
     }//GEN-LAST:event_radio_laserMouseClicked
 
     private void radio_fresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_radio_fresaMouseClicked
-        if (!radio_laser.isSelected()){
-            radio_laser.getActionCommand();
-            JOptionPane.showMessageDialog(null, "fresa");
+        if(!radio_fresa.isSelected()){
+            radio_fresa.getActionCommand();
+            radio_fresa.setEnabled(isIcon);
         }
     }//GEN-LAST:event_radio_fresaMouseClicked
 
     private void radio_impressoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_radio_impressoraMouseClicked
         if(radio_impressora.isSelected()){
             radio_impressora.getActionCommand();
-            JOptionPane.showMessageDialog(null, "impressora");
         }
     }//GEN-LAST:event_radio_impressoraMouseClicked
-
-    private void radio_producaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_radio_producaoMouseClicked
-        if(radio_producao.isSelected()){
-            radio_producao.getActionCommand();
-            JOptionPane.showMessageDialog(null, "produção");
-        }
-    }//GEN-LAST:event_radio_producaoMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        ServicosBLL rg = new ServicosBLL();
        ServicosDTO servico = new ServicosDTO();
        if(radio_laser.isSelected()){
-       
-       JOptionPane.showMessageDialog(null, radio_laser.getActionCommand());
-       }else{
+            servico.setServico(radio_laser.getActionCommand());
+            servico.setValorH(Double.valueOf(txt_valorH.getText().replace(",", ".")));
+            servico.setValorI(Double.valueOf(txt_valorI.getText().replace(",", ".")));
+            servico.setMetro(Integer.valueOf(txt_metro.getText()));
+            rg.cadastrar(servico);
+            preencherTabela();
+            JOptionPane.showMessageDialog(null, "Serviço Cadastrado!");
+       }else if(radio_fresa.isSelected()){
+            
+            servico.setServico(radio_fresa.getActionCommand());
+            servico.setValorH(Double.valueOf(txt_valorH.getText().replace(",", ".")));
+            servico.setValorI(Double.valueOf(txt_valorI.getText().replace(",", ".")));
+            servico.setMetro(Integer.valueOf(txt_metro.getText()));
+            rg.cadastrar(servico);
+            preencherTabela();
+            JOptionPane.showMessageDialog(null, "Serviço Cadastrado!");
+        }else if(radio_impressora.isSelected()){
+                    if(!txt_metro.getText().equals("")){
+                            servico.setServico(radio_impressora.getActionCommand());
+                            servico.setValorH(Double.valueOf(txt_valorH.getText().replace(",", ".")));
+                            servico.setValorI(Double.valueOf(txt_valorI.getText().replace(",", ".")));
+                            servico.setMetro(Integer.valueOf(txt_metro.getText()));
+                            rg.cadastrar(servico);
+                            preencherTabela();
+                JOptionPane.showMessageDialog(null, "Serviço Cadastrado!");
+                }else{
+                     JOptionPane.showMessageDialog(null, "Campos vazio!"); 
+                }
+        }
+        else{
            JOptionPane.showMessageDialog(null, "Selecione um serviço");
-       } 
+       }
+       
                
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void radio_laserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_laserActionPerformed
+            txt_valorH.setEnabled(true);
+            txt_valorI.setEnabled(false);
+            txt_metro.setEnabled(false);
+    }//GEN-LAST:event_radio_laserActionPerformed
+
+    private void radio_fresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_fresaActionPerformed
+            txt_valorH.setEnabled(true);
+            txt_valorI.setEnabled(false);
+            txt_metro.setEnabled(false);
+    }//GEN-LAST:event_radio_fresaActionPerformed
+
+    private void radio_impressoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_impressoraActionPerformed
+            txt_valorH.setEnabled(false);
+            txt_valorI.setEnabled(true);
+            txt_metro.setEnabled(true);
+    }//GEN-LAST:event_radio_impressoraActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -343,18 +467,20 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel msg;
     private javax.swing.JRadioButton radio_fresa;
     private javax.swing.JRadioButton radio_impressora;
     private javax.swing.JRadioButton radio_laser;
-    private javax.swing.JRadioButton radio_producao;
+    private javax.swing.JTable tb_01;
+    private javax.swing.JScrollPane tb_1;
+    private javax.swing.JTextField txt_metro;
+    private javax.swing.JTextField txt_valorH;
+    private javax.swing.JTextField txt_valorI;
     // End of variables declaration//GEN-END:variables
 }

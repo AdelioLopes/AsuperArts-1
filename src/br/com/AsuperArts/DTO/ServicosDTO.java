@@ -14,8 +14,7 @@ public class ServicosDTO {
     private String servico;
     private Double valorH;
     private Double valorI;
-    private Double valorP;
-
+    private Integer metro;
     public Integer getId_servico() {
         return id_servico;
     }
@@ -47,13 +46,12 @@ public class ServicosDTO {
     public void setValorI(Double valorI) {
         this.valorI = valorI;
     }
-
-    public Double getValorP() {
-        return valorP;
+    public Integer getMetro() {
+        return metro;
     }
 
-    public void setValorP(Double valorP) {
-        this.valorP = valorP;
+    public void setMetro(Integer metro) {
+        this.metro = metro;
     }
     
     
