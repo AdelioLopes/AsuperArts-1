@@ -121,7 +121,7 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Controle de Estoque-----------------------------------------------------------------------------------------------------------------------");
+        jLabel1.setText("Controle de Estoque");
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
