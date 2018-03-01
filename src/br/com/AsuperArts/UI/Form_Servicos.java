@@ -5,6 +5,10 @@
  */
 package br.com.AsuperArts.UI;
 
+import br.com.AsuperArts.BLL.ServicosBLL;
+import br.com.AsuperArts.DTO.ServicosDTO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Administrador
@@ -17,7 +21,7 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
     public Form_Servicos() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,18 +31,19 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        radio_laser = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        radio_fresa = new javax.swing.JRadioButton();
+        radio_impressora = new javax.swing.JRadioButton();
+        radio_producao = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -56,7 +61,7 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Serviços Prestados----------------------------------------------------------------------------------------------------------------------------------");
+        jLabel1.setText("Serviços Prestados");
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -88,6 +93,14 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
 
         jTextField1.setEditable(false);
 
+        buttonGroup2.add(radio_laser);
+        radio_laser.setText("Laser");
+        radio_laser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                radio_laserMouseClicked(evt);
+            }
+        });
+
         jLabel3.setText("Serviço");
 
         jLabel4.setText("Valor Hora");
@@ -95,13 +108,29 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField3.setText("0,0");
 
-        jRadioButton1.setText("Laser");
+        buttonGroup2.add(radio_fresa);
+        radio_fresa.setText("Fresa");
+        radio_fresa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                radio_fresaMouseClicked(evt);
+            }
+        });
 
-        jRadioButton2.setText("Fresa");
+        buttonGroup2.add(radio_impressora);
+        radio_impressora.setText("Impressora");
+        radio_impressora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                radio_impressoraMouseClicked(evt);
+            }
+        });
 
-        jRadioButton3.setText("Impressora");
-
-        jRadioButton4.setText("Produção");
+        buttonGroup2.add(radio_producao);
+        radio_producao.setText("Produção");
+        radio_producao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                radio_producaoMouseClicked(evt);
+            }
+        });
 
         jLabel5.setText("Valor Impressão");
 
@@ -117,6 +146,11 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton1.setText("Cadastrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton2.setText("Excluir");
@@ -199,13 +233,13 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
                                 .addGap(43, 43, 43)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton1)
+                                .addComponent(radio_laser)
                                 .addGap(27, 27, 27)
-                                .addComponent(jRadioButton2)
+                                .addComponent(radio_fresa)
                                 .addGap(26, 26, 26)
-                                .addComponent(jRadioButton3)
+                                .addComponent(radio_impressora)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton4))
+                                .addComponent(radio_producao))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -232,10 +266,10 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(radio_laser)
+                    .addComponent(radio_fresa)
+                    .addComponent(radio_impressora)
+                    .addComponent(radio_producao))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -254,8 +288,50 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void radio_laserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_radio_laserMouseClicked
+        if(!radio_fresa.isSelected()){
+            radio_fresa.getActionCommand();
+            JOptionPane.showMessageDialog(null, "laser");
+        }
+        
+    }//GEN-LAST:event_radio_laserMouseClicked
+
+    private void radio_fresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_radio_fresaMouseClicked
+        if (!radio_laser.isSelected()){
+            radio_laser.getActionCommand();
+            JOptionPane.showMessageDialog(null, "fresa");
+        }
+    }//GEN-LAST:event_radio_fresaMouseClicked
+
+    private void radio_impressoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_radio_impressoraMouseClicked
+        if(radio_impressora.isSelected()){
+            radio_impressora.getActionCommand();
+            JOptionPane.showMessageDialog(null, "impressora");
+        }
+    }//GEN-LAST:event_radio_impressoraMouseClicked
+
+    private void radio_producaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_radio_producaoMouseClicked
+        if(radio_producao.isSelected()){
+            radio_producao.getActionCommand();
+            JOptionPane.showMessageDialog(null, "produção");
+        }
+    }//GEN-LAST:event_radio_producaoMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       ServicosBLL rg = new ServicosBLL();
+       ServicosDTO servico = new ServicosDTO();
+       if(radio_laser.isSelected()){
+       
+       JOptionPane.showMessageDialog(null, radio_laser.getActionCommand());
+       }else{
+           JOptionPane.showMessageDialog(null, "Selecione um serviço");
+       } 
+               
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -270,15 +346,15 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JRadioButton radio_fresa;
+    private javax.swing.JRadioButton radio_impressora;
+    private javax.swing.JRadioButton radio_laser;
+    private javax.swing.JRadioButton radio_producao;
     // End of variables declaration//GEN-END:variables
 }
