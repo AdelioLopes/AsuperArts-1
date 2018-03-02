@@ -27,20 +27,15 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         btn_cancelar.setEnabled(false);
         btn_cancelar.setEnabled(false);
         
-        btn_cadastrar.setBackground(new Color(255,255,255));
-        btn_cancelar.setBackground(new Color(255,255,255));
-        btn_excluir.setBackground(new Color(255,255,255));
-        btn_salvar.setBackground(new Color(255,255,255));
-        btn_editar.setBackground(new Color(255,255,255));
         
-        btn_cadastrar.setBorder(new Form_Estoque.RoundedBorder(25));
-        btn_editar.setBorder(new Form_Estoque.RoundedBorder(25));
-        btn_excluir.setBorder(new Form_Estoque.RoundedBorder(25));
-        btn_cancelar.setBorder(new Form_Estoque.RoundedBorder(25));
-        btn_salvar.setBorder(new Form_Estoque.RoundedBorder(25));
+        btn_cadastrar.setBorder(new Form_Estoque.RoundedBorder(12));
+        btn_editar.setBorder(new Form_Estoque.RoundedBorder(12));
+        btn_excluir.setBorder(new Form_Estoque.RoundedBorder(12));
+        btn_cancelar.setBorder(new Form_Estoque.RoundedBorder(12));
+        btn_salvar.setBorder(new Form_Estoque.RoundedBorder(12));
         
     }
-     private class RoundedBorder implements Border {
+    private class RoundedBorder implements Border {
 
     private int radius;
 
@@ -171,12 +166,12 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(261, 261, 261)
-                .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(jLabel10)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,15 +262,15 @@ public class Form_Estoque extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
