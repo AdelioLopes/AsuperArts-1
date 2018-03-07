@@ -366,7 +366,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         fecharTelas();
         form_GerarOSNew  = new Form_abrirOSNew();
         form_GerarOSNew.setVisible(true);
-        desktop.add(form_GerarOSNew);
+        desktop.add(form_GerarOSNew);   
     }//GEN-LAST:event_GerarOSActionPerformed
 
     private void FuncGerarOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FuncGerarOSActionPerformed

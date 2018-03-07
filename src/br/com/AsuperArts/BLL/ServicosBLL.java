@@ -57,5 +57,27 @@ public class ServicosBLL {
         }
         return null;
     }
+    public ServicosDTO listaServicoNome(String nome){
+    
+        ResultSet rs = null;
+        sql = "SELECT * FROM tb_servico WHERE nome='" + nome + "';";
+        ServicosDTO servico = new ServicosDTO();
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                servico.setId_servico(rs.getInt("id_servico"));
+                  servico.setServico(rs.getString("servico"));
+                  servico.setValorH(rs.getDouble("valorH"));
+                  servico.setValorI(rs.getDouble("valorI"));
+                  servico.setMetro(rs.getInt("metragem"));
+                  
+            }
+            return servico;
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
     
 }
