@@ -60,7 +60,7 @@ public class ServicosBLL {
     public ServicosDTO listaServicoNome(String nome){
     
         ResultSet rs = null;
-        sql = "SELECT * FROM tb_servico WHERE nome='" + nome + "';";
+        sql = "SELECT * FROM tb_servico WHERE servico='" + nome + "';";
         ServicosDTO servico = new ServicosDTO();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
