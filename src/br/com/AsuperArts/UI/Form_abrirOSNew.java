@@ -389,7 +389,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         jLabel12.setText("Valor Total");
 
         txt_total.setEditable(false);
-        txt_total.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        txt_total.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_total.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txt_total.setText("0.0");
 
