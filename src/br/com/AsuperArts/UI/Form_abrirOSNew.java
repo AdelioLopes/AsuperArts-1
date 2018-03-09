@@ -246,16 +246,17 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         txt_unitario.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txt_unitario.setText("-");
 
+        tb_os.setAutoCreateRowSorter(true);
         tb_os.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Data de Entrada", "Cliente", "Empresa", "Serviço", "Material", "Cor", "Quantidade", "Valor Unitário", "Total", "Responsavel", "Observações", "V.Hora", "Tempo(Hora)", "Total", "V.Impressão", "Metragem(mm)", "Total", "Solicitante", "Data de Entrega"
+                "", "", "", "", "", "", "", "", "", "", "", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -263,27 +264,6 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane2.setViewportView(tb_os);
-        if (tb_os.getColumnModel().getColumnCount() > 0) {
-            tb_os.getColumnModel().getColumn(0).setResizable(false);
-            tb_os.getColumnModel().getColumn(1).setResizable(false);
-            tb_os.getColumnModel().getColumn(2).setResizable(false);
-            tb_os.getColumnModel().getColumn(3).setResizable(false);
-            tb_os.getColumnModel().getColumn(4).setResizable(false);
-            tb_os.getColumnModel().getColumn(5).setResizable(false);
-            tb_os.getColumnModel().getColumn(6).setResizable(false);
-            tb_os.getColumnModel().getColumn(7).setResizable(false);
-            tb_os.getColumnModel().getColumn(8).setResizable(false);
-            tb_os.getColumnModel().getColumn(9).setResizable(false);
-            tb_os.getColumnModel().getColumn(10).setResizable(false);
-            tb_os.getColumnModel().getColumn(11).setResizable(false);
-            tb_os.getColumnModel().getColumn(12).setResizable(false);
-            tb_os.getColumnModel().getColumn(13).setResizable(false);
-            tb_os.getColumnModel().getColumn(14).setResizable(false);
-            tb_os.getColumnModel().getColumn(15).setResizable(false);
-            tb_os.getColumnModel().getColumn(16).setResizable(false);
-            tb_os.getColumnModel().getColumn(17).setResizable(false);
-            tb_os.getColumnModel().getColumn(18).setResizable(false);
-        }
 
         jScrollPane3.setViewportView(jScrollPane2);
 
@@ -386,7 +366,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         txt_totalI.setText("-");
 
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel12.setText("Valor Total");
+        jLabel12.setText("Valor Total O.S");
 
         txt_total.setEditable(false);
         txt_total.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -468,30 +448,38 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
                                 .addComponent(txt_produtos, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(24, 24, 24))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_qtd, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_unitario, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_totalCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel22)
+                                        .addComponent(jLabel12)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txt_totalI, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txt_observacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txt_total, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btn_calc, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txt_qtd, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txt_unitario, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel17)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txt_totalCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_responsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel22)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(txt_totalI, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txt_observacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -508,13 +496,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
                                 .addGap(26, 26, 26)
                                 .addComponent(btn_del, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btn_abrir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_total, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_calc, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btn_abrir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -617,6 +599,9 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
               
     }
     private void txt_produtosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_produtosActionPerformed
+        if(!txt_produtos.getSelectedItem().equals("-")){
+            txt_unitario.setText("");
+        }
         txt_qtd.setEnabled(true);
         String NomeProduto = txt_produtos.getSelectedItem().toString();
         EstoqueBLL cb = new EstoqueBLL();
@@ -637,19 +622,22 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         String dt_entrada = txt_dtEntrada.getText().trim();
         String empresa = txt_empresa.getSelectedItem().toString();
         String servico = txt_servico.getSelectedItem().toString();
-        String responsavel = txt_responsavel.getText();
-        String solicitante = txt_solicitante.getText();
-        String observacoes = txt_observacoes.getText();
+        String material = txt_produtos.getSelectedItem().toString();
+        String cor = txt_cor.getText();
         String qtd = txt_qtd.getText();
+        String observacoes = txt_observacoes.getText();
         String unitario = txt_unitario.getText();
         String totalCalc = txt_totalCalc.getText();
+        String totalH = txt_totalH.getText();
+        String totalI = txt_totalI.getText();
+        String solicitante = txt_solicitante.getText();
         SimpleDateFormat fd = new  SimpleDateFormat("dd/MM/yyyy");
         Date texto = txt_entrega.getDate();
         String data1 = fd.format(texto);
         //this.tb_os.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         DefaultTableModel modelo = (DefaultTableModel) tb_os.getModel();
         //modelo.setNumRows(0);
-        modelo.addRow(new String[]{dt_entrada,empresa,responsavel,solicitante,observacoes,qtd,unitario,totalCalc,servico,data1});
+        modelo.addRow(new String[]{dt_entrada,empresa,servico,material,cor,qtd,totalCalc,totalH,totalI,solicitante,observacoes,data1});
         txt_empresa.setSelectedItem("-");
         txt_produtos.setSelectedItem("-");
         txt_servico.setSelectedItem("-");
@@ -692,25 +680,29 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
             txt_hora.setEnabled(true);
             txt_base.setEnabled(false);
             txt_altura.setEnabled(false);
+            txt_valorI.setText("-");
             String NomeServico = txt_servico.getSelectedItem().toString();
             ServicosBLL cb = new ServicosBLL();
             ServicosDTO servico = cb.listaServicoNome(NomeServico);
             txt_valorH.setText(servico.getValorH().toString());
-        }else if(txt_servico.getSelectedItem().equals("Impressora")){
+        }
+        if(txt_servico.getSelectedItem().equals("Impressora")){
             txt_qtd.setEnabled(false);
             txt_qtd.setEnabled(false);
             txt_hora.setEnabled(false);
             txt_base.setEnabled(true);
             txt_altura.setEnabled(true);
+            txt_produtos.setSelectedItem("-");
             String NomeServico = txt_servico.getSelectedItem().toString();
             ServicosBLL cb = new ServicosBLL();
             ServicosDTO servico = cb.listaServicoNome(NomeServico);
             txt_valorI.setText(servico.getValorI().toString());
-        }else{
+        }if(txt_servico.getSelectedItem().equals("Fresa")){
             txt_qtd.setEnabled(false);
             txt_hora.setEnabled(true);
             txt_base.setEnabled(false);
             txt_altura.setEnabled(false);
+            txt_valorI.setText("-");
             String NomeServico = txt_servico.getSelectedItem().toString();
             ServicosBLL cb = new ServicosBLL();
             ServicosDTO servico = cb.listaServicoNome(NomeServico);
