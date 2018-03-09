@@ -129,7 +129,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         jLabel20 = new javax.swing.JLabel();
         txt_valorI = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        txt_metragem1 = new javax.swing.JTextField();
+        txt_base = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         txt_totalI = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -139,7 +139,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         btn_del = new javax.swing.JButton();
         btn_add = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
-        txt_metragem2 = new javax.swing.JTextField();
+        txt_altura = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -365,16 +365,16 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         txt_valorI.setText("-");
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel21.setText("1° Metragem");
+        jLabel21.setText("Base");
 
-        txt_metragem1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_metragem1.setText("-");
-        txt_metragem1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txt_base.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_base.setText("-");
+        txt_base.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt_metragem1KeyReleased(evt);
+                txt_baseKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_metragem1KeyTyped(evt);
+                txt_baseKeyTyped(evt);
             }
         });
 
@@ -416,16 +416,16 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         });
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel23.setText("2° Metragem");
+        jLabel23.setText("Altura");
 
-        txt_metragem2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txt_metragem2.setText("-");
-        txt_metragem2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txt_altura.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_altura.setText("-");
+        txt_altura.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt_metragem2KeyReleased(evt);
+                txt_alturaKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_metragem2KeyTyped(evt);
+                txt_alturaKeyTyped(evt);
             }
         });
 
@@ -486,7 +486,12 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_observacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel22)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txt_totalI, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txt_observacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -529,15 +534,11 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
                                 .addGap(16, 16, 16)
                                 .addComponent(jLabel21)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_metragem1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_base, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel23)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_metragem2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_totalI, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txt_altura, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -573,11 +574,10 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
                     .addComponent(txt_observacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel23)
                     .addComponent(jLabel21)
                     .addComponent(jLabel22)
                     .addComponent(txt_totalI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_metragem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_base, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_valorI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
                     .addComponent(txt_totalH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -586,14 +586,15 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
                     .addComponent(jLabel19)
                     .addComponent(txt_valorH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
-                    .addComponent(txt_metragem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel23)
+                    .addComponent(txt_altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel8)
                     .addComponent(txt_solicitante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
                     .addComponent(txt_entrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(txt_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_calc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -616,6 +617,7 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
               
     }
     private void txt_produtosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_produtosActionPerformed
+        txt_qtd.setEnabled(true);
         String NomeProduto = txt_produtos.getSelectedItem().toString();
         EstoqueBLL cb = new EstoqueBLL();
         EstoqueDTO produto = cb.listaEstoqueNome(NomeProduto);
@@ -687,6 +689,9 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         
         if(txt_servico.getSelectedItem().equals("Laser")){
             txt_qtd.setEnabled(false);
+            txt_hora.setEnabled(true);
+            txt_base.setEnabled(false);
+            txt_altura.setEnabled(false);
             String NomeServico = txt_servico.getSelectedItem().toString();
             ServicosBLL cb = new ServicosBLL();
             ServicosDTO servico = cb.listaServicoNome(NomeServico);
@@ -694,12 +699,18 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         }else if(txt_servico.getSelectedItem().equals("Impressora")){
             txt_qtd.setEnabled(false);
             txt_qtd.setEnabled(false);
+            txt_hora.setEnabled(false);
+            txt_base.setEnabled(true);
+            txt_altura.setEnabled(true);
             String NomeServico = txt_servico.getSelectedItem().toString();
             ServicosBLL cb = new ServicosBLL();
             ServicosDTO servico = cb.listaServicoNome(NomeServico);
             txt_valorI.setText(servico.getValorI().toString());
         }else{
             txt_qtd.setEnabled(false);
+            txt_hora.setEnabled(true);
+            txt_base.setEnabled(false);
+            txt_altura.setEnabled(false);
             String NomeServico = txt_servico.getSelectedItem().toString();
             ServicosBLL cb = new ServicosBLL();
             ServicosDTO servico = cb.listaServicoNome(NomeServico);
@@ -726,37 +737,36 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
         txt_totalH.setText(String.valueOf(resul));
     }//GEN-LAST:event_txt_horaKeyReleased
 
-    private void txt_metragem1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_metragem1KeyTyped
+    private void txt_baseKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_baseKeyTyped
         String caracteres="0987654321";
         if(!caracteres.contains(evt.getKeyChar()+"")){
         evt.consume();
         }
-    }//GEN-LAST:event_txt_metragem1KeyTyped
+    }//GEN-LAST:event_txt_baseKeyTyped
 
-    private void txt_metragem1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_metragem1KeyReleased
-        double v0 = Double.valueOf(txt_valorI.getText());
-        double v1 = Double.valueOf(txt_metragem1.getText());
-        double v2 = Double.valueOf(txt_metragem2.getText());
+    private void txt_baseKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_baseKeyReleased
+
+        double v1 = Double.valueOf(txt_base.getText());
+        double v2 = Double.valueOf(txt_altura.getText());
         double resul;
-        resul = v1*v0;
-        txt_totalI.setText(String.valueOf(resul));
-    }//GEN-LAST:event_txt_metragem1KeyReleased
+        resul = v1*v2;
+        txt_totalI.setText(String.valueOf(resul*Double.valueOf(txt_valorI.getText())));
+    }//GEN-LAST:event_txt_baseKeyReleased
 
-    private void txt_metragem2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_metragem2KeyReleased
-        double v0 = Double.valueOf(txt_valorI.getText());
-        double v1 = Double.valueOf(txt_metragem1.getText());
-        double v2 = Double.valueOf(txt_metragem2.getText());
+    private void txt_alturaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_alturaKeyReleased
+        double v1 = Double.valueOf(txt_base.getText());
+        double v2 = Double.valueOf(txt_altura.getText());
         double resul;
-        resul = v1*v0;
-        txt_totalI.setText(String.valueOf(resul));
-    }//GEN-LAST:event_txt_metragem2KeyReleased
+        resul = v1*v2;
+        txt_totalI.setText(String.valueOf(resul*Double.valueOf(txt_valorI.getText())));
+    }//GEN-LAST:event_txt_alturaKeyReleased
 
-    private void txt_metragem2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_metragem2KeyTyped
+    private void txt_alturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_alturaKeyTyped
         String caracteres="0987654321";
         if(!caracteres.contains(evt.getKeyChar()+"")){
         evt.consume();
         }
-    }//GEN-LAST:event_txt_metragem2KeyTyped
+    }//GEN-LAST:event_txt_alturaKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -793,14 +803,14 @@ public class Form_abrirOSNew extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lbl_hora;
     private javax.swing.JTable tb_os;
+    private javax.swing.JTextField txt_altura;
+    private javax.swing.JTextField txt_base;
     private javax.swing.JTextField txt_cod;
     private javax.swing.JTextField txt_cor;
     private javax.swing.JTextField txt_dtEntrada;
     private javax.swing.JComboBox<String> txt_empresa;
     private com.toedter.calendar.JDateChooser txt_entrega;
     private javax.swing.JTextField txt_hora;
-    private javax.swing.JTextField txt_metragem1;
-    private javax.swing.JTextField txt_metragem2;
     private javax.swing.JTextField txt_observacoes;
     private javax.swing.JComboBox<String> txt_produtos;
     private javax.swing.JTextField txt_qtd;

@@ -90,9 +90,13 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
         tb_1 = new javax.swing.JScrollPane();
         tb_01 = new javax.swing.JTable();
         msg = new javax.swing.JLabel();
-        txt_metro = new javax.swing.JTextField();
+        txt_base = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        txt_altura = new javax.swing.JTextField();
+        txt_metro = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -207,11 +211,11 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Serviço", "Valor Hora", "Valor Impressão", "Metragem"
+                "ID", "Serviço", "Valor Hora", "Valor Impressão", "Metros²"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -224,6 +228,7 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
             tb_01.getColumnModel().getColumn(1).setResizable(false);
             tb_01.getColumnModel().getColumn(2).setResizable(false);
             tb_01.getColumnModel().getColumn(3).setResizable(false);
+            tb_01.getColumnModel().getColumn(4).setResizable(false);
         }
 
         msg.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -255,13 +260,38 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
                 .addComponent(tb_1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
-        txt_metro.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txt_base.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txt_base.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_baseKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_baseKeyTyped(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel7.setText("Metragem");
+        jLabel7.setText("Base");
+
+        jLabel6.setText("Altura");
+
+        txt_altura.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_altura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_alturaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_alturaKeyTyped(evt);
+            }
+        });
+
+        txt_metro.setEditable(false);
+        txt_metro.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+
+        jLabel8.setText("Metros");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -300,7 +330,15 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_metro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_base, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_altura, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_metro, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel3))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -337,8 +375,12 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(txt_valorI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_metro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
+                            .addComponent(txt_base, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(txt_altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)
+                            .addComponent(txt_metro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -374,7 +416,7 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
             servico.setServico(radio_laser.getActionCommand());
             servico.setValorH(Double.valueOf(txt_valorH.getText().replace(",", ".")));
             servico.setValorI(Double.valueOf(txt_valorI.getText().replace(",", ".")));
-            servico.setMetro(Integer.valueOf(txt_metro.getText()));
+            servico.setMetro(Integer.valueOf(txt_base.getText()));
             rg.cadastrar(servico);
             preencherTabela();
             JOptionPane.showMessageDialog(null, "Serviço Cadastrado!");
@@ -383,16 +425,16 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
             servico.setServico(radio_fresa.getActionCommand());
             servico.setValorH(Double.valueOf(txt_valorH.getText().replace(",", ".")));
             servico.setValorI(Double.valueOf(txt_valorI.getText().replace(",", ".")));
-            servico.setMetro(Integer.valueOf(txt_metro.getText()));
+            servico.setMetro(Integer.valueOf(txt_base.getText()));
             rg.cadastrar(servico);
             preencherTabela();
             JOptionPane.showMessageDialog(null, "Serviço Cadastrado!");
         }else if(radio_impressora.isSelected()){
-                    if(!txt_metro.getText().equals("")){
+                    if(!txt_base.getText().equals("")){
                             servico.setServico(radio_impressora.getActionCommand());
                             servico.setValorH(Double.valueOf(txt_valorH.getText().replace(",", ".")));
                             servico.setValorI(Double.valueOf(txt_valorI.getText().replace(",", ".")));
-                            servico.setMetro(Integer.valueOf(txt_metro.getText()));
+                            servico.setMetro(Integer.valueOf(txt_base.getText()));
                             rg.cadastrar(servico);
                             preencherTabela();
                 JOptionPane.showMessageDialog(null, "Serviço Cadastrado!");
@@ -410,20 +452,50 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
     private void radio_laserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_laserActionPerformed
             txt_valorH.setEnabled(true);
             txt_valorI.setEnabled(false);
-            txt_metro.setEnabled(false);
+            txt_base.setEnabled(false);
     }//GEN-LAST:event_radio_laserActionPerformed
 
     private void radio_fresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_fresaActionPerformed
             txt_valorH.setEnabled(true);
             txt_valorI.setEnabled(false);
-            txt_metro.setEnabled(false);
+            txt_base.setEnabled(false);
     }//GEN-LAST:event_radio_fresaActionPerformed
 
     private void radio_impressoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_impressoraActionPerformed
             txt_valorH.setEnabled(false);
             txt_valorI.setEnabled(true);
-            txt_metro.setEnabled(true);
+            txt_base.setEnabled(true);
     }//GEN-LAST:event_radio_impressoraActionPerformed
+
+    private void txt_baseKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_baseKeyTyped
+        String caracteres="0987654321.";
+        if(!caracteres.contains(evt.getKeyChar()+"")){
+        evt.consume();
+        }
+    }//GEN-LAST:event_txt_baseKeyTyped
+
+    private void txt_alturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_alturaKeyTyped
+        String caracteres="0987654321.";
+        if(!caracteres.contains(evt.getKeyChar()+"")){
+        evt.consume();
+        }
+    }//GEN-LAST:event_txt_alturaKeyTyped
+
+    private void txt_baseKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_baseKeyReleased
+        double v1 = Double.valueOf(txt_base.getText());
+        double v2 = Double.valueOf(txt_altura.getText());
+        double resul;
+        resul = v1*v2;
+        txt_metro.setText(String.valueOf(resul));
+    }//GEN-LAST:event_txt_baseKeyReleased
+
+    private void txt_alturaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_alturaKeyReleased
+        double v1 = Double.valueOf(txt_base.getText());
+        double v2 = Double.valueOf(txt_altura.getText());
+        double resul;
+        resul = v1*v2;
+        txt_metro.setText(String.valueOf(resul));
+    }//GEN-LAST:event_txt_alturaKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -436,7 +508,9 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
@@ -447,6 +521,8 @@ public class Form_Servicos extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton radio_laser;
     private javax.swing.JTable tb_01;
     private javax.swing.JScrollPane tb_1;
+    private javax.swing.JTextField txt_altura;
+    private javax.swing.JTextField txt_base;
     private javax.swing.JTextField txt_metro;
     private javax.swing.JTextField txt_valorH;
     private javax.swing.JTextField txt_valorI;
